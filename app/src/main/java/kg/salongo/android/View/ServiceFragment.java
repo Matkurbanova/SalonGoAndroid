@@ -23,10 +23,11 @@ public class ServiceFragment extends Fragment {
     private ServiceAdapter adapter;
 
     private Service Service[] = new Service[]{
-            new Service("Dein","Коррекция бровей","5-й микрорайон, 63Б","Открыто c 10:00 до 17:00", "500",
+            new Service("Варвара","Коррекция бровей","5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек","Сегодня c 09:00 до 19:00 ", "Закрыто. Откроется в 09:00","500",
                     "https://i.pinimg.com/600x315/63/f9/4a/63f94a65f8d2a49fb430fd7a26bbcf3c.jpg"),
-            new Service("VarVara","Коррекция бровей","5-й микрорайон, 63Б","Открыто c 10:00 до 17:00", "500",
-                    "https://i.pinimg.com/600x315/63/f9/4a/63f94a65f8d2a49fb430fd7a26bbcf3c.jpg")
+            new Service("Варвара","Коррекция бровей","5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек","Сегодня c 09:00 до 19:00 ", "Закрыто. Откроется в 09:00","500",
+                    "https://i.pinimg.com/600x315/63/f9/4a/63f94a65f8d2a49fb430fd7a26bbcf3c.jpg"),
+
     };
 
     @Nullable

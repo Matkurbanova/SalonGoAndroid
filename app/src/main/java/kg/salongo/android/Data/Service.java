@@ -9,15 +9,25 @@ public class Service {
     private String address;
     private String workTime;
     private String price;
+    private String close;
 
     public Service(
-            String nameSalon, String nameSubCategory, String address, String workTime, String price, String image) {
+            String nameSalon, String nameSubCategory, String address, String workTime, String close,String price, String image) {
         this.nameSalon=nameSalon;
         this.nameSubCategory=nameSubCategory;
         this.address=address;
         this.workTime=workTime;
         this.price=price;
         this.image=image;
+        this.close=close;
+    }
+
+    public String getClose() {
+        return close;
+    }
+
+    public void setClose(String close) {
+        this.close = close;
     }
 
     public String getImage() {

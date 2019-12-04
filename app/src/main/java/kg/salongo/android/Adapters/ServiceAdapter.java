@@ -49,6 +49,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
        holder.textViewSubCatygoryName.setText(service.getNameSubCategory());
        holder.textViewaddress.setText(service.getAddress());
        holder.textViewWorkTime.setText(service.getWorkTime());
+       holder.textClose.setText(service.getClose());
 
 
         if (!service.getImage().isEmpty())
@@ -71,6 +72,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
         TextView textViewWorkTime;
         ImageView imageViewLogo;
         Button buttonprice;
+        TextView textClose;
 
         public ServiceHV(@NonNull View itemView) {
             super(itemView);
@@ -80,6 +82,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
             textViewWorkTime=itemView.findViewById(R.id.textViewWorkTime);
             imageViewLogo=itemView.findViewById(R.id.imageViewServiceLogo);
             buttonprice=itemView.findViewById(R.id.button);
+            textClose=itemView.findViewById(R.id.textClose);
 
         }
     }

@@ -6,16 +6,16 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="500com"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewNameSubcat"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNameSalon" />
+<!--    <Button-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="24dp"-->
+<!--        android:text="500com"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textViewNameSubcat"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textViewNameSalon" />-->
 
     <ImageView
         android:id="@+id/imageViewServiceLogo"
@@ -31,60 +31,108 @@
         app:layout_constraintEnd_toStartOf="@+id/textViewNameSubcat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
-        android:id="@+id/textViewNameSubcat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="NameSubCategory"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNameSalon" />
-
-    <TextView
         android:id="@+id/textViewNameSalon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Name Salon"
-        android:textColor="#F2070707"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        android:text="Address"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNameSubcat"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textViewWorkTime"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="WorkTame"
+        android:text="Варвара"
         android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:text="500 сом"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameSalon" />
+
+    <TextView
+        android:id="@+id/textViewNameSubcat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="Коррекция бровей"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAddress"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameSalon"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginRight="65dp"
+        android:text="Закрыто. Откроется в 09:00"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWorkTime" />
+
+    <TextView
+        android:id="@+id/textViewWorkTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
+        android:text="Сегодня c 09:00 до 19:00 "
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textClose"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
         app:layout_constraintTop_toBottomOf="@+id/textViewAddress" />
+
+
+
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
