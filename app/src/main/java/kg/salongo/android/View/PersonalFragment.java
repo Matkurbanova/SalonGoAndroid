@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.graphics.ImageDecoder;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
+
 import kg.salongo.android.R;
 
 public class PersonalFragment extends Fragment {
+
     private ImageView avatar;
     private TextView textViewNameSalon;
     private TextView textContacts;
@@ -29,6 +35,8 @@ public class PersonalFragment extends Fragment {
     private ImageView imageViewPersonal2;
     private ImageView imageLike;
     private ImageView imageSave;
+
+
 
     @Nullable
 @Override
@@ -50,6 +58,8 @@ public class PersonalFragment extends Fragment {
         imageViewPersonal=view.findViewById(R.id.imageViewPersonal);
         imageViewPersonal2=view.findViewById(R.id.imageViewPersonal2);
         imageLike=view.findViewById(R.id.imageSave);
+
+
 
     }
 }

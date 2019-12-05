@@ -34,9 +34,9 @@
             android:layout_marginLeft="46dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:foregroundGravity="center_vertical|center"
+
             android:text="Варвара"
-            android:textAlignment="center"
+
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -57,6 +57,7 @@
             android:layout_marginBottom="4dp"
             android:text="Контакты:"
             android:textColor="@color/black"
+
             app:layout_constraintBottom_toTopOf="@+id/textAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/avatar"
@@ -89,6 +90,8 @@
             android:ems="10"
             android:hint="Номер телефона"
             android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/textWorkTime"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintStart_toEndOf="@+id/avatar"
