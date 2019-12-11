@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 
+import com.squareup.picasso.Picasso;
+
 import kg.salongo.android.R;
 
 public class EditFragment extends Fragment {
@@ -49,6 +51,8 @@ public class EditFragment extends Fragment {
         editNewPassword=view.findViewById(R.id.editNewPassword);
         editDescription=view.findViewById(R.id.editDescription);
         SaveInf=view.findViewById(R.id.SaveInf);
+
+        Picasso.get().load("https://pngimage.net/wp-content/uploads/2018/05/beauty-logo-design-png-4.png").into(imagephoto);
 
 
 
