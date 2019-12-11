@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 
 import kg.salongo.android.View.AuthorizationFragment;
 import kg.salongo.android.View.CategoryFragment;
+import kg.salongo.android.View.EditFragment;
 import kg.salongo.android.View.PersonalKabinetFragment;
 import kg.salongo.android.View.RegistrationPersonalFragment;
 import kg.salongo.android.View.RegistrationSalonFragment;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         frameLayout = findViewById(R.id.mainFrame);
-        showFragment(new RegistrationSalonFragment());
+        showFragment(new RegistrationPersonalFragment());
     }
 
     private void showFragment(Fragment fragment) {
