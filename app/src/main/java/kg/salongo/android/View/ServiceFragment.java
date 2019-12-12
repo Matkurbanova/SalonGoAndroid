@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,16 +17,26 @@ import java.util.Arrays;
 import kg.salongo.android.Adapters.CategoryAdapter;
 import kg.salongo.android.Adapters.ServiceAdapter;
 import kg.salongo.android.Data.Service;
+import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class ServiceFragment extends Fragment {
     private RecyclerView recyclerView;
     private ServiceAdapter adapter;
 
+    private MainActivity mainActivity;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MainActivity)
+            mainActivity = (MainActivity) context;
+    }
+
     private Service Service[] = new Service[]{
-            new Service("Варвара","Коррекция бровей","5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек","Сегодня c 09:00 до 19:00 ", "Закрыто. Откроется в 09:00","500",
+            new Service("Варвара", "Коррекция бровей", "5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек", "Сегодня c 09:00 до 19:00 ", "Закрыто. Откроется в 09:00", "500",
                     "https://i.pinimg.com/600x315/63/f9/4a/63f94a65f8d2a49fb430fd7a26bbcf3c.jpg"),
-            new Service("Варвара","Коррекция бровей","5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек","Сегодня c 09:00 до 19:00 ", "Закрыто. Откроется в 09:00","500",
+            new Service("Варвара", "Коррекция бровей", "5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек", "Сегодня c 09:00 до 19:00 ", "Закрыто. Откроется в 09:00", "500",
                     "https://i.pinimg.com/600x315/63/f9/4a/63f94a65f8d2a49fb430fd7a26bbcf3c.jpg"),
 
     };
@@ -35,13 +46,19 @@ public class ServiceFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_service, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerView = view.findViewById(R.id.RecyclerViewService);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
-        adapter = new ServiceAdapter(getContext());
+        adapter = new ServiceAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);
         adapter.setServices(Arrays.asList(Service));
     }
 
+    public void serviceClicked(Service service) {
+        PersonalFragment personalFragment = new PersonalFragment();
+        personalFragment.setService(service);
+        mainActivity.showFragment(personalFragment);
+    }
 }

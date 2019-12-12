@@ -23,9 +23,9 @@ public class CategoryFragment extends Fragment {
     private RecyclerView recyclerView;
     private CategoryAdapter adapter;
     private Category categories[] = new Category[]{
-            new Category("NailsService", "http://tattoo.diadema.kg/sites/default/files/nail_1.png"),
-            new Category("Salon A", "http://tattoo.diadema.kg/sites/default/files/nail_1.png"),
-            new Category("Salon B", "http://tattoo.diadema.kg/sites/default/files/nail_1.png")
+            new Category("NailsService", "https://opmakeup.com/wp-content/uploads/2018/09/screen-shot-2016-12-16-at-5-48-16-pm-1481928523.png"),
+            new Category("Salon A", "https://opmakeup.com/wp-content/uploads/2018/09/screen-shot-2016-12-16-at-5-48-16-pm-1481928523.png"),
+            new Category("Salon B", "https://opmakeup.com/wp-content/uploads/2018/09/screen-shot-2016-12-16-at-5-48-16-pm-1481928523.png")
     };
 
     @Nullable

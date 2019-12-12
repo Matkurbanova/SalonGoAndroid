@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.content.Context;
 import android.graphics.ImageDecoder;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,9 +19,13 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import kg.salongo.android.Data.Service;
+import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class PersonalFragment extends Fragment {
+
+    private Service service;
 
     private ImageView avatar;
     private TextView textViewNameSalon;
@@ -37,30 +42,33 @@ public class PersonalFragment extends Fragment {
     private ImageView imageSave;
 
 
+    public void setService(Service service) {
+        this.service = service;
+    }
 
     @Nullable
-@Override
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.personal_fragment, container, false);
     }
 
- @Override
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        avatar=view.findViewById(R.id.avatar);
-        textAddress=view.findViewById(R.id.textAddress);
-        textViewNameSalon=view.findViewById(R.id.textViewNameSalon);
-        textContacts=view.findViewById(R.id.textContacts);
-        editTextNumber=view.findViewById(R.id.editTextNumber);
-        textWorkTime=view.findViewById(R.id.textWorkTime);
-        Close=view.findViewById(R.id.Close);
-        TextSubCat=view.findViewById(R.id.TextSubCat);
-        buttonPrice=view.findViewById(R.id.buttonPrice);
-        imageViewPersonal=view.findViewById(R.id.imageViewPersonal);
-        imageViewPersonal2=view.findViewById(R.id.imageViewPersonal2);
-        imageLike=view.findViewById(R.id.imageSave);
+        avatar = view.findViewById(R.id.avatar);
+        textAddress = view.findViewById(R.id.textAddress);
+        textViewNameSalon = view.findViewById(R.id.textViewNameSalon);
+        textContacts = view.findViewById(R.id.textContacts);
+        editTextNumber = view.findViewById(R.id.editTextNumber);
+        textWorkTime = view.findViewById(R.id.textWorkTime);
+        Close = view.findViewById(R.id.Close);
+        TextSubCat = view.findViewById(R.id.TextSubCat);
+        buttonPrice = view.findViewById(R.id.buttonPrice);
+        imageViewPersonal = view.findViewById(R.id.imageViewPersonal);
+        imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
+        imageLike = view.findViewById(R.id.imageSave);
 
-
-
+        Picasso.get().load(service.getImage())
+                .into(avatar);
     }
 }
 

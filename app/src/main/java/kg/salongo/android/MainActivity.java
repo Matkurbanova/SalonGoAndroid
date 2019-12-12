@@ -14,6 +14,7 @@ import kg.salongo.android.View.AuthorizationFragment;
 public class MainActivity extends AppCompatActivity {
 
     private FrameLayout frameLayout;
+    private Fragment currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.mainFrame, fragment, fragment.getTag());
+        if (currentFragment != null)
+            transaction.addToBackStack(currentFragment.getTag());
         transaction.commit();
+        currentFragment = fragment;
     }
 }
