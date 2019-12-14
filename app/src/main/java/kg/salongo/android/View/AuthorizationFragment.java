@@ -47,10 +47,16 @@ public class AuthorizationFragment extends Fragment {
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showFragment(new ServiceFragment());
+                mainActivity.showFragment(new CategoryFragment());
             }
         });
 
         textViewRegistration = view.findViewById(R.id.textViewRegistration);
+        textViewRegistration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new RegistrationPersonalFragment());
+            }
+        });
     }
 }

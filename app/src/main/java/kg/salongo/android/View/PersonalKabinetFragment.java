@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import kg.salongo.android.Adapters.CategoryAdapter;
 import kg.salongo.android.Adapters.PersonalKabinetAdapter;
 import kg.salongo.android.Adapters.ServiceAdapter;
 import kg.salongo.android.Data.PersonalKabinet;
+import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class PersonalKabinetFragment extends Fragment {
@@ -28,6 +30,15 @@ public class PersonalKabinetFragment extends Fragment {
     private EditText editTextName;
     private Button buttonEdit;
     private ImageView imageViewPrAvatar;
+    private MainActivity mainActivity;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MainActivity)
+            mainActivity = (MainActivity) context;
+    }
+
 
 
     private PersonalKabinet personalKabinets[] = new PersonalKabinet[]{
@@ -45,6 +56,13 @@ public class PersonalKabinetFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         editTextName=view.findViewById(R.id.editTextName);
         buttonEdit=view.findViewById(R.id.buttonEdit);
+        buttonEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment( new PersonalKabinetFragment());
+
+            }
+        });
         imageViewPrAvatar=view.findViewById(R.id.imageViewPrAvatar);
         recyclerViewPrKabien = view.findViewById(R.id.RecyclerViewPersonalKabinet);
         recyclerViewPrKabien.setLayoutManager(new GridLayoutManager(getContext(), 1));

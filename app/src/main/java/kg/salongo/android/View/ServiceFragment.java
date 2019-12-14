@@ -23,8 +23,8 @@ import kg.salongo.android.R;
 public class ServiceFragment extends Fragment {
     private RecyclerView recyclerView;
     private ServiceAdapter adapter;
-
     private MainActivity mainActivity;
+
 
     @Override
     public void onAttach(Context context) {
