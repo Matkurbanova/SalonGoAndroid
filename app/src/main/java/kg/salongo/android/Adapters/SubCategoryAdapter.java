@@ -15,13 +15,16 @@ import java.util.List;
 
 import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.R;
+import kg.salongo.android.View.SubCategoryFragment;
 
 public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.SubCategoryVH> {
     private List<SubCategory> subCategoryList = new ArrayList<>();
     private Context context;
+    private SubCategoryFragment subCategoryFragment;
 
-    public SubCategoryAdapter(Context context) {
+    public SubCategoryAdapter(Context context, SubCategoryFragment subCategoryFragment) {
         this.context = context;
+        this.subCategoryFragment=subCategoryFragment;
     }
 
     public void setSubCategoryList(List<SubCategory> subCategories) {
@@ -40,10 +43,14 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull SubCategoryAdapter.SubCategoryVH holder, int position) {
-        SubCategory subCategory = subCategoryList.get(position);
+         final SubCategory subCategory = subCategoryList.get(position);
         holder.textViewNameSubCategory.setText(subCategory.getName());
-
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                subCategoryFragment.subCategoryClicked(subCategory);
+            }
+        });
     }
 
     @Override

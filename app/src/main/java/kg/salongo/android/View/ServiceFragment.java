@@ -17,6 +17,7 @@ import java.util.Arrays;
 import kg.salongo.android.Adapters.CategoryAdapter;
 import kg.salongo.android.Adapters.ServiceAdapter;
 import kg.salongo.android.Data.Service;
+import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
@@ -24,6 +25,10 @@ public class ServiceFragment extends Fragment {
     private RecyclerView recyclerView;
     private ServiceAdapter adapter;
     private MainActivity mainActivity;
+    private SubCategory subCategory;
+    public void setSubCategory(SubCategory subCategory) {
+        this.subCategory = subCategory;
+    }
 
 
     @Override

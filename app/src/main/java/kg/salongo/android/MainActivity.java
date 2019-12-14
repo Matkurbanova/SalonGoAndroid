@@ -9,6 +9,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import kg.salongo.android.View.AuthorizationFragment;
+import kg.salongo.android.View.CategoryFragment;
+import kg.salongo.android.View.ServiceFragment;
+import kg.salongo.android.View.SubCategoryFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         frameLayout = findViewById(R.id.mainFrame);
-        showFragment(new AuthorizationFragment());
+        showFragment(new CategoryFragment());
     }
 
     public void showFragment(Fragment fragment) {

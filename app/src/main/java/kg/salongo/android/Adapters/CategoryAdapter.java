@@ -19,17 +19,21 @@ import java.util.jar.Attributes;
 
 import kg.salongo.android.Data.Category;
 import kg.salongo.android.R;
+import kg.salongo.android.View.CategoryFragment;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
     private List<Category> categoryList = new ArrayList<>();
     private Context context;
+    private CategoryFragment categoryFragment;
 
-    public CategoryAdapter(Context context) {
+    public CategoryAdapter(Context context, CategoryFragment categoryFragment) {
         this.context = context;
+        this.categoryFragment=categoryFragment;
     }
         public void setCategoryList (List<Category> categoryes) {
             categoryList.clear();
-            categoryList.addAll(categoryes);
+
+                categoryList.addAll(categoryes);
             notifyDataSetChanged();
         }
 
@@ -43,7 +47,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.CategoryViewHolder holder, int position) {
-        Category category = categoryList.get(position);
+       final Category category = categoryList.get(position);
         holder.name.setText(category.getName());
 
         if (!category.getImage().isEmpty())
@@ -51,6 +55,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                     .load(category.getImage())
                     .into(holder.image);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                categoryFragment.categoryClicked(category);
+            }
+        });
     }
 
     @Override
