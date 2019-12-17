@@ -1,7 +1,7 @@
 *.iml
-.gradlew
+gradlew
 .gradle
-.bat
+*.bat
 /gradle/wrapper/gradle-wrapper.jar
 /gradle/wrapper/gradle-wrapper.properties
 /local.properties
@@ -11,7 +11,7 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-/.idea/codeStyle/Project.xml
+/.idea/codeStyles/Project.xml
 /.idea/gradle.xml
 /.idea/misc.xml
 /.idea/runConfigurations.xml
