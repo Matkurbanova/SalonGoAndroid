@@ -28,6 +28,7 @@
             app:layout_constraintStart_toEndOf="@+id/imageViewPrAvatar"
             app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
+
         <EditText
             android:id="@+id/editTextName"
             android:layout_width="wrap_content"
@@ -67,4 +68,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:background="@color/font"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

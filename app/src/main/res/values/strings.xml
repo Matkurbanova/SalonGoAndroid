@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">SalonGo</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="home">Home</string>
+    <string name="sales">Акции</string>
+    <string name="personal">Кабинет</string>
 </resources>
