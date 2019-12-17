@@ -3,6 +3,7 @@ package kg.salongo.android.View;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -11,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Arrays;
 
@@ -21,11 +24,13 @@ import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class ServiceFragment extends Fragment {
+public class ServiceFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
     private ServiceAdapter adapter;
     private MainActivity mainActivity;
     private SubCategory subCategory;
+    private BottomNavigationView bottomNavigationView;
+
     public void setSubCategory(SubCategory subCategory) {
         this.subCategory = subCategory;
     }
@@ -59,11 +64,23 @@ public class ServiceFragment extends Fragment {
         adapter = new ServiceAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);
         adapter.setServices(Arrays.asList(Service));
+        bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
     public void serviceClicked(Service service) {
         PersonalFragment personalFragment = new PersonalFragment();
         personalFragment.setService(service);
         mainActivity.showFragment(personalFragment);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.action_personal:
+                mainActivity.showFragment(new PersonalKabinetFragment());
+                break;
+        }
+        return false;
     }
 }

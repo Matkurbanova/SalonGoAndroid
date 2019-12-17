@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.Arrays;
 
 import kg.salongo.android.Adapters.CategoryAdapter;
@@ -31,6 +33,7 @@ public class PersonalKabinetFragment extends Fragment {
     private Button buttonEdit;
     private ImageView imageViewPrAvatar;
     private MainActivity mainActivity;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     public void onAttach(Context context) {
@@ -40,9 +43,8 @@ public class PersonalKabinetFragment extends Fragment {
     }
 
 
-
     private PersonalKabinet personalKabinets[] = new PersonalKabinet[]{
-            new PersonalKabinet ("Варвара", "Коррекция бровей", "5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек", "Сегодня c 09:00 до 19:00","Закрыто. Откроется в 09:00","500",
+            new PersonalKabinet("Варвара", "Коррекция бровей", "5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек", "Сегодня c 09:00 до 19:00", "Закрыто. Откроется в 09:00", "500",
                     "https://i.pinimg.com/600x315/63/f9/4a/63f94a65f8d2a49fb430fd7a26bbcf3c.jpg"),
     };
 
@@ -54,16 +56,19 @@ public class PersonalKabinetFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        editTextName=view.findViewById(R.id.editTextName);
-        buttonEdit=view.findViewById(R.id.buttonEdit);
+        bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.action_personal);
+
+        editTextName = view.findViewById(R.id.editTextName);
+        buttonEdit = view.findViewById(R.id.buttonEdit);
         buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showFragment( new PersonalKabinetFragment());
+                mainActivity.showFragment(new PersonalKabinetFragment());
 
             }
         });
-        imageViewPrAvatar=view.findViewById(R.id.imageViewPrAvatar);
+        imageViewPrAvatar = view.findViewById(R.id.imageViewPrAvatar);
         recyclerViewPrKabien = view.findViewById(R.id.RecyclerViewPersonalKabinet);
         recyclerViewPrKabien.setLayoutManager(new GridLayoutManager(getContext(), 1));
         adapter = new PersonalKabinetAdapter(getContext());
