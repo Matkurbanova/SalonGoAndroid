@@ -141,7 +141,7 @@
             app:layout_constraintStart_toEndOf="@+id/TextSubCat"
             app:layout_constraintTop_toTopOf="@+id/TextSubCat" />
 
-        <com.synnapps.carouselview.CarouselView
+        <ImageView
             android:id="@+id/imageViewPersonal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

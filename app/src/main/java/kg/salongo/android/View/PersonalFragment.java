@@ -66,7 +66,7 @@ public class PersonalFragment extends Fragment {
         Close = view.findViewById(R.id.Close);
         TextSubCat = view.findViewById(R.id.TextSubCat);
         TextPrice = view.findViewById(R.id.TextPrice);
-        carouselView= view.findViewById(R.id.imageViewPersonal);
+        imageViewPersonal= view.findViewById(R.id.imageViewPersonal);
         imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
         imageLike = view.findViewById(R.id.imageSave);
         imageViewInstaLogo=view.findViewById(R.id.imageViewInstaLogo);
