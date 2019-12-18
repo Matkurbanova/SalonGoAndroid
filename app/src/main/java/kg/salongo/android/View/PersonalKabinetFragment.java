@@ -6,8 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,9 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Arrays;
 
-import kg.salongo.android.Adapters.CategoryAdapter;
 import kg.salongo.android.Adapters.PersonalKabinetAdapter;
-import kg.salongo.android.Adapters.ServiceAdapter;
 import kg.salongo.android.Data.PersonalKabinet;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
@@ -29,7 +27,7 @@ import kg.salongo.android.R;
 public class PersonalKabinetFragment extends Fragment {
     private RecyclerView recyclerViewPrKabien;
     private PersonalKabinetAdapter adapter;
-    private EditText editTextName;
+    private TextView TextViewName;
     private Button buttonEdit;
     private ImageView imageViewPrAvatar;
     private MainActivity mainActivity;
@@ -59,7 +57,7 @@ public class PersonalKabinetFragment extends Fragment {
         bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.action_personal);
 
-        editTextName = view.findViewById(R.id.editTextName);
+        TextViewName = view.findViewById(R.id.TextViewName);
         buttonEdit = view.findViewById(R.id.buttonEdit);
         buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override

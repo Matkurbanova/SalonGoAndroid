@@ -31,15 +31,16 @@ public class PersonalFragment extends Fragment {
     private TextView textViewNameSalon;
     private TextView textContacts;
     private TextView textAddress;
-    private EditText editTextNumber;
+    private TextView textViewPhone;
     private TextView textWorkTime;
     private TextView Close;
     private TextView TextSubCat;
-    private Button buttonPrice;
+    private TextView TextPrice;
     private ImageView imageViewPersonal;
     private ImageView imageViewPersonal2;
     private ImageView imageLike;
     private ImageView imageSave;
+    private ImageView imageViewInstaLogo;
 
 
     public void setService(Service service) {
@@ -58,14 +59,15 @@ public class PersonalFragment extends Fragment {
         textAddress = view.findViewById(R.id.textAddress);
         textViewNameSalon = view.findViewById(R.id.textViewNameSalon);
         textContacts = view.findViewById(R.id.textContacts);
-        editTextNumber = view.findViewById(R.id.editTextNumber);
+        textViewPhone = view.findViewById(R.id.textViewPhone);
         textWorkTime = view.findViewById(R.id.textWorkTime);
         Close = view.findViewById(R.id.Close);
         TextSubCat = view.findViewById(R.id.TextSubCat);
-        buttonPrice = view.findViewById(R.id.buttonPrice);
+        TextPrice = view.findViewById(R.id.TextPrice);
         imageViewPersonal = view.findViewById(R.id.imageViewPersonal);
         imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
         imageLike = view.findViewById(R.id.imageSave);
+        imageViewInstaLogo=view.findViewById(R.id.imageViewInstaLogo);
 
         Picasso.get().load(service.getImage())
                 .into(avatar);

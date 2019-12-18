@@ -42,7 +42,7 @@ public class EditPersonalFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         imageViewAvatar=view.findViewById(R.id.imageViewAvatar);
-        editTextName=view.findViewById(R.id.editTextName);
+        editTextName=view.findViewById(R.id.TextViewName);
         editTextPhone=view.findViewById(R.id.editTextPhone);
         editTextOldPass=view.findViewById(R.id.editTextPass);
         editTextnewPass=view.findViewById(R.id.editTextNewPass);
