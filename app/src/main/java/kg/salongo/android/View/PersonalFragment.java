@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
 import com.synnapps.carouselview.CarouselView;
 
@@ -45,6 +46,8 @@ public class PersonalFragment extends Fragment {
     private CarouselView carouselView;
 
 
+
+
     public void setService(Service service) {
         this.service = service;
     }
@@ -70,6 +73,8 @@ public class PersonalFragment extends Fragment {
         imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
         imageLike = view.findViewById(R.id.imageSave);
         imageViewInstaLogo=view.findViewById(R.id.imageViewInstaLogo);
+
+
 
         Picasso.get().load(service.getImage())
                 .into(avatar);
