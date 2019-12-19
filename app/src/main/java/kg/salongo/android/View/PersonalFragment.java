@@ -15,7 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
+import com.synnapps.carouselview.CarouselView;
 
 import java.util.List;
 
@@ -41,6 +43,9 @@ public class PersonalFragment extends Fragment {
     private ImageView imageLike;
     private ImageView imageSave;
     private ImageView imageViewInstaLogo;
+    private CarouselView carouselView;
+
+
 
 
     public void setService(Service service) {
@@ -64,13 +69,19 @@ public class PersonalFragment extends Fragment {
         Close = view.findViewById(R.id.Close);
         TextSubCat = view.findViewById(R.id.TextSubCat);
         TextPrice = view.findViewById(R.id.TextPrice);
-        imageViewPersonal = view.findViewById(R.id.imageViewPersonal);
+        imageViewPersonal= view.findViewById(R.id.imageViewPersonal);
         imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
         imageLike = view.findViewById(R.id.imageSave);
         imageViewInstaLogo=view.findViewById(R.id.imageViewInstaLogo);
 
+
+
         Picasso.get().load(service.getImage())
                 .into(avatar);
+        Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVtoeVcGG8cwoPtnLv95g6d9jj-vh9izm_vPtuzLZLPHKz77sQ&s").into(imageViewPersonal);
+        Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX6KRlgRZkZ3GI5OvXjjTfjr_xhv-oUsXP1tjbkvEp1HV_pzaKmw&s").into(imageViewPersonal2);
+
+
     }
 }
 

@@ -80,6 +80,7 @@ public class ServiceFragment extends Fragment implements BottomNavigationView.On
             case R.id.action_personal:
                 mainActivity.showFragment(new PersonalKabinetFragment());
                 break;
+
         }
         return false;
     }

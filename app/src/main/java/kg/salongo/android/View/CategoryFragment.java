@@ -3,6 +3,7 @@ package kg.salongo.android.View;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -14,6 +15,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.Arrays;
 
 import kg.salongo.android.Adapters.CategoryAdapter;
@@ -21,10 +25,11 @@ import kg.salongo.android.Data.Category;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class CategoryFragment extends Fragment {
+public class CategoryFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
     private CategoryAdapter adapter;
     private MainActivity mainActivity;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     public void onAttach(Context context) {
@@ -53,12 +58,24 @@ public class CategoryFragment extends Fragment {
         adapter = new CategoryAdapter(getContext(),this);
         recyclerView.setAdapter(adapter);
         adapter.setCategoryList(Arrays.asList(categories));
+        bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
     public void categoryClicked(Category category) {
         SubCategoryFragment subCategoryFragment = new SubCategoryFragment();
         subCategoryFragment.setCategory(category);
         mainActivity.showFragment(subCategoryFragment);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.action_home:
+                mainActivity.showFragment(new CategoryFragment());
+                break;
+        }
+        return false;
     }
 }
 
