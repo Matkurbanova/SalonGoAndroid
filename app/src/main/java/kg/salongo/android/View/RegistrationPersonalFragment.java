@@ -25,6 +25,7 @@ public class RegistrationPersonalFragment extends Fragment {
     private EditText editTextPassword;
     private EditText editTextTell;
     private TextView textViewZaregstr;
+    private TextView signIn;
     private Button buttonSave;
     private MainActivity mainActivity;
 
@@ -49,6 +50,13 @@ public class RegistrationPersonalFragment extends Fragment {
         editTextTell=view.findViewById(R.id.editTextTelRPF);
         editTextPassword=view.findViewById(R.id.editTextPasswordRPF);
         textViewZaregstr=view.findViewById(R.id.textViewZKSK);
+        signIn=view.findViewById(R.id.textView2);
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new CategoryFragment());
+            }
+        });
         buttonSave=view.findViewById(R.id.buttonOkRPF);
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
