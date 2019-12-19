@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class RegistrationSalonFragment extends Fragment {
@@ -26,6 +28,14 @@ public class RegistrationSalonFragment extends Fragment {
     private Button buttonRegistr;
     private TextView textViewZaregstr;
     private TextView textViewSign;
+    private MainActivity mainActivity;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MainActivity)
+            mainActivity = (MainActivity) context;
+    }
 
     @Nullable
     @Override
@@ -43,8 +53,27 @@ public class RegistrationSalonFragment extends Fragment {
         editTextTel=view.findViewById(R.id.editTextTel);
         editTextPassword=view.findViewById(R.id.editTextPass);
         buttonRegistr=view.findViewById(R.id.buttonOkSalon);
+        buttonRegistr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new CategoryFragment());
+            }
+        });
         textViewZaregstr=view.findViewById(R.id.textViewZaregistrPers);
+        textViewZaregstr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new RegistrationPersonalFragment());
+            }
+        });
         textViewSign=view.findViewById(R.id.textViewVoiti);
+        textViewSign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new CategoryFragment());
+            }
+        });
+
     }
 
 }

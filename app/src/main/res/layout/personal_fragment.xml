@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backphoto">
+    android:background="@drawable/fon">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -68,7 +68,7 @@
             android:layout_marginRight="8dp"
 
             android:text="​5-й микрорайон, 63Б 5 м-н, Октябрьский район, Бишкек"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/font"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/avatar"
             app:layout_constraintTop_toBottomOf="@+id/textContacts" />
@@ -80,7 +80,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="24dp"
             android:text="Закрыто. Откроется в 09:00"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/font"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/TextSubCat"
             app:layout_constraintEnd_toEndOf="parent"

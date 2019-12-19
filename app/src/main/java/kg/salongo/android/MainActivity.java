@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         frameLayout = findViewById(R.id.mainFrame);
-        showFragment(new CategoryFragment());
+        showFragment(new AuthorizationFragment());
     }
 
     public void showFragment(Fragment fragment) {

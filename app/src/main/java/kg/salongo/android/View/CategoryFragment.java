@@ -40,9 +40,9 @@ public class CategoryFragment extends Fragment implements BottomNavigationView.O
 
 
     private Category categories[] = new Category[]{
-            new Category("NailsService", "https://opmakeup.com/wp-content/uploads/2018/09/screen-shot-2016-12-16-at-5-48-16-pm-1481928523.png"),
-            new Category("Salon A", "https://opmakeup.com/wp-content/uploads/2018/09/screen-shot-2016-12-16-at-5-48-16-pm-1481928523.png"),
-            new Category("Salon B", "https://opmakeup.com/wp-content/uploads/2018/09/screen-shot-2016-12-16-at-5-48-16-pm-1481928523.png")
+            new Category("ногтевой сервис ", "https://creamjam.ru/wp-content/uploads/2019/09/ngt33.png"),
+            new Category("Волосы", "https://creamjam.ru/wp-content/uploads/2019/09/ngt33.png"),
+            new Category("Salon B", "https://creamjam.ru/wp-content/uploads/2019/09/ngt33.png")
     };
 
     @Nullable

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="20dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -96,7 +97,7 @@
         android:layout_marginEnd="65dp"
         android:layout_marginRight="65dp"
         android:text="Закрыто. Откроется в 09:00"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/font"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
@@ -118,12 +119,13 @@
         app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
         app:layout_constraintTop_toBottomOf="@+id/textViewAddress" />
 
-
-
-
-
-
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/font"
+        app:layout_constraintTop_toBottomOf="@+id/textClose"
+        tools:layout_editor_absoluteX="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

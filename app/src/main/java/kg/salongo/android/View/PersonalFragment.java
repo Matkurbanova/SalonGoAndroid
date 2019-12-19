@@ -17,7 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
-import com.synnapps.carouselview.CarouselView;
+//import com.synnapps.carouselview.CarouselView;
 
 import java.util.List;
 
@@ -43,8 +43,15 @@ public class PersonalFragment extends Fragment {
     private ImageView imageLike;
     private ImageView imageSave;
     private ImageView imageViewInstaLogo;
-    private CarouselView carouselView;
+    private MainActivity mainActivity;
+   // private CarouselView carouselView;
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MainActivity)
+            mainActivity = (MainActivity) context;
+    }
 
 
 
@@ -72,6 +79,13 @@ public class PersonalFragment extends Fragment {
         imageViewPersonal= view.findViewById(R.id.imageViewPersonal);
         imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
         imageLike = view.findViewById(R.id.imageSave);
+        imageLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new AuthorizationFragment());
+
+            }
+        });
         imageViewInstaLogo=view.findViewById(R.id.imageViewInstaLogo);
 
 
