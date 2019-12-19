@@ -55,7 +55,7 @@ public class AuthorizationFragment extends Fragment {
         textViewRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showFragment(new RegistrationPersonalFragment());
+                mainActivity.showFragment(new RegistrationPersonalFragment(), false);
             }
         });
     }

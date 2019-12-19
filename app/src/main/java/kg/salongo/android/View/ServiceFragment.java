@@ -24,12 +24,11 @@ import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class ServiceFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class ServiceFragment extends Fragment{
     private RecyclerView recyclerView;
     private ServiceAdapter adapter;
     private MainActivity mainActivity;
     private SubCategory subCategory;
-    private BottomNavigationView bottomNavigationView;
 
     public void setSubCategory(SubCategory subCategory) {
         this.subCategory = subCategory;
@@ -64,24 +63,11 @@ public class ServiceFragment extends Fragment implements BottomNavigationView.On
         adapter = new ServiceAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);
         adapter.setServices(Arrays.asList(Service));
-        bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
     public void serviceClicked(Service service) {
         PersonalFragment personalFragment = new PersonalFragment();
         personalFragment.setService(service);
         mainActivity.showFragment(personalFragment);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case R.id.action_personal:
-                mainActivity.showFragment(new PersonalKabinetFragment());
-                break;
-
-        }
-        return false;
     }
 }

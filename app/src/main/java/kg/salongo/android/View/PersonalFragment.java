@@ -1,13 +1,10 @@
 package kg.salongo.android.View;
 
 import android.content.Context;
-import android.graphics.ImageDecoder;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,15 +12,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
-//import com.synnapps.carouselview.CarouselView;
-
-import java.util.List;
 
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+
+//import com.synnapps.carouselview.CarouselView;
 
 public class PersonalFragment extends Fragment {
 
@@ -44,7 +39,7 @@ public class PersonalFragment extends Fragment {
     private ImageView imageSave;
     private ImageView imageViewInstaLogo;
     private MainActivity mainActivity;
-   // private CarouselView carouselView;
+    // private CarouselView carouselView;
 
     @Override
     public void onAttach(Context context) {
@@ -52,7 +47,6 @@ public class PersonalFragment extends Fragment {
         if (context instanceof MainActivity)
             mainActivity = (MainActivity) context;
     }
-
 
 
     public void setService(Service service) {
@@ -76,7 +70,7 @@ public class PersonalFragment extends Fragment {
         Close = view.findViewById(R.id.Close);
         TextSubCat = view.findViewById(R.id.TextSubCat);
         TextPrice = view.findViewById(R.id.TextPrice);
-        imageViewPersonal= view.findViewById(R.id.imageViewPersonal);
+        imageViewPersonal = view.findViewById(R.id.imageViewPersonal);
         imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
         imageLike = view.findViewById(R.id.imageSave);
         imageLike.setOnClickListener(new View.OnClickListener() {
@@ -86,12 +80,11 @@ public class PersonalFragment extends Fragment {
 
             }
         });
-        imageViewInstaLogo=view.findViewById(R.id.imageViewInstaLogo);
+        imageViewInstaLogo = view.findViewById(R.id.imageViewInstaLogo);
 
 
-
-        Picasso.get().load(service.getImage())
-                .into(avatar);
+//        Picasso.get().load(service.getImage())
+//                .into(avatar);
         Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVtoeVcGG8cwoPtnLv95g6d9jj-vh9izm_vPtuzLZLPHKz77sQ&s").into(imageViewPersonal);
         Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX6KRlgRZkZ3GI5OvXjjTfjr_xhv-oUsXP1tjbkvEp1HV_pzaKmw&s").into(imageViewPersonal2);
 

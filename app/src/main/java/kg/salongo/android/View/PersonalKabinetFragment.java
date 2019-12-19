@@ -31,7 +31,6 @@ public class PersonalKabinetFragment extends Fragment {
     private Button buttonEdit;
     private ImageView imageViewPrAvatar;
     private MainActivity mainActivity;
-    private BottomNavigationView bottomNavigationView;
 
     @Override
     public void onAttach(Context context) {
@@ -54,9 +53,6 @@ public class PersonalKabinetFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.action_personal);
-
         TextViewName = view.findViewById(R.id.TextViewName);
         buttonEdit = view.findViewById(R.id.buttonEdit);
         buttonEdit.setOnClickListener(new View.OnClickListener() {

@@ -9,13 +9,10 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Arrays;
@@ -25,11 +22,10 @@ import kg.salongo.android.Data.Category;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class CategoryFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class CategoryFragment extends Fragment{
     private RecyclerView recyclerView;
     private CategoryAdapter adapter;
     private MainActivity mainActivity;
-    private BottomNavigationView bottomNavigationView;
 
     @Override
     public void onAttach(Context context) {
@@ -58,24 +54,12 @@ public class CategoryFragment extends Fragment implements BottomNavigationView.O
         adapter = new CategoryAdapter(getContext(),this);
         recyclerView.setAdapter(adapter);
         adapter.setCategoryList(Arrays.asList(categories));
-        bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
     public void categoryClicked(Category category) {
         SubCategoryFragment subCategoryFragment = new SubCategoryFragment();
         subCategoryFragment.setCategory(category);
         mainActivity.showFragment(subCategoryFragment);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case R.id.action_home:
-                mainActivity.showFragment(new CategoryFragment());
-                break;
-        }
-        return false;
     }
 }
 
