@@ -1,6 +1,7 @@
 package kg.salongo.android.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class PersonalKabinetAdapter extends RecyclerView.Adapter<PersonalKabinet
     @Override
     public void onBindViewHolder(@NonNull PersonalKabinetVH holder, int position) {
 
-        PersonalKabinet personalKabinet = personalKabinetList.get(position);
+        final PersonalKabinet personalKabinet = personalKabinetList.get(position);
         holder.textViewSalonName.setText(personalKabinet.getNameSalon());
         holder.textViewSubCatygoryName.setText(personalKabinet.getNameSubCategory());
         holder.textViewaddress.setText(personalKabinet.getAddress());
@@ -56,15 +57,25 @@ public class PersonalKabinetAdapter extends RecyclerView.Adapter<PersonalKabinet
             Picasso.get()
                     .load(personalKabinet.getImage())
                     .into(holder.imageViewLogo);
-
+        holder.imageViewShere.setOnClickListener(v -> {
+            sharePersonal(personalKabinet.getLinks());
+        });
 
     }
+
 
 
     @Override
     public int getItemCount() {
         return personalKabinetList.size();
     }
+    private void sharePersonal(String url) {
+        Intent share = new Intent(Intent.ACTION_SEND);
+        share.setType("text/plain");
+        share.putExtra(Intent.EXTRA_TEXT, url);
+        context.startActivity(Intent.createChooser(share, context.getString(R.string.share)));
+    }
+
 
     public class PersonalKabinetVH extends RecyclerView.ViewHolder {
 

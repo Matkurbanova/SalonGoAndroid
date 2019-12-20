@@ -10,6 +10,7 @@ public class PersonalKabinet {
     private String workTime;
     private String price;
     private String close;
+    private String links;
 
     public PersonalKabinet(
             String nameSalon, String nameSubCategory, String address, String workTime, String close,String price, String image) {
@@ -20,10 +21,18 @@ public class PersonalKabinet {
         this.price=price;
         this.image=image;
         this.close=close;
+        this.links=links;
     }
 
     public String getClose() {
         return close;
+    }
+    public String getLinks() {
+        return links;
+    }
+
+    public void setLinks(String links) {
+        this.links = links;
     }
 
     public void setClose(String close) {
