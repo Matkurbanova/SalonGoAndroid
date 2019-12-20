@@ -36,9 +36,9 @@ public class CategoryFragment extends Fragment{
 
 
     private Category categories[] = new Category[]{
-            new Category("ногтевой сервис ", "https://creamjam.ru/wp-content/uploads/2019/09/ngt33.png"),
-            new Category("Волосы", "https://creamjam.ru/wp-content/uploads/2019/09/ngt33.png"),
-            new Category("Salon B", "https://creamjam.ru/wp-content/uploads/2019/09/ngt33.png")
+            new Category("Брови ", "https://avatars.mds.yandex.net/get-pdb/1044853/e556f94a-7fcc-4b47-91c0-c440900ad792/s1200"),
+            new Category("Ногтевой сервис", "https://st03.kakprosto.ru/tumb/680/images/article/2011/4/14/1_52551e78ad3cf52551e78ad40e.jpg"),
+            new Category(" Ресницы", "https://minio.profiles.ru/profiles/7945cfaaa9fc4a0fae83490cddba77dd.jpeg"),
     };
 
     @Nullable
