@@ -164,12 +164,22 @@
             android:id="@+id/imageLike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toStartOf="@+id/imageSave"
             app:layout_constraintHorizontal_bias="0.818"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewPersonal"
             app:srcCompat="@drawable/heart" />
+
+
+        <ImageView
+            android:id="@+id/imageLiked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/imageSave"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPersonal"
+            app:srcCompat="@drawable/heart_30" />
 
         <ImageView
             android:id="@+id/imageSave"
@@ -177,6 +187,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+
             app:layout_constraintEnd_toStartOf="@+id/imageViewInstaLogo"
             app:layout_constraintStart_toEndOf="@+id/imageLike"
             app:layout_constraintTop_toTopOf="@+id/imageLike"
@@ -203,15 +214,50 @@
             android:id="@+id/imageViewInstaLogo"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.031"
             app:layout_constraintStart_toEndOf="@+id/imageSave"
-            app:layout_constraintTop_toTopOf="@+id/imageSave"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPersonal2"
             app:srcCompat="@drawable/inslogo" />
 
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPersonal2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_heart_small_blue" />
+
+            <TextSwitcher
+                android:id="@+id/tsLikesCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_like_counter" />
+            </TextSwitcher>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123"
+                android:textColor="@color/text_like_counter" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.core.widget.NestedScrollView>

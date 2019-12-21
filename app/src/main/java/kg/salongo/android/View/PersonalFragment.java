@@ -6,19 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+
 import com.squareup.picasso.Picasso;
+
 
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-//import com.synnapps.carouselview.CarouselView;
+
 
 public class PersonalFragment extends Fragment {
 
@@ -36,9 +39,11 @@ public class PersonalFragment extends Fragment {
     private ImageView imageViewPersonal;
     private ImageView imageViewPersonal2;
     private ImageView imageLike;
+    private ImageView imageLiked;
     private ImageView imageSave;
     private ImageView imageViewInstaLogo;
     private MainActivity mainActivity;
+
     // private CarouselView carouselView;
 
     @Override
@@ -57,6 +62,7 @@ public class PersonalFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.personal_fragment, container, false);
+
     }
 
     @Override
@@ -73,13 +79,19 @@ public class PersonalFragment extends Fragment {
         imageViewPersonal = view.findViewById(R.id.imageViewPersonal);
         imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
         imageLike = view.findViewById(R.id.imageSave);
+        imageLiked = view.findViewById(R.id.imageLiked);
+
         imageLike.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 mainActivity.showFragment(new AuthorizationFragment());
 
             }
+
         });
+
+
         imageViewInstaLogo = view.findViewById(R.id.imageViewInstaLogo);
 
 
@@ -87,8 +99,12 @@ public class PersonalFragment extends Fragment {
 //                .into(avatar);
         Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVtoeVcGG8cwoPtnLv95g6d9jj-vh9izm_vPtuzLZLPHKz77sQ&s").into(imageViewPersonal);
         Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX6KRlgRZkZ3GI5OvXjjTfjr_xhv-oUsXP1tjbkvEp1HV_pzaKmw&s").into(imageViewPersonal2);
+    }
 
 
     }
-}
+
+
+
+
 
