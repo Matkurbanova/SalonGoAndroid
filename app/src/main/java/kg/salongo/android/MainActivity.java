@@ -18,6 +18,7 @@ import kg.salongo.android.View.CategoryFragment;
 import kg.salongo.android.View.MoreServiceFragment;
 import kg.salongo.android.View.PersonalFragment;
 import kg.salongo.android.View.PersonalKabinetFragment;
+import kg.salongo.android.View.PromoFragment;
 import kg.salongo.android.View.ServiceFragment;
 import kg.salongo.android.View.SubCategoryFragment;
 
@@ -63,10 +64,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 showFragment(new CategoryFragment());
                 break;
             case R.id.action_personal:
-                showFragment(new PersonalKabinetFragment());
+                showFragment(new PersonalFragment());
                 break;
             case R.id.action_sales:
-                showFragment(new PersonalFragment());
+                showFragment(new PromoFragment());
                 break;
         }
         menuItem.setChecked(true);

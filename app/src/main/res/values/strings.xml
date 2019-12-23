@@ -6,4 +6,5 @@
     <string name="personal">Кабинет</string>
     <string name="share">Поделиться</string>
     <color name="text_like_counter">#2b5a83</color>
+    <string name="share_promo">Поделиться акцией</string>
 </resources>
