@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kg.salongo.android.Data.Service;
-import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.R;
 import kg.salongo.android.View.ServiceFragment;
 
@@ -84,7 +83,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
 
         public ServiceHV(@NonNull View itemView) {
             super(itemView);
-            textViewSalonName = itemView.findViewById(R.id.textViewNameSalon);
+            textViewSalonName = itemView.findViewById(R.id.textViewNameMaster);
             textViewSubCatygoryName = itemView.findViewById(R.id.textViewNameSubcat);
             textViewaddress = itemView.findViewById(R.id.textViewAddress);
             textViewWorkTime = itemView.findViewById(R.id.textViewWorkTime);

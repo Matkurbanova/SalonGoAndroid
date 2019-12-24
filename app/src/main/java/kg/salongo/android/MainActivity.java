@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         frameLayout = findViewById(R.id.mainFrame);
         bottomNavMain = findViewById(R.id.bottomNavMain);
         bottomNavMain.setOnNavigationItemSelectedListener(this);
-        showFragment(new AuthorizationFragment());
+        showFragment(new PromoFragment());
     }
 
     public void showFragment(Fragment fragment, boolean withBottomNavigation) {

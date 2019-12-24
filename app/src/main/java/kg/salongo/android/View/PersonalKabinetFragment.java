@@ -15,8 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import java.util.Arrays;
 
 import kg.salongo.android.Adapters.PersonalKabinetAdapter;
@@ -48,7 +46,7 @@ public class PersonalKabinetFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_personalkabinet, container, false);
+        return inflater.inflate(R.layout.fragment_moreservise_salon, container, false);
     }
 
     @Override

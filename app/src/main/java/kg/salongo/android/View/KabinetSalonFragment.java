@@ -47,7 +47,7 @@ public class KabinetSalonFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         imageViewLogoSal=view.findViewById(R.id.imageViewKabinetLogo);
-        textViewNameSalon=view.findViewById(R.id.textViewNameSalon);
+        textViewNameSalon=view.findViewById(R.id.textViewNameMaster);
         textViewDescription=view.findViewById(R.id.textViewDiscrN);
         textViewKontakty=view.findViewById(R.id.textViewKontakt);
         textViewAddress=view.findViewById(R.id.textViewadress);

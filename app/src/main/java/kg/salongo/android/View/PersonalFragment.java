@@ -61,7 +61,7 @@ public class PersonalFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.personal_fragment, container, false);
+        return inflater.inflate(R.layout.fragment_more_salon, container, false);
 
     }
 
@@ -69,7 +69,7 @@ public class PersonalFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         avatar = view.findViewById(R.id.avatar);
         textAddress = view.findViewById(R.id.textAddress);
-        textViewNameSalon = view.findViewById(R.id.textViewNameSalon);
+        textViewNameSalon = view.findViewById(R.id.textViewNameMaster);
         textContacts = view.findViewById(R.id.textContacts);
         textViewPhone = view.findViewById(R.id.textViewPhone);
         textWorkTime = view.findViewById(R.id.textWorkTime);
