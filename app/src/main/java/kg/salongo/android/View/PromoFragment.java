@@ -22,7 +22,7 @@ import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class PromoFragment extends Fragment {
-    private RecyclerView recyclerViewPromo;
+    private RecyclerView recyclerViewAksii;
     private PromoAdapter promoAdapter;
     private MainActivity mainActivity;
 
@@ -48,10 +48,10 @@ public class PromoFragment extends Fragment {
 }
 
     private void initViews(View view) {
-        recyclerViewPromo = view.findViewById(R.id.recyclerViewAksii);
+        recyclerViewAksii = view.findViewById(R.id.recyclerViewAksii);
         promoAdapter = new PromoAdapter(getContext());
-        recyclerViewPromo.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerViewPromo.setAdapter(promoAdapter);
+        recyclerViewAksii.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewAksii.setAdapter(promoAdapter);
 
     }
 

@@ -46,7 +46,7 @@ public class PersonalKabinetFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_moreservise_salon, container, false);
+        return inflater.inflate(R.layout.fragment_more_service, container, false);
     }
 
     @Override

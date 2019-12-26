@@ -116,7 +116,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewNumber"
         app:layout_constraintTop_toTopOf="@+id/textViewNumber"
-        app:srcCompat="@drawable/phone" />
+        app:srcCompat="@drawable/ic_phone_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
 
     <ImageView
         android:id="@+id/imageViewinsLogo"
