@@ -18,7 +18,6 @@ import java.util.Arrays;
 
 import kg.salongo.android.Adapters.ServiceMasterAdapter;
 import kg.salongo.android.Data.MasterService;
-import kg.salongo.android.Data.PersonalKabinet;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
