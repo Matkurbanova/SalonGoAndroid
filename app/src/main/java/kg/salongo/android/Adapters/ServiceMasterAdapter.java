@@ -53,12 +53,6 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
         holder.workExperienceYear.setText(masterService.getExperienceYear());
         holder.StatusFree.setText(masterService.getStatusFree());
         holder.StatusBusy.setText(masterService.getStatusBusy());
-
-
-
-
-
-
     }
 
     @Override
