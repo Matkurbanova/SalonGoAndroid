@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import java.util.Arrays;
 
 import kg.salongo.android.Adapters.PromoAdapter;
 
+import kg.salongo.android.Data.Promo;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
@@ -39,18 +41,20 @@ public class PromoFragment extends Fragment {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_aksii, container, false);
         initViews(view);
         return view;
+    }
 
-
-
-
-
-}
+    Promo promos[] = {
+            new Promo(400.0, "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "", "", "Мир Эстетики"),
+            new Promo(300.0, "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "", "", "Мир Эстетики"),
+            new Promo(100.0, "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "", "", "Мир Эстетики"),
+    };
 
     private void initViews(View view) {
         recyclerViewAksii = view.findViewById(R.id.recyclerViewAksii);
         promoAdapter = new PromoAdapter(getContext());
         recyclerViewAksii.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewAksii.setAdapter(promoAdapter);
+        promoAdapter.setPromoList(Arrays.asList(promos));
 
     }
 
