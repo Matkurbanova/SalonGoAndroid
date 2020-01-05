@@ -13,14 +13,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import kg.salongo.android.View.AuthorizationFragment;
 import kg.salongo.android.View.CategoryFragment;
-import kg.salongo.android.View.MoreServiceFragment;
-import kg.salongo.android.View.PersonalFragment;
-import kg.salongo.android.View.PersonalKabinetFragment;
+import kg.salongo.android.View.MoreMasterFragment;
+import kg.salongo.android.View.MoreSalonFragment;
 import kg.salongo.android.View.PromoFragment;
-import kg.salongo.android.View.ServiceFragment;
-import kg.salongo.android.View.SubCategoryFragment;
 
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -36,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         frameLayout = findViewById(R.id.mainFrame);
         bottomNavMain = findViewById(R.id.bottomNavMain);
         bottomNavMain.setOnNavigationItemSelectedListener(this);
-        showFragment(new PromoFragment());
+        showFragment(new MoreMasterFragment() );
     }
 
     public void showFragment(Fragment fragment, boolean withBottomNavigation) {
@@ -64,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 showFragment(new CategoryFragment());
                 break;
             case R.id.action_personal:
-                showFragment(new PersonalFragment());
+                showFragment(new MoreSalonFragment());
                 break;
             case R.id.action_sales:
                 showFragment(new PromoFragment());

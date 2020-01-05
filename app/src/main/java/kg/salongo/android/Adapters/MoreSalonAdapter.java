@@ -20,11 +20,11 @@ import java.util.List;
 import kg.salongo.android.Data.PersonalKabinet;
 import kg.salongo.android.R;
 
-public class PersonalKabinetAdapter extends RecyclerView.Adapter<PersonalKabinetAdapter.PersonalKabinetVH> {
+public class MoreSalonAdapter extends RecyclerView.Adapter<MoreSalonAdapter.PersonalKabinetVH> {
     private List<PersonalKabinet> personalKabinetList = new ArrayList<>();
     private Context context;
 
-    public PersonalKabinetAdapter(Context context) {
+    public MoreSalonAdapter(Context context) {
         this.context = context;
     }
 
@@ -35,7 +35,7 @@ public class PersonalKabinetAdapter extends RecyclerView.Adapter<PersonalKabinet
     }
     @NonNull
     @Override
-    public PersonalKabinetAdapter.PersonalKabinetVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MoreSalonAdapter.PersonalKabinetVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
                 .inflate(R.layout.list_personalkabinet, parent, false);
         return new PersonalKabinetVH(view);

@@ -61,7 +61,7 @@ public class RegistrationPersonalFragment extends Fragment {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showFragment(new PersonalKabinetFragment());
+                mainActivity.showFragment(new ServiceSalonFragment());
 
             }
         });

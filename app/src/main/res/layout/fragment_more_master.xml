@@ -7,11 +7,12 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewmaster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewnameMaster"
         app:srcCompat="@mipmap/ic_launcher_round" />
@@ -24,7 +25,7 @@
         android:text="TextView"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imageViewmaster"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -37,7 +38,7 @@
         android:text="Контакты:"
         android:textColor="@color/black"
         android:textSize="12dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imageViewmaster"
         app:layout_constraintTop_toBottomOf="@+id/textViewnameMaster" />
 
     <TextView
@@ -56,6 +57,8 @@
         android:id="@+id/textViewStaj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="Опыт мастера:  "
         android:textColor="@color/black"
@@ -79,6 +82,8 @@
         android:id="@+id/textViewStaus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="Статус:"
         android:textColor="@color/black"
@@ -136,12 +141,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
         android:text="Коррекция бровей"
         android:textColor="@color/black"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        tools:layout_editor_absoluteY="188dp" />
+        app:layout_constraintStart_toStartOf="@+id/imageViewmaster"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOffline" />
 
     <TextView
         android:id="@+id/textViewPrice"
@@ -154,4 +160,70 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewNameService"
         app:layout_constraintTop_toTopOf="@+id/textViewNameService" />
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="396dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Описание — композиционная форма, которую используют в литературоведении и лингвистике для подробной характеристики предметов или явлений в целях создания художественного образа"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewNameService"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameService" />
+
+    <ImageView
+        android:id="@+id/imageViewMoreImage1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDescription"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/imageViewMoreImage2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewMoreImage1"
+        app:layout_constraintTop_toTopOf="@+id/imageViewMoreImage1"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/imageViewMoreImage3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewMoreImage2"
+        app:layout_constraintTop_toTopOf="@+id/imageViewMoreImage2"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewMoreImage3"
+        app:layout_constraintTop_toTopOf="@+id/imageViewMoreImage3"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <Button
+        android:id="@+id/buttonMoreService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:shadowColor="@color/color_hinter"
+        android:text="Другие услуги мастера"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMoreImage3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

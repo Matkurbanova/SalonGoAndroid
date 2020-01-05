@@ -23,7 +23,7 @@ import kg.salongo.android.R;
 
 
 
-public class PersonalFragment extends Fragment {
+public class MoreSalonFragment extends Fragment {
 
     private Service service;
 

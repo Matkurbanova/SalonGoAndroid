@@ -5,6 +5,9 @@
     <string name="sales">Акции</string>
     <string name="personal">Кабинет</string>
     <string name="share">Поделиться</string>
+    <string name="contacts"></string>
+    <string name="salon">Салон</string>
+    <string name="navyezd">На выездь</string>
     <color name="text_like_counter">#2b5a83</color>
     <string name="share_promo">Поделиться акцией</string>
 </resources>

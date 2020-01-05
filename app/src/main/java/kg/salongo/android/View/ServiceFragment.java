@@ -3,7 +3,6 @@ package kg.salongo.android.View;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -13,11 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import java.util.Arrays;
 
-import kg.salongo.android.Adapters.CategoryAdapter;
 import kg.salongo.android.Adapters.ServiceAdapter;
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.Data.SubCategory;
@@ -66,7 +62,7 @@ public class ServiceFragment extends Fragment{
     }
 
     public void serviceClicked(Service service) {
-        PersonalFragment personalFragment = new PersonalFragment();
+        MoreSalonFragment personalFragment = new MoreSalonFragment();
         personalFragment.setService(service);
         mainActivity.showFragment(personalFragment);
     }
