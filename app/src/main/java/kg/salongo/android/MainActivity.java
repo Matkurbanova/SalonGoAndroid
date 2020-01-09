@@ -17,6 +17,7 @@ import kg.salongo.android.View.CategoryFragment;
 import kg.salongo.android.View.MoreMasterFragment;
 import kg.salongo.android.View.MoreSalonFragment;
 import kg.salongo.android.View.PromoFragment;
+import kg.salongo.android.View.TypeFragment;
 
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.action_home:
-                showFragment(new CategoryFragment());
+                showFragment(new TypeFragment());
                 break;
             case R.id.action_personal:
                 showFragment(new MoreSalonFragment());
