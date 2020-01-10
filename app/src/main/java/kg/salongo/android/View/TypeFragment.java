@@ -57,4 +57,10 @@ public class TypeFragment extends Fragment {
             }
         });
         buttonMaster=view.findViewById(R.id.buttonMaster);
+        buttonMaster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new RegistrationMasterFragment());
+            }
+        });
 }}

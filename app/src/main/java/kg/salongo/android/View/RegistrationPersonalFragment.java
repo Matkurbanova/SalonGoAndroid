@@ -54,7 +54,7 @@ public class RegistrationPersonalFragment extends Fragment {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showFragment(new CategoryFragment());
+                mainActivity.showFragment(new AuthorizationFragment());
             }
         });
         buttonSave=view.findViewById(R.id.buttonOkRPF);
