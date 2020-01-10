@@ -162,6 +162,7 @@
             app:layout_constraintTop_toTopOf="@+id/imageViewPersonal"
             app:srcCompat="@mipmap/ic_launcher" />
 
+
         <ImageView
             android:id="@+id/imageLike"
             android:layout_width="wrap_content"
@@ -171,17 +172,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewPersonal"
             app:srcCompat="@drawable/heart" />
-
-
-        <ImageView
-            android:id="@+id/imageLiked"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/imageSave"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewPersonal"
-            app:srcCompat="@drawable/heart_30" />
 
         <ImageView
             android:id="@+id/imageSave"
@@ -222,43 +212,16 @@
             app:layout_constraintTop_toBottomOf="@+id/imageViewPersonal2"
             app:srcCompat="@drawable/inslogo" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
+        <Button
+            android:id="@+id/buttonMoreServiceSalon"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical|right"
+            android:layout_marginTop="16dp"
+            android:shadowColor="@color/color_hinter"
+            android:text="Другие услуги салона"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewPersonal2">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_heart_small_blue" />
-
-            <TextSwitcher
-                android:id="@+id/tsLikesCounter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/text_like_counter" />
-            </TextSwitcher>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="123"
-                android:textColor="@color/text_like_counter" />
-        </LinearLayout>
-
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewInstaLogo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
