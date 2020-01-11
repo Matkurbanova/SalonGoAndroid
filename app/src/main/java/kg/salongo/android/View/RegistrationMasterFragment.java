@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.github.pinball83.maskededittext.MaskedEditText;
 
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
@@ -28,6 +31,17 @@ public class RegistrationMasterFragment extends Fragment {
     private TextView textViewPersonal;
     private TextView textViewSignIn;
     private MainActivity mainActivity;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MainActivity)
+            mainActivity = (MainActivity) context;
+        MaskedEditText editTextPhone = new MaskedEditText.Builder(context)
+                .mask("+996 (***) *** ***")
+                .notMaskedSymbol("*")
+                .build();; //set mask to "8 (***) *** **-**" and not masked symbol to "*"
+    }
 
     @Nullable
     @Override
@@ -72,5 +86,7 @@ public class RegistrationMasterFragment extends Fragment {
                 mainActivity.showFragment(new AuthorizationFragment());
             }
         });
+
+
     }
 }
