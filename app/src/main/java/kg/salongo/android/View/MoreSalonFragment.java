@@ -71,7 +71,7 @@ public class MoreSalonFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         avatar = view.findViewById(R.id.avatar);
         textAddress = view.findViewById(R.id.textAddress);
-        textViewNameSalon = view.findViewById(R.id.textViewNameMaster);
+        textViewNameSalon = view.findViewById(R.id.textViewNameMAster);
         textContacts = view.findViewById(R.id.textContacts);
         textViewPhone = view.findViewById(R.id.textViewPhone);
         textWorkTime = view.findViewById(R.id.textWorkTime);

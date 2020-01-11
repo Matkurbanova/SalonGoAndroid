@@ -32,6 +32,7 @@ public class KabinetSalonFragment extends Fragment {
     private TextView textViewTimeWork;
     private Button buttonEdit;
     private Button buttonAddService;
+    private ImageView imageViewIconPhone;
 
     private KabinetSalon kabinetSalon []=new KabinetSalon[]{
             new KabinetSalon("Varvara","https://images11.cosmopolitan.ru/upload/gallery/f84/f8449fa1ed14e7dc1000ae45007f4dd9.jpg"),
@@ -47,9 +48,9 @@ public class KabinetSalonFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         imageViewLogoSal=view.findViewById(R.id.imageViewKabinetLogo);
-        textViewNameSalon=view.findViewById(R.id.textViewNameMaster);
+        textViewNameSalon=view.findViewById(R.id.textViewNameMAster);
         textViewDescription=view.findViewById(R.id.textViewDiscrN);
-        textViewKontakty=view.findViewById(R.id.textViewKontakt);
+imageViewIconPhone=view.findViewById(R.id.imageViewIconPhone);
         textViewAddress=view.findViewById(R.id.textViewadress);
         textViewNomer=view.findViewById(R.id.textViewNumber);
         textViewTimeWork=view.findViewById(R.id.textViewWorkTM);

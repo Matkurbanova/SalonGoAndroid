@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 
 import kg.salongo.android.Adapters.MasterProfileAdapter;
-import kg.salongo.android.Adapters.ServiceAdapter;
 import kg.salongo.android.Data.MasterProfile;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
@@ -40,7 +39,7 @@ public class MasterProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_master_profile, container, false);
+        return inflater.inflate(R.layout.fragment_profil_master, container, false);
     }
 
     @Override

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -69,7 +68,7 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
         TextView StatusBusy;
         public MasterServiceHV(@NonNull View itemView) {
             super(itemView);
-            textViewNameMaster = itemView.findViewById(R.id.textViewNameMaster);
+            textViewNameMaster = itemView.findViewById(R.id.textViewNameMAster);
         imageMaster=itemView.findViewById(R.id.imageMaster);
         StatusBusy=itemView.findViewById(R.id.StatusBusy);
         StatusFree=itemView.findViewById(R.id.StatusFree);

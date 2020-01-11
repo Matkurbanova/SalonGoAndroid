@@ -92,7 +92,7 @@ public class MoreSalonAdapter extends RecyclerView.Adapter<MoreSalonAdapter.Pers
         public PersonalKabinetVH(@NonNull View itemView) {
             super(itemView);
 
-            textViewSalonName=itemView.findViewById(R.id.textViewNameMaster);
+            textViewSalonName=itemView.findViewById(R.id.textViewNameMAster);
             textViewSubCatygoryName=itemView.findViewById(R.id.textViewNameSubcat);
             textViewaddress=itemView.findViewById(R.id.textViewAddress);
             textViewWorkTime=itemView.findViewById(R.id.textViewWorkTime);

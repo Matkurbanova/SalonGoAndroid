@@ -83,7 +83,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
 
         public ServiceHV(@NonNull View itemView) {
             super(itemView);
-            textViewSalonName = itemView.findViewById(R.id.textViewNameMaster);
+            textViewSalonName = itemView.findViewById(R.id.textViewNameMAster);
             textViewSubCatygoryName = itemView.findViewById(R.id.textViewNameSubcat);
             textViewaddress = itemView.findViewById(R.id.textViewAddress);
             textViewWorkTime = itemView.findViewById(R.id.textViewWorkTime);
