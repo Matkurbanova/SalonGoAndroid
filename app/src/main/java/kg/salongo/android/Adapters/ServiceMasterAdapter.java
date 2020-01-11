@@ -43,6 +43,7 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
         return new ServiceMasterAdapter.MasterServiceHV(view);
    }
 
+
     @Override
     public void onBindViewHolder(@NonNull ServiceMasterAdapter.MasterServiceHV holder, int position) {
         final MasterService masterService = masterServiceList.get(position);
