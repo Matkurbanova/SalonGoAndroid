@@ -53,6 +53,6 @@ public class EditPersonalFragment extends Fragment {
                 mainActivity.showFragment(new ServiceFragment());
             }
         });
-        editText=view.findViewById(R.id.textViewEditAvatar);
+     //   editText=view.findViewById(R.id.textViewEditAvatar);
     }
 }
