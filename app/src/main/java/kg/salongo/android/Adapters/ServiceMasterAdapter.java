@@ -5,22 +5,21 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
 import kg.salongo.android.Data.MasterService;
-
+import kg.salongo.android.Data.Service;
 import kg.salongo.android.R;
 import kg.salongo.android.View.MasterServiceFragment;
-
+import kg.salongo.android.View.ServiceFragment;
 
 public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdapter.MasterServiceHV> {
     private List<MasterService> masterServiceList = new ArrayList<>();
@@ -31,7 +30,7 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
         this.masterServiceFragment = masterServiceFragment;
     }
 
-    public void setMasterService(List<MasterService> masterServices) {
+    public void setMasterServiceFragment(List<MasterService> masterServices) {
         masterServiceList.clear();
         masterServiceList.addAll(masterServices);
         notifyDataSetChanged();
@@ -47,36 +46,27 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
     @Override
     public void onBindViewHolder(@NonNull ServiceMasterAdapter.MasterServiceHV holder, int position) {
         final MasterService masterService = masterServiceList.get(position);
-        holder.textViewNameMaster.setText(masterService.getNameMaster());
-        holder.nameofService.setText(masterService.getNameofService());
-        holder.workExperienceYear.setText(masterService.getExperienceYear());
-        holder.StatusFree.setText(masterService.getStatusFree());
-        holder.StatusBusy.setText(masterService.getStatusBusy());
+
+
+
+
     }
 
     @Override
     public int getItemCount() {
-        return masterServiceList.size();
+        return 0;
     }
 
     public class MasterServiceHV extends RecyclerView.ViewHolder {
         TextView textViewNameMaster ;
-        TextView nameofService;
-        TextView workExperienceYear;
-        ImageView imageMaster;
-        TextView StatusFree;
-        TextView StatusBusy;
+        TextView textViewSubCatygoryName;
+        TextView textViewaddress;
+        TextView textViewWorkTime;
+        ImageView imageViewLogo;
+        Button buttonprice;
+        TextView textClose;
         public MasterServiceHV(@NonNull View itemView) {
             super(itemView);
-            textViewNameMaster = itemView.findViewById(R.id.textViewNameMAster);
-        imageMaster=itemView.findViewById(R.id.imageMaster);
-        StatusBusy=itemView.findViewById(R.id.StatusBusy);
-        StatusFree=itemView.findViewById(R.id.StatusFree);
-        nameofService=itemView.findViewById(R.id.NameOfService);
-        workExperienceYear=itemView.findViewById(R.id.WorkExperienceYear);
-        nameofService=itemView.findViewById(R.id.NameOfService);
-
-
         }
     }
 }
