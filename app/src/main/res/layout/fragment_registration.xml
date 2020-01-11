@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="13"
-        android:hint="Login"
+        android:hint="Логин"
         android:inputType="textPersonName"
         android:textColor="#0A0A0A"
         android:textColorHighlight="#B22B2A2A"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="13"
-        android:hint="Name"
+        android:hint="Имя"
         android:inputType="textPersonName"
         android:textColor="#111111"
         android:textColorHint="#EB383737"
@@ -47,16 +47,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextLoginRPF" />
 
-    <EditText
+    <com.github.pinball83.maskededittext.MaskedEditText
         android:id="@+id/editTextTelRPF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="13"
-        android:hint="Tel:"
         android:inputType="textPersonName"
         android:textColor="#0C0C0C"
         android:textColorHint="#444242"
+        app:mask="+996 (***) *** ***"
+        app:notMaskedSymbol="*"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNameRPF" />
@@ -67,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="13"
-        android:hint="Password"
+        android:hint="Пароль"
         android:inputType="textPersonName"
         android:textColor="#020202"
         android:textColorHint="#F74D4848"
@@ -79,8 +80,7 @@
         android:id="@+id/buttonOkRPF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK"
-        android:background="@color/color_hinter"
+        android:text="Зарегистрироваться"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPasswordRPF" />

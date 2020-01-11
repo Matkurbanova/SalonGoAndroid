@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import android.widget.TextView;
@@ -39,7 +40,8 @@ public class MoreSalonFragment extends Fragment {
     private ImageView imageViewPersonal;
     private ImageView imageViewPersonal2;
     private ImageView imageLike;
-    private ImageView imageLiked;
+    private Button buttonMoreServiceSalon;
+
     private ImageView imageSave;
     private ImageView imageViewInstaLogo;
     private MainActivity mainActivity;
@@ -78,8 +80,11 @@ public class MoreSalonFragment extends Fragment {
         TextPrice = view.findViewById(R.id.TextPrice);
         imageViewPersonal = view.findViewById(R.id.imageViewPersonal);
         imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
+        buttonMoreServiceSalon=view.findViewById(R.id.buttonMoreServiceSalon);
         imageLike = view.findViewById(R.id.imageSave);
-        imageLiked = view.findViewById(R.id.imageLiked);
+
+
+
 
         imageLike.setOnClickListener(new View.OnClickListener() {
 

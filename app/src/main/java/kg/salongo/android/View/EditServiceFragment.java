@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,14 +17,15 @@ import androidx.fragment.app.Fragment;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class EditPersonalFragment extends Fragment {
-    private ImageView imageViewAvatar;
-    private EditText editTextName;
-    private EditText editTextPhone;
-    private EditText editTextOldPass;
-    private EditText editTextnewPass;
-    private Button buttonSave;
-    private EditText editText;
+public class EditServiceFragment extends Fragment {
+    private ImageView mainImage;
+    private ImageView imageGallery;
+    private ImageView imagePlus;
+    private EditText EditNameOfService;
+    private EditText editPrice;
+    private EditText editDescription;
+    private TextView PhotoGalleryText;
+    private Button buttonSaveService;
     MainActivity mainActivity;
 
     @Override
@@ -36,23 +38,25 @@ public class EditPersonalFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_edit_personal, container, false);
+        return inflater.inflate(R.layout.editservice_fragment, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        imageViewAvatar=view.findViewById(R.id.imageViewAvatar);
-        editTextName=view.findViewById(R.id.TextViewName);
-        editTextPhone=view.findViewById(R.id.editTextPhone);
-        editTextOldPass=view.findViewById(R.id.editTextPass);
-        editTextnewPass=view.findViewById(R.id.editTextNewPass);
-        buttonSave=view.findViewById(R.id.buttonSaveEdit);
-        buttonSave.setOnClickListener(new View.OnClickListener() {
+        mainImage=view.findViewById(R.id.mainImage);
+        imageGallery=view.findViewById(R.id.imageGallery);
+        imagePlus=view.findViewById(R.id.imagePlus);
+        EditNameOfService=view.findViewById(R.id.EditNameOfService);
+        editPrice=view.findViewById(R.id.editPrice);
+        editDescription=view.findViewById(R.id.editDescription);
+        PhotoGalleryText=view.findViewById(R.id.PhotoGalleryText);
+        buttonSaveService=view.findViewById(R.id.buttonSaveService);
+        buttonSaveService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showFragment(new ServiceFragment());
             }
         });
-        editText=view.findViewById(R.id.textViewEditAvatar);
+        mainImage=view.findViewById(R.id.mainImage);
     }
 }

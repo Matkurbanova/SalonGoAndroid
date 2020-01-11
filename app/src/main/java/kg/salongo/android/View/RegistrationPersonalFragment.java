@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.github.pinball83.maskededittext.MaskedEditText;
+
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
@@ -23,7 +25,7 @@ public class RegistrationPersonalFragment extends Fragment {
     private EditText editTextLogin;
     private EditText editTextName;
     private EditText editTextPassword;
-    private EditText editTextTell;
+    private MaskedEditText editTextTell;
     private TextView textViewZaregstr;
     private TextView signIn;
     private Button buttonSave;
@@ -34,7 +36,12 @@ public class RegistrationPersonalFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof MainActivity)
             mainActivity = (MainActivity) context;
+        MaskedEditText editTextTell = new MaskedEditText.Builder(context)
+                .mask("+996 (***) *** ***")
+                .notMaskedSymbol("*")
+                .build();; //set mask to "8 (***) *** **-**" and not masked symbol to "*"
     }
+
 
     @Nullable
     @Override
@@ -54,14 +61,14 @@ public class RegistrationPersonalFragment extends Fragment {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showFragment(new CategoryFragment());
+                mainActivity.showFragment(new AuthorizationFragment());
             }
         });
         buttonSave=view.findViewById(R.id.buttonOkRPF);
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showFragment(new ServiceSalonFragment());
+                mainActivity.showFragment(new KabinetSalonFragment());
 
             }
         });
