@@ -61,7 +61,7 @@ public class RegistrationMasterFragment extends Fragment {
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showFragment(new AuthorizationFragment());
+                mainActivity.showFragment(new KabinetMasterFragment());
 
             }
         });
