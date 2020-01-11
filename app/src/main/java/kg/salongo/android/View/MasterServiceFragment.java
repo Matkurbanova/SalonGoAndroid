@@ -47,6 +47,8 @@ public class MasterServiceFragment extends Fragment {
     }
     MasterService masterServices[] = {
             new MasterService("https://i.pinimg.com/736x/1c/ea/a1/1ceaa1221c1af3cfe88f4e2c7a83a421.jpg", "Камилла",
+                    "Коррекция бровей", "2 года", "свободна", "занята"),
+            new MasterService("https://i.pinimg.com/736x/1c/ea/a1/1ceaa1221c1af3cfe88f4e2c7a83a421.jpg", "Камилла",
                     "Коррекция бровей", "2 года", "свободна", "занята")
 
     };

@@ -24,10 +24,10 @@ import kg.salongo.android.View.ServiceFragment;
 public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdapter.MasterServiceHV> {
     private List<MasterService> masterServiceList = new ArrayList<>();
     private Context context;
-    private MasterServiceFragment masterServiceFragment;
+   // private MasterServiceFragment masterServiceFragment;
     public ServiceMasterAdapter(Context context, MasterServiceFragment masterServiceFragment) {
         this.context = context;
-        this.masterServiceFragment = masterServiceFragment;
+        //.masterServiceFragment = masterServiceFragment;
     }
 
     public void setMasterServiceFragmentList(List<MasterService> masterServices) {
@@ -51,23 +51,34 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
 
 
 
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return masterServiceList.size();
     }
 
     public class MasterServiceHV extends RecyclerView.ViewHolder {
-        TextView textViewNameMaster ;
-        TextView textViewSubCatygoryName;
-        TextView textViewaddress;
-        TextView textViewWorkTime;
-        ImageView imageViewLogo;
-        Button buttonprice;
-        TextView textClose;
+        TextView NameMaster ;
+        TextView nameofService;
+        TextView experienceYear;
+        ImageView imageMaster;
+
+        TextView statusFree;
+        TextView statusBusy;
         public MasterServiceHV(@NonNull View itemView) {
             super(itemView);
+            NameMaster= itemView.findViewById(R.id.NameMaster);
+            nameofService=itemView.findViewById(R.id.NameOfService);
+            experienceYear=itemView.findViewById(R.id.WorkExperienceYear);
+            imageMaster=itemView.findViewById(R.id.imageMaster);
+            statusFree=itemView.findViewById(R.id.StatusFree);
+            statusBusy=itemView.findViewById(R.id.StatusBusy);
+
+
+
+
         }
     }
 }
