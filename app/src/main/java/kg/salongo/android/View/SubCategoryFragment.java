@@ -4,14 +4,19 @@ import android.content.Context;
 import android.os.Bundle;
 import android.print.PrinterId;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.Arrays;
 
@@ -28,6 +33,7 @@ public class SubCategoryFragment extends Fragment {
     private Category category;
     private MainActivity mainActivity;
 
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -37,7 +43,7 @@ public class SubCategoryFragment extends Fragment {
 
     private SubCategory subCategories[] = new SubCategory[]{
 
-    new SubCategory("Окрашивание бровей с хной"),
+            new SubCategory("Окрашивание бровей с хной"),
             new SubCategory("Коррекция бровей"),
             new SubCategory("Окрашивание бровей краской")
     };
@@ -57,7 +63,7 @@ public class SubCategoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerView = view.findViewById(R.id.recyclerViewSubCategory);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
-        adapter = new SubCategoryAdapter(getContext(),this);
+        adapter = new SubCategoryAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);
         adapter.setSubCategoryList(Arrays.asList(subCategories));
     }
@@ -67,4 +73,7 @@ public class SubCategoryFragment extends Fragment {
         serviceFragment.setSubCategory(subCategory);
         mainActivity.showFragment(serviceFragment);
     }
+
+
 }
+

@@ -23,14 +23,14 @@ import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 
-
 public class MoreSalonFragment extends Fragment {
 
     private Service service;
 
     private ImageView avatar;
     private TextView textViewNameSalon;
-    private TextView textContacts;
+    private ImageView imageViewIconInst;
+    private ImageView imageViewIconTell;
     private TextView textAddress;
     private TextView textViewPhone;
     private TextView textWorkTime;
@@ -41,7 +41,7 @@ public class MoreSalonFragment extends Fragment {
     private ImageView imageViewPersonal2;
     private ImageView imageLike;
     private Button buttonMoreServiceSalon;
-
+    private TextView textViewDesN;
     private ImageView imageSave;
     private ImageView imageViewInstaLogo;
     private MainActivity mainActivity;
@@ -72,18 +72,18 @@ public class MoreSalonFragment extends Fragment {
         avatar = view.findViewById(R.id.avatar);
         textAddress = view.findViewById(R.id.textAddress);
         textViewNameSalon = view.findViewById(R.id.textViewNameMAster);
-        textContacts = view.findViewById(R.id.textContacts);
         textViewPhone = view.findViewById(R.id.textViewPhone);
         textWorkTime = view.findViewById(R.id.textWorkTime);
         Close = view.findViewById(R.id.Close);
         TextSubCat = view.findViewById(R.id.TextSubCat);
         TextPrice = view.findViewById(R.id.TextPrice);
+        textViewDesN=view.findViewById(R.id.textViewDeN);
+        imageViewIconInst = view.findViewById(R.id.imageViewInstIcon);
+        imageViewIconTell = view.findViewById(R.id.imageViewPhoneIcon);
         imageViewPersonal = view.findViewById(R.id.imageViewPersonal);
         imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
-        buttonMoreServiceSalon=view.findViewById(R.id.buttonMoreServiceSalon);
+        buttonMoreServiceSalon = view.findViewById(R.id.buttonMoreServiceSalon);
         imageLike = view.findViewById(R.id.imageSave);
-
-
 
 
         imageLike.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +107,7 @@ public class MoreSalonFragment extends Fragment {
     }
 
 
-    }
+}
 
 
 

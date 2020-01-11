@@ -25,14 +25,14 @@ public class MoreServiceFragment extends Fragment {
     private ImageView imageViewLogoSal;
     private TextView textViewNameSalon;
     private TextView textViewDescription;
-    private TextView textViewKontakty;
+    private ImageView imageViewIconPhone;
     private TextView textViewAddress;
     private TextView textViewNomer;
     private TextView textViewTimeWork;
 
-    private KabinetSalon kabinetSalon []=new KabinetSalon[]{
-            new KabinetSalon("Varvara","https://images11.cosmopolitan.ru/upload/gallery/f84/f8449fa1ed14e7dc1000ae45007f4dd9.jpg"),
-     new KabinetSalon("Alina","https://images11.cosmopolitan.ru/upload/gallery/f84/f8449fa1ed14e7dc1000ae45007f4dd9.jpg")
+    private KabinetSalon kabinetSalon[] = new KabinetSalon[]{
+            new KabinetSalon("Varvara", "https://images11.cosmopolitan.ru/upload/gallery/f84/f8449fa1ed14e7dc1000ae45007f4dd9.jpg"),
+            new KabinetSalon("Alina", "https://images11.cosmopolitan.ru/upload/gallery/f84/f8449fa1ed14e7dc1000ae45007f4dd9.jpg")
     };
 
     @Nullable
@@ -43,15 +43,13 @@ public class MoreServiceFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        imageViewLogoSal=view.findViewById(R.id.imageViewKabinetLogo);
-        textViewNameSalon=view.findViewById(R.id.textViewNameMAster);
-        textViewDescription=view.findViewById(R.id.textViewDiscrN);
-        textViewKontakty=view.findViewById(R.id.textViewKontakt);
-        textViewAddress=view.findViewById(R.id.textViewadress);
-        textViewNomer=view.findViewById(R.id.textViewNumber);
-        textViewTimeWork=view.findViewById(R.id.textViewWorkTM);
-
-
+        imageViewLogoSal = view.findViewById(R.id.imageViewKabinetLogo);
+        textViewNameSalon = view.findViewById(R.id.textViewNameMAster);
+        textViewDescription = view.findViewById(R.id.textViewDiscrN);
+        textViewAddress = view.findViewById(R.id.textViewadress);
+        textViewNomer = view.findViewById(R.id.textViewNumber);
+        textViewTimeWork = view.findViewById(R.id.textViewWorkTM);
+        imageViewIconPhone = view.findViewById(R.id.imageView6);
         recyclerView = view.findViewById(R.id.recyclerViewKabinetSalon);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         adapter = new KabinetSalonAdapter(getContext());

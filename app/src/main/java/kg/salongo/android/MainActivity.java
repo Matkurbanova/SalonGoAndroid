@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.action_home:
-                showFragment(new KabinetMasterFragment());
+                showFragment(new CategoryFragment());
                 break;
             case R.id.action_personal:
                 showFragment(new TypeFragment());

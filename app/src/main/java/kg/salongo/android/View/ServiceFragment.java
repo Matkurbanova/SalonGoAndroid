@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,12 +21,12 @@ import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class ServiceFragment extends Fragment{
+public class ServiceFragment extends Fragment {
     private RecyclerView recyclerView;
     private ServiceAdapter adapter;
     private MainActivity mainActivity;
     private SubCategory subCategory;
-
+    private Button buttonNavyezd;
     public void setSubCategory(SubCategory subCategory) {
         this.subCategory = subCategory;
     }
@@ -54,6 +55,13 @@ public class ServiceFragment extends Fragment{
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        buttonNavyezd=view.findViewById(R.id.buttonNaVyezd);
+        buttonNavyezd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new MasterServiceFragment());
+            }
+        });
         recyclerView = view.findViewById(R.id.RecyclerViewService);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
         adapter = new ServiceAdapter(getContext(), this);

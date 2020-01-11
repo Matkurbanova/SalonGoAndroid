@@ -11,8 +11,6 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewKabinetSalon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,9 +31,11 @@
             android:id="@+id/textViewNameMAster"
             android:layout_width="92dp"
             android:layout_height="0dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="8dp"
             android:text="VarVara"
             android:textColor="#111111"
+            android:textSize="15dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageViewKabinetLogo"
             app:layout_constraintTop_toTopOf="parent" />
@@ -44,26 +44,14 @@
             android:id="@+id/textViewDiscrN"
             android:layout_width="346dp"
             android:layout_height="30dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:text="Мы всегда рады видеть новых гостей в нашем салоне красоты! Широкий спектр услуг, отличное качество - по приемлемым ценам. "
             android:textColor="#131212"
-            android:textSize="8sp"
-            app:layout_constraintBottom_toTopOf="@+id/textViewKontakt"
+            android:textSize="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewKabinetLogo" />
-
-        <TextView
-            android:id="@+id/textViewKontakt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Контакты"
-            android:textColor="#0E0D0D"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@+id/textViewDiscrN"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDiscrN" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textViewadress"
+            app:layout_constraintTop_toBottomOf="@+id/textViewadress" />
 
         <TextView
             android:id="@+id/textViewadress"
@@ -71,61 +59,73 @@
             android:layout_height="wrap_content"
             android:text="​5-й микрорайон, 63Б 5 м-н, Октябрьский район, Бишкек"
             android:textColor="#F318188A"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@+id/textViewKontakt"
-            app:layout_constraintTop_toBottomOf="@+id/textViewKontakt" />
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toStartOf="@+id/imageViewKabinetLogo"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWorkTM" />
 
         <TextView
             android:id="@+id/textViewNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:text="+996(702 858 956)"
             android:textColor="#070707"
             android:textColorHint="#070707"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textViewadress"
-            app:layout_constraintTop_toBottomOf="@+id/textViewadress" />
+            android:textSize="13dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewKabinetLogo"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNameMAster" />
 
         <TextView
             android:id="@+id/textViewWorkTM"
-            android:layout_width="179dp"
-            android:layout_height="27dp"
+            android:layout_width="178dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:text="Сегодня c 09:00 до 19:00 Закрыто. Откроется в 09:00"
             android:textColor="#FA0F0F0F"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textViewNumber"
+            android:textSize="13dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewKabinetLogo"
             app:layout_constraintTop_toBottomOf="@+id/textViewNumber" />
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView6"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewadress"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDiscrN"
+            app:layout_constraintTop_toTopOf="@+id/imageView6"
             app:srcCompat="@drawable/inslogo" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewNumber"
+            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toEndOf="@+id/textViewNumber"
+            app:layout_constraintTop_toTopOf="@+id/textViewNumber"
+            app:srcCompat="@drawable/phone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewKabinetSalon"
-        android:layout_width="409dp"
-        android:layout_height="495dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.38" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
