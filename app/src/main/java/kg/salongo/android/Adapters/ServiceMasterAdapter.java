@@ -30,7 +30,7 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
         this.masterServiceFragment = masterServiceFragment;
     }
 
-    public void setMasterServiceFragment(List<MasterService> masterServices) {
+    public void setMasterServiceFragmentList(List<MasterService> masterServices) {
         masterServiceList.clear();
         masterServiceList.addAll(masterServices);
         notifyDataSetChanged();
