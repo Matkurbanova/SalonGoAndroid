@@ -51,8 +51,7 @@ public class MasterProfileFragment extends Fragment {
         textViewExperience=view.findViewById(R.id.textView10);
         textViewExperiences=view.findViewById(R.id.textViewExperience);
         textViewDescription=view.findViewById(R.id.textViewDescription);
-
-        recyclerView = view.findViewById(R.id.recyclerViewMasterProfile);
+        recyclerView = view.findViewById(R.id.recyclerViewKabin);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         adapter= new MasterProfileAdapter(getContext());
         recyclerView.setAdapter(adapter);

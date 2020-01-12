@@ -26,8 +26,8 @@
 
     <ImageView
         android:id="@+id/PromoImage"
-        android:layout_width="410dp"
-        android:layout_height="264dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -40,11 +40,14 @@
         android:id="@+id/Liked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
+        android:layout_marginStart="16dp"
 
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toTopOf="@+id/PromoInfo"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PromoImage"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_favorite_border_black_24dp"
         tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
@@ -52,15 +55,10 @@
         android:id="@+id/promoShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/PromoInfo"
-        app:layout_constraintEnd_toStartOf="@+id/OldPrice"
-        app:layout_constraintHorizontal_bias="0.058"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         app:layout_constraintStart_toEndOf="@+id/Liked"
         app:layout_constraintTop_toTopOf="@+id/Liked"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_menu_share"
         tools:ignore="VectorDrawableCompat" />
 
@@ -68,31 +66,30 @@
         android:id="@+id/OldPrice"
         android:layout_width="wrap_content"
         android:layout_height="27dp"
-        android:layout_marginStart="297dp"
-        android:layout_marginLeft="297dp"
 
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:lineSpacingExtra="8sp"
         android:text="556"
         android:textAllCaps="true"
         android:textSize="20sp"
         android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/NewPrice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/promoShare"
+        app:layout_constraintEnd_toStartOf="@+id/NewPrice"
         app:layout_constraintTop_toBottomOf="@+id/PromoImage" />
 
     <TextView
         android:id="@+id/NewPrice"
         android:layout_width="wrap_content"
-        android:layout_height="26dp"
+        android:layout_height="0dp"
 
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:text="446"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/PromoInfo"
+        app:layout_constraintBottom_toBottomOf="@+id/OldPrice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/OldPrice"
-        app:layout_constraintTop_toBottomOf="@+id/OldPrice" />
+        app:layout_constraintTop_toTopOf="@+id/OldPrice" />
 
     <TextView
         android:id="@+id/PromoInfo"
@@ -100,13 +97,13 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="8dp"
-
         android:text="Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!"
         android:textColor="@color/black"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NewPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/OldPrice" />
 
 
 

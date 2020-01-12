@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,6 +37,10 @@ private ImageView imageViewServices1;
 private ImageView imageViewServices2;
 private ImageView imageVieInsMaster;
 private MainActivity mainActivity;
+private ImageView imageViewSeved;
+private ImageView imageViewLike;
+private ImageView imageViewShere;
+private Button buttonServicesMaster;
 
     @Override
     public void onAttach(Context context) {
@@ -70,6 +75,16 @@ private MainActivity mainActivity;
         imageViewServices1 = view.findViewById(R.id.imageViewService1);
         imageViewServices2 = view.findViewById(R.id.imageViewService2);
         imageVieInsMaster = view.findViewById(R.id.imageVieInsMaster);
+        imageViewSeved=view.findViewById(R.id.imageViewSeved);
+        imageViewLike=view.findViewById(R.id.imageViewLike);
+        imageViewShere=view.findViewById(R.id.imageViewSeved);
+        buttonServicesMaster=view.findViewById(R.id.buttonAddServicesMaster);
+        buttonServicesMaster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new MasterProfileFragment());
+            }
+        });
 
         Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVtoeVcGG8cwoPtnLv95g6d9jj-vh9izm_vPtuzLZLPHKz77sQ&s").into(imageViewServices1);
         Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX6KRlgRZkZ3GI5OvXjjTfjr_xhv-oUsXP1tjbkvEp1HV_pzaKmw&s").into(imageViewServices2);
