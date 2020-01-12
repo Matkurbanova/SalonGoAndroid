@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +14,12 @@ import androidx.fragment.app.Fragment;
 
 import com.squareup.picasso.Picasso;
 
+import kg.salongo.android.Data.MasterService;
+import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class OtherServicesMasterFragment  extends Fragment {
+    private MasterService masterService;
 private ImageView imageMaster;
 private TextView NameMaster;
 private  TextView MasterContacts;
@@ -24,13 +28,26 @@ private TextView WorkExperienceYear;
 private  TextView Status;
 private TextView StatusFree;
 private TextView StatusBusy;
-private TextView imagePhone;
+private ImageView imagePhone;
 private TextView textViewNumber;
 private TextView textViewDescriptionMasters;
 private TextView textViewMastersServices;
 private ImageView imageViewServices1;
 private ImageView imageViewServices2;
 private ImageView imageVieInsMaster;
+private MainActivity mainActivity;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MainActivity)
+            mainActivity = (MainActivity) context;
+    }
+     public void setMasterService(MasterService masterService) {
+         this.masterService = masterService;
+     }
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,7 +59,6 @@ private ImageView imageVieInsMaster;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         imageMaster= view.findViewById(R.id.imageMaster);
         NameMaster = view.findViewById(R.id.NameMaster);
-        MasterContacts = view.findViewById(R.id.MasterContacts);
         WorkExperience = view.findViewById(R.id.WorkExperience);
         WorkExperienceYear = view.findViewById(R.id.WorkExperienceYear);
         Status = view.findViewById(R.id.Status);

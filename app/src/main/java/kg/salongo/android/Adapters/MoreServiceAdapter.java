@@ -18,11 +18,14 @@ import java.util.List;
 import kg.salongo.android.Data.KabinetSalon;
 import kg.salongo.android.Data.MoreService;
 import kg.salongo.android.R;
+import kg.salongo.android.View.MoreSalonFragment;
+import kg.salongo.android.View.MoreServiceFragment;
 
 public class MoreServiceAdapter extends RecyclerView.Adapter<MoreServiceAdapter.MoreServiceVH> {
 
     private List<MoreService> moreServiceList = new ArrayList<>();
     private Context context;
+    private MoreServiceFragment moreServiceFragment;
 
     public MoreServiceAdapter(Context context) {
         this.context = context;
@@ -32,6 +35,10 @@ public class MoreServiceAdapter extends RecyclerView.Adapter<MoreServiceAdapter.
         moreServiceList.clear();
         moreServiceList.addAll(moreServices);
         notifyDataSetChanged();
+    }
+
+    public void setMoreServiceFragment(MoreServiceFragment moreServiceFragment) {
+        this.moreServiceFragment = moreServiceFragment;
     }
 
     @NonNull
@@ -51,6 +58,12 @@ public class MoreServiceAdapter extends RecyclerView.Adapter<MoreServiceAdapter.
 
         MoreService moreService = moreServiceList.get(position);
         holder.textViewNameService.setText(moreService.getNameService());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                moreServiceFragment.moreServiceClicked(moreService);
+            }
+        });
 
 
         if (!moreService.getImageService().isEmpty())

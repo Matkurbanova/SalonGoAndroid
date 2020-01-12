@@ -25,5 +25,6 @@ public class MoreService {
     public void setImageService(String imageService) {
         ImageService = imageService;
     }
+
 }
 

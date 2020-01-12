@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,17 +15,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 
 import kg.salongo.android.Adapters.ServiceAdapter;
+import kg.salongo.android.Data.MoreService;
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class ServiceFragment extends Fragment {
+public class ServiceFragment extends Fragment{
     private RecyclerView recyclerView;
     private ServiceAdapter adapter;
     private MainActivity mainActivity;
     private SubCategory subCategory;
-    private Button buttonNavyezd;
+    private MoreService moreService;
+
     public void setSubCategory(SubCategory subCategory) {
         this.subCategory = subCategory;
     }
@@ -37,6 +38,10 @@ public class ServiceFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof MainActivity)
             mainActivity = (MainActivity) context;
+    }
+
+    public void setMoreService(MoreService moreService){
+        this.moreService=moreService;
     }
 
     private Service Service[] = new Service[]{
@@ -55,13 +60,6 @@ public class ServiceFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        buttonNavyezd=view.findViewById(R.id.buttonNaVyezd);
-        buttonNavyezd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.showFragment(new MasterServiceFragment());
-            }
-        });
         recyclerView = view.findViewById(R.id.RecyclerViewService);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
         adapter = new ServiceAdapter(getContext(), this);

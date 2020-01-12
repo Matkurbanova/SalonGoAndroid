@@ -24,10 +24,11 @@ import kg.salongo.android.View.ServiceFragment;
 public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdapter.MasterServiceHV> {
     private List<MasterService> masterServiceList = new ArrayList<>();
     private Context context;
+    private MasterServiceFragment masterServiceFragment;
    // private MasterServiceFragment masterServiceFragment;
     public ServiceMasterAdapter(Context context, MasterServiceFragment masterServiceFragment) {
         this.context = context;
-        //.masterServiceFragment = masterServiceFragment;
+        this.masterServiceFragment = masterServiceFragment;
     }
 
     public void setMasterServiceFragmentList(List<MasterService> masterServices) {
@@ -47,6 +48,15 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
     @Override
     public void onBindViewHolder(@NonNull ServiceMasterAdapter.MasterServiceHV holder, int position) {
         final MasterService masterService = masterServiceList.get(position);
+        holder.NameMaster.setText(masterService.getNameMaster());
+        holder.nameofService.setText(masterService.getNameofService());
+        holder.experienceYear.setText(masterService.getExperienceYear());
+         holder.itemView.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 masterServiceFragment.masterServiceClicked( masterService);
+             }
+         });
 
 
 
@@ -69,7 +79,7 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
         TextView statusBusy;
         public MasterServiceHV(@NonNull View itemView) {
             super(itemView);
-            NameMaster= itemView.findViewById(R.id.NameMaster);
+            NameMaster= itemView.findViewById(R.id.textViewNameMaster);
             nameofService=itemView.findViewById(R.id.NameOfService);
             experienceYear=itemView.findViewById(R.id.WorkExperienceYear);
             imageMaster=itemView.findViewById(R.id.imageMaster);

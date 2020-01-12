@@ -16,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import kg.salongo.android.View.CategoryFragment;
 import kg.salongo.android.View.KabinetMasterFragment;
 import kg.salongo.android.View.MasterProfileFragment;
+import kg.salongo.android.View.MasterServiceFragment;
 import kg.salongo.android.View.MoreMasterFragment;
 import kg.salongo.android.View.MoreSalonFragment;
 import kg.salongo.android.View.PromoFragment;

@@ -25,38 +25,18 @@
 
         <TextView
             android:id="@+id/NameMaster"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
             android:layout_marginTop="4dp"
 
-            android:layout_marginEnd="168dp"
-            android:layout_marginRight="168dp"
-
-            android:layout_marginBottom="8dp"
             android:text="Камила"
 
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/MasterContacts"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageMaster"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/MasterContacts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"
-            android:text="Контакты:"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/WorkExperience"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageMaster"
-            app:layout_constraintTop_toBottomOf="@+id/NameMaster" />
 
         <TextView
             android:id="@+id/WorkExperience"
@@ -65,84 +45,64 @@
             android:layout_marginTop="8dp"
             android:text="ОПЫТ РАБОТЫ:"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@+id/imageMaster"
-            app:layout_constraintTop_toBottomOf="@+id/MasterContacts" />
+            app:layout_constraintStart_toStartOf="@+id/textViewNumber"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNumber" />
 
         <TextView
             android:id="@+id/WorkExperienceYear"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
             android:text="2 года"
             android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/WorkExperience"
             app:layout_constraintStart_toEndOf="@+id/WorkExperience"
-            app:layout_constraintTop_toBottomOf="@+id/NameMaster" />
+            app:layout_constraintTop_toTopOf="@+id/WorkExperience" />
 
         <TextView
             android:id="@+id/Status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
             android:text="Статус:"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/StatusFree"
-            app:layout_constraintStart_toEndOf="@+id/imageMaster"
+            app:layout_constraintStart_toStartOf="@+id/WorkExperience"
             app:layout_constraintTop_toBottomOf="@+id/WorkExperience" />
-
-        <TextView
-            android:id="@+id/StatusFree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="свободна"
-            android:textColor="@color/green"
-            app:layout_constraintBottom_toTopOf="@+id/StatusBusy"
-            app:layout_constraintStart_toEndOf="@+id/Status"
-            app:layout_constraintTop_toBottomOf="@+id/WorkExperience"
-            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/StatusBusy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
             android:text="занята"
             android:textColor="@color/red"
+            app:layout_constraintBottom_toBottomOf="@+id/Status"
             app:layout_constraintStart_toEndOf="@+id/Status"
-            app:layout_constraintTop_toBottomOf="@+id/StatusFree" />
+            app:layout_constraintTop_toTopOf="@+id/Status" />
 
         <ImageView
             android:id="@+id/imageVieInsMaster"
             android:layout_width="30dp"
             android:layout_height="30dp"
 
-            android:layout_marginStart="38dp"
-            android:layout_marginLeft="38dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/StatusFree"
+            app:layout_constraintBottom_toBottomOf="@+id/imagePhone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.757"
-            app:layout_constraintStart_toEndOf="@+id/WorkExperienceYear"
-            app:layout_constraintTop_toBottomOf="@+id/textViewNumber"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintStart_toEndOf="@+id/imagePhone"
+            app:layout_constraintTop_toTopOf="@+id/imagePhone"
             app:srcCompat="@drawable/inslogo" />
 
         <ImageView
             android:id="@+id/imagePhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageVieInsMaster"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewNumber"
             app:layout_constraintStart_toEndOf="@+id/textViewNumber"
             app:layout_constraintTop_toTopOf="@+id/textViewNumber"
-            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_phone_black_24dp"
             tools:ignore="VectorDrawableCompat" />
 
@@ -150,29 +110,26 @@
             android:id="@+id/textViewNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
             android:text="+996(702 858 956)"
             android:textColor="#070707"
             android:textColorHint="#070707"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toStartOf="@+id/imagePhone"
-            app:layout_constraintStart_toEndOf="@+id/MasterContacts"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/imageMaster"
             app:layout_constraintTop_toBottomOf="@+id/NameMaster" />
 
         <TextView
             android:id="@+id/textViewDescriptionMasters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:text="Мы всегда рады видеть новых гостей в нашем салоне красоты! Широкий спектр услуг, отличное качество - по приемлемым ценам. "
             android:textColor="#131212"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageMaster"
             app:layout_constraintTop_toBottomOf="@+id/StatusBusy" />
 
         <TextView

@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.squareup.picasso.Picasso;
 
 
+import kg.salongo.android.Data.MoreService;
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
@@ -83,6 +84,12 @@ public class MoreSalonFragment extends Fragment {
         imageViewPersonal = view.findViewById(R.id.imageViewPersonal);
         imageViewPersonal2 = view.findViewById(R.id.imageViewPersonal2);
         buttonMoreServiceSalon = view.findViewById(R.id.buttonMoreServiceSalon);
+        buttonMoreServiceSalon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new MoreServiceFragment());
+            }
+        });
         imageLike = view.findViewById(R.id.imageSave);
 
 
@@ -95,11 +102,6 @@ public class MoreSalonFragment extends Fragment {
             }
 
         });
-
-
-        imageViewInstaLogo = view.findViewById(R.id.imageViewInstaLogo);
-
-
 //        Picasso.get().load(service.getImage())
 //                .into(avatar);
         Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVtoeVcGG8cwoPtnLv95g6d9jj-vh9izm_vPtuzLZLPHKz77sQ&s").into(imageViewPersonal);

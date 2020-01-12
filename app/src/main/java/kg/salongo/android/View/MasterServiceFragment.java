@@ -61,5 +61,10 @@ public class MasterServiceFragment extends Fragment {
         serviceMasterAdapter.setMasterServiceFragmentList(Arrays.asList(masterServices));
 
     }
+    public void masterServiceClicked(MasterService masterService){
+        OtherServicesMasterFragment otherServicesMasterFragment= new OtherServicesMasterFragment();
+        otherServicesMasterFragment.setMasterService(masterService);
+        mainActivity.showFragment(otherServicesMasterFragment);
+    }
 
 }
