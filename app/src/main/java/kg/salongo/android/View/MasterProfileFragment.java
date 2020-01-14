@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,13 @@ public class MasterProfileFragment extends Fragment {
     private TextView textViewDescription;
     private MasterProfileAdapter adapter;
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MainActivity)
+            mainActivity = (MainActivity) context;
+    }
+
     private MasterProfile masterProfile[]=new MasterProfile[]{
             new MasterProfile("https://images11.cosmopolitan.ru/upload/gallery/f84/f8449fa1ed14e7dc1000ae45007f4dd9.jpg", "Kamilla")
     };
@@ -54,9 +62,16 @@ public class MasterProfileFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerViewKabin);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         adapter= new MasterProfileAdapter(getContext());
+        adapter.setMasterProfiles(this);
         recyclerView.setAdapter(adapter);
         adapter.setMasterProfiles(Arrays.asList(masterProfile  ));
 
+
+    }
+    public void masterProfilClicked(MasterProfile masterProfile){
+        MasterServiceFragment masterServiceFragment=new MasterServiceFragment();
+        masterServiceFragment.setMasterProfil(masterProfile);
+        mainActivity.showFragment(masterServiceFragment);
 
     }
 

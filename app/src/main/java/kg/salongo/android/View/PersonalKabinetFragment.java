@@ -28,7 +28,6 @@ public class PersonalKabinetFragment extends Fragment {
     private Button EditProfile;
     private RecyclerView recyclerView;
     private PersonalKabinetAdapter personalKabinetAdapter;
-
     private PersonalKabinet personalKabinet;
     private MainActivity mainActivity;
 

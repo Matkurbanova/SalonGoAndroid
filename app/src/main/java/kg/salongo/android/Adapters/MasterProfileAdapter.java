@@ -17,11 +17,13 @@ import java.util.List;
 
 import kg.salongo.android.Data.MasterProfile;
 import kg.salongo.android.R;
+import kg.salongo.android.View.MasterProfileFragment;
+import kg.salongo.android.View.MoreMasterFragment;
 
 public class MasterProfileAdapter extends RecyclerView.Adapter<MasterProfileAdapter.MasterProfileVH> {
     private List<MasterProfile> masterProfileList = new ArrayList<>();
     private Context context;
-
+private MasterProfileFragment masterProfileFragment;
     public MasterProfileAdapter(Context context) {
         this.context = context;
     }
@@ -30,6 +32,9 @@ public class MasterProfileAdapter extends RecyclerView.Adapter<MasterProfileAdap
         masterProfileList.clear();
         masterProfileList.addAll(masterProfiles);
         notifyDataSetChanged();
+    }
+    public void setMasterProfiles(MasterProfileFragment masterProfileFragment){
+        this.masterProfileFragment=masterProfileFragment;
     }
 
     @NonNull
@@ -45,6 +50,12 @@ public class MasterProfileAdapter extends RecyclerView.Adapter<MasterProfileAdap
     public void onBindViewHolder(@NonNull MasterProfileVH holder, int position) {
         MasterProfile masterProfile = masterProfileList.get(position);
         holder.textViewNameService.setText(masterProfile.getDescription());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                masterProfileFragment.masterProfilClicked(masterProfile);
+            }
+        });
 
 
         if (!masterProfile.getImage().isEmpty())

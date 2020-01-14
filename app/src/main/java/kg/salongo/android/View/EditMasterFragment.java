@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.squareup.picasso.Picasso;
 
+import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class EditMasterFragment extends Fragment {
@@ -27,6 +29,14 @@ public class EditMasterFragment extends Fragment {
     private EditText editNewPassword;
     private EditText editAboutMaster;
     private Button buttonSave;
+    private MainActivity mainActivity;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MainActivity)
+            mainActivity = (MainActivity) context;
+    }
 
 
     @Nullable
@@ -37,19 +47,24 @@ public class EditMasterFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-       imageMasterLogo =view.findViewById(R.id.imageMasterLogo);
-       EditNameMaster=view.findViewById(R.id.EditNameMaster);
-       EditWorkExperience=view.findViewById(R.id.EditWorkExperience);
-       editPhoneMaster=view.findViewById(R.id.editPhoneMaster);
-       editInstaLinks=view.findViewById(R.id.editInstaLinks);
-       editAboutMaster=view.findViewById(R.id.CheckWorkDay);
-        editOldPassword=view.findViewById(R.id.editOldPassword);
-        editNewPassword=view.findViewById(R.id.editNewPassword);
-        buttonSave=view.findViewById(R.id.buttonSave);
+        imageMasterLogo = view.findViewById(R.id.imageMasterLogo);
+        EditNameMaster = view.findViewById(R.id.EditNameMaster);
+        EditWorkExperience = view.findViewById(R.id.EditWorkExperience);
+        editPhoneMaster = view.findViewById(R.id.editPhoneMaster);
+        editInstaLinks = view.findViewById(R.id.editInstaLinks);
+        editAboutMaster = view.findViewById(R.id.CheckWorkDay);
+        editOldPassword = view.findViewById(R.id.editOldPassword);
+        editNewPassword = view.findViewById(R.id.editNewPassword);
+        buttonSave = view.findViewById(R.id.buttonSave);
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new KabinetMasterFragment());
+
+            }
+        });
 
         Picasso.get().load("https://pngimage.net/wp-content/uploads/2018/05/beauty-logo-design-png-4.png").into(imageMasterLogo);
-
-
 
 
     }

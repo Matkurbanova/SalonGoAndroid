@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         frameLayout = findViewById(R.id.mainFrame);
         bottomNavMain = findViewById(R.id.bottomNavMain);
         bottomNavMain.setOnNavigationItemSelectedListener(this);
-        showFragment(new CategoryFragment() );
+        showFragment(new CategoryFragment());
     }
 
     public void showFragment(Fragment fragment, boolean withBottomNavigation) {
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             bottomNavMain.setVisibility(View.VISIBLE);
         else
             bottomNavMain.setVisibility(View.GONE);
+        currentFragment = fragment;
     }
 
     public void showFragment(Fragment fragment) {

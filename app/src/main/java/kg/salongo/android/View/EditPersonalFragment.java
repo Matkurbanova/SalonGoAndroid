@@ -13,13 +13,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.github.pinball83.maskededittext.MaskedEditText;
+
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class EditPersonalFragment extends Fragment {
     private ImageView imageViewAvatar;
     private EditText editTextName;
-    private EditText editTextPhone;
+    private MaskedEditText editTextPhone;
     private EditText editTextOldPass;
     private EditText editTextnewPass;
     private Button buttonSave;

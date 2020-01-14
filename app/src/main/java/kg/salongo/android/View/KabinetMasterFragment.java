@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import kg.salongo.android.Data.KabinetMaster;
+import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class KabinetMasterFragment extends Fragment {
@@ -30,6 +32,16 @@ public class KabinetMasterFragment extends Fragment {
     private TextView textViewDescription;
     private Button buttonEdit;
     private Button buttonAddService;
+    private Button buttonAddPromo;
+    private MainActivity mainActivity;
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MainActivity)
+            mainActivity = (MainActivity) context;
+    }
 
     @Nullable
     @Override
@@ -48,7 +60,21 @@ public class KabinetMasterFragment extends Fragment {
         SwitchOnnOff=view.findViewById(R.id.switchStatus);
         textViewDescription=view.findViewById(R.id.textViewDescription);
         buttonEdit=view.findViewById(R.id.buttonAdd);
+        buttonEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new EditMasterFragment());
+
+            }
+        });
         buttonAddService=view.findViewById(R.id.buttonEdit);
+        buttonAddService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new EditServiceFragment());
+            }
+        });
+        buttonAddPromo=view.findViewById(R.id.buttonAddPromo);
 
     }
 }

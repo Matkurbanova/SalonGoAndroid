@@ -1,5 +1,6 @@
 package kg.salongo.android.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.squareup.picasso.Picasso;
 
+import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class EditFragment extends Fragment {
@@ -30,7 +32,14 @@ public class EditFragment extends Fragment {
     private EditText editNewPassword;
     private EditText editDescription;
     private Button SaveInf;
+    private MainActivity mainActivity;
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof MainActivity)
+            mainActivity = (MainActivity) context;
+    }
 
     @Nullable
     @Override
@@ -51,6 +60,12 @@ public class EditFragment extends Fragment {
         editNewPassword=view.findViewById(R.id.editNewPassword);
         editDescription=view.findViewById(R.id.editDescription);
         SaveInf=view.findViewById(R.id.SaveInf);
+        SaveInf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showFragment(new KabinetSalonFragment());
+            }
+        });
 
         Picasso.get().load("https://pngimage.net/wp-content/uploads/2018/05/beauty-logo-design-png-4.png").into(imagephoto);
 

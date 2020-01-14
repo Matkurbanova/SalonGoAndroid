@@ -9,8 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
-        android:layout_width="403dp"
-        android:layout_height="218dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
@@ -108,8 +108,9 @@
             android:textColor="@color/black"
             android:textSize="10dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/imageViewPhotoMaster"
-            app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
+            app:layout_constraintTop_toBottomOf="@+id/switchStatus" />
 
         <Switch
             android:id="@+id/switchStatus"
@@ -129,6 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Добавить услуги"
+            android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
 
@@ -137,21 +139,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Редактировать"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.93"
-            app:layout_constraintStart_toEndOf="@+id/switchStatus"
-            app:layout_constraintTop_toBottomOf="@+id/textViewExperience" />
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/buttonAddPromo" />
+
+        <Button
+            android:id="@+id/buttonAddPromo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить акции"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
+            app:layout_constraintStart_toEndOf="@+id/buttonAdd"
+            app:layout_constraintTop_toTopOf="@+id/buttonEdit" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMasterProfile"
-        android:layout_width="409dp"
-        android:layout_height="553dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />

@@ -10,4 +10,6 @@
     <string name="navyezd">На выездь</string>
     <color name="text_like_counter">#2b5a83</color>
     <string name="share_promo">Поделиться акцией</string>
+    <string name="promos">Акции</string>
+    <string name="serivices">Услуги</string>
 </resources>

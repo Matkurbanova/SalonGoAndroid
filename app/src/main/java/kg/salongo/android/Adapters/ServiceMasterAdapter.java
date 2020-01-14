@@ -74,8 +74,7 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
         TextView nameofService;
         TextView experienceYear;
         ImageView imageMaster;
-
-        TextView statusFree;
+        TextView textViewTellMaster;
         TextView statusBusy;
         public MasterServiceHV(@NonNull View itemView) {
             super(itemView);
@@ -83,8 +82,8 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
             nameofService=itemView.findViewById(R.id.NameOfService);
             experienceYear=itemView.findViewById(R.id.WorkExperienceYear);
             imageMaster=itemView.findViewById(R.id.imageMaster);
-            statusFree=itemView.findViewById(R.id.StatusFree);
             statusBusy=itemView.findViewById(R.id.StatusBusy);
+            textViewTellMaster=itemView.findViewById(R.id.textViewTellMaster);
 
 
 

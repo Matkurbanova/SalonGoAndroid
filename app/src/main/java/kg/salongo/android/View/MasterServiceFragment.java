@@ -17,6 +17,7 @@ import java.util.Arrays;
 import kg.salongo.android.Adapters.ServiceMasterAdapter;
 
 
+import kg.salongo.android.Data.MasterProfile;
 import kg.salongo.android.Data.MasterService;
 
 import kg.salongo.android.MainActivity;
@@ -26,12 +27,16 @@ public class MasterServiceFragment extends Fragment {
     private RecyclerView recyclerViewServiceMaster;
     private ServiceMasterAdapter serviceMasterAdapter;
     private MainActivity mainActivity;
+    private MasterProfile masterProfile;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof MainActivity)
             mainActivity = (MainActivity) context;
+    }
+    public void setMasterProfil(MasterProfile masterProfil){
+        this.masterProfile=masterProfil;
     }
 //    private MasterService masterServices[] = new MasterService[]{
 //
