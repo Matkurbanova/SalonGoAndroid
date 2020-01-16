@@ -24,10 +24,12 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.PromoVH> {
 
     private LayoutInflater inflater;
     private Context context;
+    private boolean isUserPromo;
 
-    public PromoAdapter(Context context) {
+    public PromoAdapter(Context context, boolean isUserPromo) {
         inflater = LayoutInflater.from(context);
         this.context = context;
+        this.isUserPromo = isUserPromo;
     }
 
     public void setPromoList(List<Promo> promo) {
@@ -60,8 +62,10 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.PromoVH> {
         holder.textViewOldPrice.setPaintFlags(holder.textViewOldPrice.getPaintFlags() |
                 Paint.STRIKE_THRU_TEXT_FLAG);
         holder.textViewProductInfo.setText(promo.getPromoDescription());
-
-
+        if (isUserPromo)
+            holder.imageViewDelete.setVisibility(View.VISIBLE);
+        else
+            holder.imageViewDelete.setVisibility(View.GONE);
 
         holder.promoShare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +88,7 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.PromoVH> {
         private TextView textViewProductInfo;
         private ImageView promoShare;
         private ImageView Liked;
+        private ImageView imageViewDelete;
 
 
         public PromoVH(@NonNull View itemView) {
@@ -93,6 +98,7 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.PromoVH> {
             textViewOldPrice = itemView.findViewById(R.id.OldPrice);
             textViewNewPrice = itemView.findViewById(R.id.NewPrice);
             textViewProductInfo = itemView.findViewById(R.id.PromoInfo);
+            imageViewDelete = itemView.findViewById(R.id.imageViewDelete);
 
 
             promoShare = itemView.findViewById(R.id.promoShare);

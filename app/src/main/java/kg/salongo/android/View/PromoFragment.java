@@ -26,6 +26,11 @@ public class PromoFragment extends Fragment {
     private PromoAdapter promoAdapter;
     private MainActivity mainActivity;
 
+    private boolean isUserPromos;
+
+    public PromoFragment(boolean isUserPromos) {
+        this.isUserPromos = isUserPromos;
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -42,10 +47,8 @@ public class PromoFragment extends Fragment {
         return view;
 
 
+    }
 
-
-
-}
     Promo promos[] = {
             new Promo(400.0, "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "", "", "Мир Эстетики"),
             new Promo(300.0, "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "", "", "Мир Эстетики"),
@@ -54,12 +57,13 @@ public class PromoFragment extends Fragment {
 
     private void initViews(View view) {
         recyclerViewAksii = view.findViewById(R.id.recyclerViewAksii);
-        promoAdapter = new PromoAdapter(getContext());
+        promoAdapter = new PromoAdapter(getContext(), isUserPromos);
         recyclerViewAksii.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewAksii.setAdapter(promoAdapter);
         promoAdapter.setPromoList(Arrays.asList(promos));
 
 
-}}
+    }
+}
 
 

@@ -15,6 +15,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import kg.salongo.android.Data.KabinetSalon;
 import kg.salongo.android.R;
 
@@ -67,15 +69,14 @@ public class KabinetSalonAdapter extends RecyclerView.Adapter<KabinetSalonAdapte
     }
 
     public class KabinetSalonVH extends RecyclerView.ViewHolder {
+        @BindView(R.id.textViewService)
         TextView textViewNameService;
+        @BindView(R.id.imageViewService)
         ImageView imageViewService;
 
         public KabinetSalonVH(@NonNull View itemView) {
             super(itemView);
-            textViewNameService = itemView.findViewById(R.id.textViewService);
-            imageViewService = itemView.findViewById(R.id.imageViewService);
-
-
+            ButterKnife.bind(this, itemView);
         }
     }
 }

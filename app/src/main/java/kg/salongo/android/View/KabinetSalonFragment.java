@@ -81,8 +81,10 @@ public class KabinetSalonFragment extends Fragment {
         fabAdd.setOnClickListener(v -> {
             if (viewPager.getCurrentItem() == 0) {
                 Toast.makeText(getContext(), "Promo Add", Toast.LENGTH_SHORT).show();
+                mainActivity.showFragment(new AddPromoFragment());
             } else if (viewPager.getCurrentItem() == 1) {
                 Toast.makeText(getContext(), "Service Add", Toast.LENGTH_SHORT).show();
+                mainActivity.showFragment(new AddPromoFragment());
             }
         });
 
@@ -94,7 +96,7 @@ public class KabinetSalonFragment extends Fragment {
     class KabinetSalonaPagerAdapter extends FragmentPagerAdapter {
 
         Fragment[] fragments = new Fragment[]{
-                new PromoFragment(), //   0
+                new PromoFragment(true), //   0
                 new CategoryFragment() // 1
         };
 

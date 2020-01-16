@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import kg.salongo.android.Data.PersonalKabinet;
 import kg.salongo.android.R;
 import kg.salongo.android.View.PersonalKabinetFragment;
@@ -32,6 +34,7 @@ public class PersonalKabinetAdapter extends RecyclerView.Adapter<PersonalKabinet
         personalKabinetList.addAll(personalKabinets);
         notifyDataSetChanged();
     }
+
     @NonNull
     @Override
     public PersonalKabinetAdapter.PersonalKabinetVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -63,11 +66,11 @@ public class PersonalKabinetAdapter extends RecyclerView.Adapter<PersonalKabinet
     }
 
 
-
     @Override
     public int getItemCount() {
         return personalKabinetList.size();
     }
+
     private void sharePersonal(String url) {
         Intent share = new Intent(Intent.ACTION_SEND);
         share.setType("text/plain");
@@ -77,29 +80,28 @@ public class PersonalKabinetAdapter extends RecyclerView.Adapter<PersonalKabinet
 
 
     public class PersonalKabinetVH extends RecyclerView.ViewHolder {
-
+        @BindView(R.id.textViewNameMAster)
         TextView nameSalon;
+        @BindView(R.id.textViewNameSubcat)
         TextView nameSubCategory;
+        @BindView(R.id.textViewAddress)
         TextView address;
+        @BindView(R.id.textViewWorkTime)
         TextView workTime;
+        @BindView(R.id.imageViewServiceLogo)
         ImageView image;
+        @BindView(R.id.button)
         Button price;
+        @BindView(R.id.textClose)
         TextView close;
+        @BindView(R.id.imageViewshere)
         ImageView imageViewShere;
+        @BindView(R.id.imageViewDelete)
         ImageView imageViewDelete;
 
         public PersonalKabinetVH(@NonNull View itemView) {
             super(itemView);
-            nameSalon=itemView.findViewById(R.id.textViewNameMAster);
-            nameSubCategory=itemView.findViewById(R.id.textViewNameSubcat);
-            address=itemView.findViewById(R.id.textViewAddress);
-            workTime=itemView.findViewById(R.id.textViewWorkTime);
-            image=itemView.findViewById(R.id.imageViewServiceLogo);
-            price=itemView.findViewById(R.id.button);
-            close=itemView.findViewById(R.id.textClose);
-            imageViewShere=itemView.findViewById(R.id.imageViewshere);
-            imageViewDelete=itemView.findViewById(R.id.imageViewDelete);
-
+            ButterKnife.bind(this, itemView);
         }
     }
 }

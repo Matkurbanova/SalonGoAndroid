@@ -13,6 +13,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import kg.salongo.android.View.CategoryFragment;
 import kg.salongo.android.View.KabinetMasterFragment;
 import kg.salongo.android.View.MasterProfileFragment;
@@ -25,16 +27,15 @@ import kg.salongo.android.View.TypeFragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private FrameLayout frameLayout;
+    @BindView(R.id.bottomNavMain)
+    BottomNavigationView bottomNavMain;
     private Fragment currentFragment;
-    private BottomNavigationView bottomNavMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        frameLayout = findViewById(R.id.mainFrame);
-        bottomNavMain = findViewById(R.id.bottomNavMain);
+        ButterKnife.bind(this);
         bottomNavMain.setOnNavigationItemSelectedListener(this);
         showFragment(new CategoryFragment());
     }
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 showFragment(new TypeFragment());
                 break;
             case R.id.action_sales:
-                showFragment(new PromoFragment());
+                showFragment(new PromoFragment(false));
                 break;
         }
         menuItem.setChecked(true);

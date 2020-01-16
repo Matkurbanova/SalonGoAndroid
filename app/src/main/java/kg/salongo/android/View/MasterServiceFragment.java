@@ -35,8 +35,9 @@ public class MasterServiceFragment extends Fragment {
         if (context instanceof MainActivity)
             mainActivity = (MainActivity) context;
     }
-    public void setMasterProfil(MasterProfile masterProfil){
-        this.masterProfile=masterProfil;
+
+    public void setMasterProfil(MasterProfile masterProfil) {
+        this.masterProfile = masterProfil;
     }
 //    private MasterService masterServices[] = new MasterService[]{
 //
@@ -50,6 +51,7 @@ public class MasterServiceFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_servicesmaster, container, false);
     }
+
     MasterService masterServices[] = {
             new MasterService("https://i.pinimg.com/736x/1c/ea/a1/1ceaa1221c1af3cfe88f4e2c7a83a421.jpg", "Камилла",
                     "Коррекция бровей", "2 года", "свободна", "занята"),
@@ -57,17 +59,19 @@ public class MasterServiceFragment extends Fragment {
                     "Коррекция бровей", "2 года", "свободна", "занята")
 
     };
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerViewServiceMaster = view.findViewById(R.id.recyclerViewServiceMaster);
         recyclerViewServiceMaster.setLayoutManager(new GridLayoutManager(getContext(), 1));
-        serviceMasterAdapter = new ServiceMasterAdapter(getContext(),this);
+        serviceMasterAdapter = new ServiceMasterAdapter(getContext(), this);
         recyclerViewServiceMaster.setAdapter(serviceMasterAdapter);
         serviceMasterAdapter.setMasterServiceFragmentList(Arrays.asList(masterServices));
 
     }
-    public void masterServiceClicked(MasterService masterService){
-        OtherServicesMasterFragment otherServicesMasterFragment= new OtherServicesMasterFragment();
+
+    public void masterServiceClicked(MasterService masterService) {
+        OtherServicesMasterFragment otherServicesMasterFragment = new OtherServicesMasterFragment();
         otherServicesMasterFragment.setMasterService(masterService);
         mainActivity.showFragment(otherServicesMasterFragment);
     }
