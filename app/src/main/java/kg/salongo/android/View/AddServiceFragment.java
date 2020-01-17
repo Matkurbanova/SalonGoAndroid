@@ -14,38 +14,29 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-
-import com.squareup.picasso.Picasso;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class EditFragment extends Fragment {
-    @BindView(R.id.imageViewAvatarEditFragment)
-    ImageView imagephoto;
-    @BindView(R.id.UpdatePhoto)
-    TextView UpdatePhoto;
-    @BindView(R.id.EditName)
-    EditText EditName;
-    @BindView(R.id.EditAddress)
-    EditText EditAddress;
-    @BindView(R.id.editPhone)
-    EditText editPhone;
-    @BindView(R.id.CheckWorkDay)
-    TextView CheckWorkDay;
-    @BindView(R.id.editInstaLogin)
-    EditText editInstaLogin;
-    @BindView(R.id.editOldPassword)
-    EditText editOldPassword;
-    @BindView(R.id.editNewPassword)
-    EditText editNewPassword;
+public class AddServiceFragment extends Fragment {
+    @BindView(R.id.mainImage)
+    ImageView mainImage;
+    @BindView(R.id.imageGallery)
+    ImageView imageGallery;
+    @BindView(R.id.imagePlus)
+    ImageView imagePlus;
+    @BindView(R.id.EditNameOfService)
+    EditText EditNameOfService;
+    @BindView(R.id.editPrice)
+    EditText editPrice;
     @BindView(R.id.editDescription)
     EditText editDescription;
-    @BindView(R.id.SaveInf)
-    Button SaveInf;
-    private MainActivity mainActivity;
+    @BindView(R.id.PhotoGalleryText)
+    TextView PhotoGalleryText;
+    @BindView(R.id.buttonSaveService)
+    Button buttonSaveService;
+    MainActivity mainActivity;
 
     @Override
     public void onAttach(Context context) {
@@ -57,23 +48,12 @@ public class EditFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.edit_fragment, container, false);
+        return inflater.inflate(R.layout.addservice_fragment, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
-        SaveInf.setOnClickListener(v -> mainActivity.showFragment(new KabinetSalonFragment()));
-        Picasso.get().load("https://pngimage.net/wp-content/uploads/2018/05/beauty-logo-design-png-4.png").into(imagephoto);
-
-
-
-
+        buttonSaveService.setOnClickListener(v -> mainActivity.showFragment(new ServiceFragment()));
     }
 }
-
-
-
-
-
-

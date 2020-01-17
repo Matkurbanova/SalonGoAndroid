@@ -22,7 +22,7 @@ import kg.salongo.android.Data.Category;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class CategoryFragment extends Fragment{
+public class CategoryFragment extends Fragment {
     private RecyclerView recyclerView;
     private CategoryAdapter adapter;
     private MainActivity mainActivity;
@@ -51,7 +51,7 @@ public class CategoryFragment extends Fragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        adapter = new CategoryAdapter(getContext(),this);
+        adapter = new CategoryAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);
         adapter.setCategoryList(Arrays.asList(categories));
     }

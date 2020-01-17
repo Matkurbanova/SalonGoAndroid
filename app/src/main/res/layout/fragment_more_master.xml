@@ -6,17 +6,6 @@
     android:background="@drawable/fon"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageViewmaster"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewnameMaster"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
     <TextView
         android:id="@+id/textViewnameMaster"
         android:layout_width="wrap_content"
@@ -24,8 +13,11 @@
         android:layout_marginTop="16dp"
         android:text="TextView"
         android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewmaster"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="@+id/textViewkantakty"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -103,17 +95,6 @@
         app:layout_constraintStart_toEndOf="@+id/textViewStaus"
         app:layout_constraintTop_toTopOf="@+id/textViewStaus" />
 
-    <TextView
-        android:id="@+id/textViewOffline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Занята"
-        android:textColor="@color/red"
-        android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="@+id/textViewOnline"
-        app:layout_constraintTop_toBottomOf="@+id/textViewOnline" />
-
     <ImageView
         android:id="@+id/imageViewPhone"
         android:layout_width="30dp"
@@ -139,15 +120,12 @@
         android:id="@+id/textViewNameService"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
         android:text="Коррекция бровей"
         android:textColor="@color/black"
-        android:textSize="15dp"
+        android:textSize="13dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/imageViewmaster"
-        app:layout_constraintTop_toBottomOf="@+id/textViewOffline" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="166dp" />
 
     <TextView
         android:id="@+id/textViewPrice"
@@ -155,7 +133,7 @@
         android:layout_height="wrap_content"
         android:text="500 coм"
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="13dp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewNameService"
@@ -226,4 +204,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewMoreImage3" />
+
+    <ImageView
+        android:id="@+id/imageViewmaster"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus" />
 </androidx.constraintlayout.widget.ConstraintLayout>

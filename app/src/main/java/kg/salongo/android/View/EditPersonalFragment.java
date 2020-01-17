@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,17 +16,26 @@ import androidx.fragment.app.Fragment;
 
 import com.github.pinball83.maskededittext.MaskedEditText;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class EditPersonalFragment extends Fragment {
-    private ImageView imageViewAvatar;
-    private EditText editTextName;
-    private MaskedEditText editTextPhone;
-    private EditText editTextOldPass;
-    private EditText editTextnewPass;
-    private Button buttonSave;
-    private EditText editText;
+    @BindView(R.id.imageViewAvatarEditPersonal)
+    ImageView imageViewAvatar;
+    @BindView(R.id.TextViewName)
+    EditText editTextName;
+    @BindView(R.id.editTextPhone)
+    MaskedEditText editTextPhone;
+    @BindView(R.id.editTextPass)
+    EditText editTextOldPass;
+    @BindView(R.id.editTextNewPass)
+    EditText editTextnewPass;
+    @BindView(R.id.buttonSaveEdit)
+    Button buttonSave;
+    @BindView(R.id.textViewEditAvatar)
+    TextView textViewUpdateAvatar;
     MainActivity mainActivity;
 
     @Override
@@ -43,18 +53,7 @@ public class EditPersonalFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        imageViewAvatar=view.findViewById(R.id.imageViewAvatar);
-        editTextName=view.findViewById(R.id.TextViewName);
-        editTextPhone=view.findViewById(R.id.editTextPhone);
-        editTextOldPass=view.findViewById(R.id.editTextPass);
-        editTextnewPass=view.findViewById(R.id.editTextNewPass);
-        buttonSave=view.findViewById(R.id.buttonSaveEdit);
-        buttonSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.showFragment(new ServiceFragment());
-            }
-        });
-     //   editText=view.findViewById(R.id.textViewEditAvatar);
+        ButterKnife.bind(this, view);
+        buttonSave.setOnClickListener(v -> mainActivity.showFragment(new ServiceFragment()));
     }
 }

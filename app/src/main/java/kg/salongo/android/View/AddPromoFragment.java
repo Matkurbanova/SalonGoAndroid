@@ -13,17 +13,26 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class AddPromoFragment extends Fragment {
-    private ImageView imageView;
-    private EditText editTextNameSalon;
-    private EditText editTextNamePromo;
-    private EditText editTextOldPrise;
-    private EditText editTextNewPrise;
-    private EditText editTextDescN;
-    private Button button;
+    @BindView(R.id.imageViewAddPromo)
+    ImageView imageView;
+    @BindView(R.id.editTextNamePSalonAddPromo)
+    EditText editTextNameSalon;
+    @BindView(R.id.editTextNamePromoAddPromo)
+    EditText editTextNamePromo;
+    @BindView(R.id.editTextOldPriseAddPromo)
+    EditText editTextOldPrise;
+    @BindView(R.id.editTextNewPriseAddPromo)
+     EditText editTextNewPrise;
+    @BindView(R.id.editTextDescNAddPromo)
+    EditText editTextDescN;
+    @BindView(R.id.buttonOkAddPromo)
+    Button button;
     private MainActivity mainActivity;
 
     @Override
@@ -32,28 +41,16 @@ public class AddPromoFragment extends Fragment {
         if (context instanceof MainActivity)
             mainActivity = (MainActivity) context;
     }
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_add_promo, container, false);
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        imageView = view.findViewById(R.id.imageViewAddPromo);
-        editTextNameSalon = view.findViewById(R.id.editTextNamePSalonAddPromo);
-        editTextNamePromo = view.findViewById(R.id.editTextNamePromoAddPromo);
-        editTextOldPrise = view.findViewById(R.id.editTextOldPriseAddPromo);
-        editTextNewPrise = view.findViewById(R.id.editTextNewPriseAddPromo);
-        editTextDescN = view.findViewById(R.id.editTextDescNAddPromo);
-        button = view.findViewById(R.id.buttonOkAddPromo);
-         button.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 mainActivity.showFragment(new KabinetSalonFragment());
-             }
-         });
+        ButterKnife.bind(this, view);
+        button.setOnClickListener(v -> mainActivity.showFragment(new KabinetSalonFragment()));
     }
 }

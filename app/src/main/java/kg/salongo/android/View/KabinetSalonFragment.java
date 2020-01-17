@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,15 +14,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.Arrays;
-
+import butterknife.BindView;
 import kg.salongo.android.Adapters.KabinetSalonAdapter;
 import kg.salongo.android.Data.KabinetSalon;
 import kg.salongo.android.MainActivity;
@@ -32,14 +27,20 @@ import kg.salongo.android.R;
 
 public class KabinetSalonFragment extends Fragment {
     private KabinetSalonAdapter adapter;
-    private ImageView imageViewLogoSal;
-    private TextView textViewNameSalon;
-    private TextView textViewDescription;
-    private TextView textViewKontakty;
-    private TextView textViewAddress;
-    private TextView textViewNomer;
-    private TextView textViewTimeWork;
-    private ImageView imageViewIconPhone;
+    @BindView(R.id.imageViewKabinetLogo)
+    ImageView imageViewLogoSal;
+    @BindView(R.id.textViewNameMAster)
+    TextView textViewNameSalon;
+    @BindView(R.id.textViewDiscrN)
+    TextView textViewDescription;
+    @BindView(R.id.textViewadress)
+    TextView textViewAddress;
+    @BindView(R.id.textViewNumber)
+     TextView textViewNomer;
+    @BindView(R.id.textViewWorkTM)
+     TextView textViewTimeWork;
+    @BindView(R.id.imageViewIconPhone)
+     ImageView imageViewIconPhone;
     private MainActivity mainActivity;
     private KabinetSalonaPagerAdapter pagerAdapter;
     private FloatingActionButton fabAdd;
@@ -67,17 +68,9 @@ public class KabinetSalonFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        imageViewLogoSal = view.findViewById(R.id.imageViewKabinetLogo);
-        textViewNameSalon = view.findViewById(R.id.textViewNameMAster);
-        textViewDescription = view.findViewById(R.id.textViewDiscrN);
-        imageViewIconPhone = view.findViewById(R.id.imageViewIconPhone);
-        textViewAddress = view.findViewById(R.id.textViewadress);
-        textViewNomer = view.findViewById(R.id.textViewNumber);
-        textViewTimeWork = view.findViewById(R.id.textViewWorkTM);
-
-        tabLayout = view.findViewById(R.id.tabLayoutKabinetSalona);
-        viewPager = view.findViewById(R.id.viewPagerKabinetSalona);
-        fabAdd = view.findViewById(R.id.fabAddKabinetSalona);
+        tabLayout = view.findViewById(R.id.tabLayoutKabinetMaster);
+        viewPager = view.findViewById(R.id.viewPagerKabinetMaster);
+        fabAdd = view.findViewById(R.id.fabAddKabinetMaster);
         fabAdd.setOnClickListener(v -> {
             if (viewPager.getCurrentItem() == 0) {
                 Toast.makeText(getContext(), "Promo Add", Toast.LENGTH_SHORT).show();

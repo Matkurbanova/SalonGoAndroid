@@ -12,9 +12,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.Arrays;
 
+import butterknife.BindView;
 import kg.salongo.android.Adapters.ServiceAdapter;
 import kg.salongo.android.Data.MoreService;
 import kg.salongo.android.Data.Service;
@@ -28,7 +32,6 @@ public class ServiceFragment extends Fragment{
     private MainActivity mainActivity;
     private SubCategory subCategory;
     private MoreService moreService;
-    private Button buttonNavyezd;
 
     public void setSubCategory(SubCategory subCategory) {
         this.subCategory = subCategory;
@@ -62,14 +65,8 @@ public class ServiceFragment extends Fragment{
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        buttonNavyezd=view.findViewById(R.id.buttonNaVyezd);
-        buttonNavyezd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.showFragment(new MasterServiceFragment());
-            }
-        });
-        recyclerView = view.findViewById(R.id.RecyclerViewService);
+
+        recyclerView=view.findViewById(R.id.recyclerViewServise);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
         adapter = new ServiceAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);

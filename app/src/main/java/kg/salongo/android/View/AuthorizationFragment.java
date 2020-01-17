@@ -14,15 +14,22 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class AuthorizationFragment extends Fragment {
-    private ImageView imageViewLogoSalonGo;
-    private EditText editTextLogin;
-    private EditText editTextPassword;
-    private Button buttonOk;
-    private TextView textViewRegistration;
+    @BindView(R.id.imageViewLogoSalonGo)
+    ImageView imageViewLogoSalonGo;
+    @BindView(R.id.editTextLogin)
+    EditText editTextLogin;
+    @BindView(R.id.editTextPassword)
+    EditText editTextPassword;
+    @BindView(R.id.buttonOK)
+    Button buttonOk;
+    @BindView(R.id.textViewRegistration)
+    TextView textViewRegistration;
     private MainActivity mainActivity;
 
     @Override
@@ -40,23 +47,8 @@ public class AuthorizationFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        imageViewLogoSalonGo = view.findViewById(R.id.imageViewLogoSalonGo);
-        editTextLogin = view.findViewById(R.id.editTextLogin);
-        editTextPassword = view.findViewById(R.id.editTextPassword);
-        buttonOk = view.findViewById(R.id.buttonOK);
-        buttonOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.showFragment(new CategoryFragment());
-            }
-        });
-
-        textViewRegistration = view.findViewById(R.id.textViewRegistration);
-        textViewRegistration.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.showFragment(new RegistrationPersonalFragment(), false);
-            }
-        });
+        ButterKnife.bind(this, view);
+        buttonOk.setOnClickListener(v -> mainActivity.showFragment(new CategoryFragment()));
+        textViewRegistration.setOnClickListener(v -> mainActivity.showFragment(new RegistrationPersonalFragment(), false));
     }
 }

@@ -9,8 +9,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="50dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageView
@@ -34,8 +36,9 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:ems="15"
-            android:text="Название услуг"
+            android:hint="Название услуг"
             android:textColor="@color/black"
+            android:textColorHint="@color/cardview_dark_background"
             app:layout_constraintBottom_toTopOf="@+id/EditTypeOfService"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.505"
@@ -50,8 +53,9 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:ems="15"
-            android:text="Виды"
+            android:hint="Виды"
             android:textColor="@color/black"
+            android:textColorHint="@color/cardview_dark_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.613"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +68,9 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="8dp"
             android:ems="15"
-            android:text="Цена"
+            android:hint="Цена"
             android:textColor="@color/black"
+            android:textColorHint="@color/cardview_dark_background"
             app:layout_constraintBottom_toTopOf="@+id/editDescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
@@ -79,9 +84,10 @@
             android:layout_marginTop="56dp"
             android:layout_marginBottom="8dp"
             android:ems="15"
+            android:hint="Описание"
             android:paddingBottom="52dp"
-            android:text="Описание"
             android:textColor="@color/black"
+            android:textColorHint="@color/cardview_dark_background"
             app:layout_constraintBottom_toTopOf="@+id/PhotoGalleryText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"

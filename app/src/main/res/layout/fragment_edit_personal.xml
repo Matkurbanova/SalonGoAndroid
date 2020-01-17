@@ -2,22 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/fon"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imageViewAvatar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@android:dimen/notification_large_icon_height"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewEditAvatar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textViewEditAvatar"
@@ -29,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAvatarEditPersonal" />
 
     <EditText
         android:id="@+id/TextViewName"
@@ -40,7 +28,7 @@
         android:hint="Имя"
         android:inputType="textPersonName"
         android:textColor="#2B2A2A"
-        android:textColorHint="#222020"
+        android:textColorHint="@color/cardview_dark_background"
         android:textColorLink="#FC272525"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,11 +42,11 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="@color/black"
-        app:mask="+996 (***) *** ***"
-        app:notMaskedSymbol="*"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextViewName" />
+        app:layout_constraintTop_toBottomOf="@+id/TextViewName"
+        app:mask="+996 (***) *** ***"
+        app:notMaskedSymbol="*" />
 
     <EditText
         android:id="@+id/editTextPass"
@@ -92,10 +80,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Сохранить"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNewPass"
+        app:layout_constraintStart_toStartOf="@+id/editTextNewPass"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNewPass" />
+
+    <ImageView
+        android:id="@+id/imageViewAvatarEditPersonal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNewPass"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus" />
 </androidx.constraintlayout.widget.ConstraintLayout>

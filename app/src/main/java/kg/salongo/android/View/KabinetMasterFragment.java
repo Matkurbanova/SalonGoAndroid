@@ -9,11 +9,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,7 +31,7 @@ import kg.salongo.android.R;
 
 public class KabinetMasterFragment extends Fragment {
 
-    @BindView(R.id.imageViewPhotoMaster)
+    @BindView(R.id.imageViewAvatarMasterKabinet)
     ImageView imageViewPhotoMaster;
     @BindView(R.id.imageViewIconInst)
     ImageView imageViewIconIns;
@@ -34,16 +41,22 @@ public class KabinetMasterFragment extends Fragment {
     TextView textViewNameMaster;
     @BindView(R.id.textViewPhoneNumber)
     TextView textViewPhone;
-    private TextView textView;
-    private TextView textViewExperience;
-    private Switch SwitchOnnOff;
-    private TextView textViewDescription;
+    @BindView(R.id.textView10)
+    TextView textView;
+    @BindView(R.id.textViewExperience)
+    TextView textViewExperience;
+    @BindView(R.id.switchStatus)
+    Switch SwitchOnnOff;
+    @BindView(R.id.textViewDescription)
+    TextView textViewDescription;
     @BindView(R.id.buttonAdd)
     Button buttonEdit;
-    private Button buttonAddService;
-    @BindView(R.id.buttonAddPromo)
-    Button buttonAddPromo;
     private MainActivity mainActivity;
+    private KabinetMasterPagerAdapter pagerAdapter;
+    private FloatingActionButton fabAdd;
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
 
     @Override
@@ -62,21 +75,56 @@ public class KabinetMasterFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
-        textView = view.findViewById(R.id.textView10);
-        textViewExperience = view.findViewById(R.id.textViewExperience);
-        SwitchOnnOff = view.findViewById(R.id.switchStatus);
-        textViewDescription = view.findViewById(R.id.textViewDescription);
+        tabLayout = view.findViewById(R.id.tabLayoutKabinetMaster);
+        viewPager = view.findViewById(R.id.viewPagerKabinetMaster);
+        fabAdd = view.findViewById(R.id.fabAddKabinetMaster);
+        fabAdd.setOnClickListener(v -> {
+            if (viewPager.getCurrentItem() == 0) {
+                Toast.makeText(getContext(), "Promo Add", Toast.LENGTH_SHORT).show();
+                mainActivity.showFragment(new AddPromoFragment());
+            } else if (viewPager.getCurrentItem() == 1) {
+                Toast.makeText(getContext(), "Service Add", Toast.LENGTH_SHORT).show();
+                mainActivity.showFragment(new AddPromoFragment());
+            }
+        });
+
+        pagerAdapter = new KabinetMasterPagerAdapter(getChildFragmentManager());
+        viewPager.setAdapter(pagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
-    @OnClick({R.id.buttonEdit, R.id.buttonAddPromo})
-    void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.buttonEdit:
-                mainActivity.showFragment(new EditServiceFragment());
-                break;
-            case R.id.buttonAddPromo:
-                mainActivity.showFragment(new AddPromoFragment());
-                break;
+    class KabinetMasterPagerAdapter extends FragmentPagerAdapter {
+        Fragment[] fragments = new Fragment[]{
+                new PromoFragment(true), //   0
+                new CategoryFragment() // 1
+        };
+
+        String[] titles = new String[]{
+                getString(R.string.promos),
+                getString(R.string.serivices),
+        };
+
+
+        public KabinetMasterPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fragments[position];
+        }
+
+        @Override
+        public int getCount() {
+            return fragments.length;
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles[position];
         }
     }
+
+
 }

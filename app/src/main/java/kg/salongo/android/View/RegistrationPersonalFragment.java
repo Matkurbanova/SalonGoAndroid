@@ -16,12 +16,15 @@ import androidx.fragment.app.Fragment;
 
 import com.github.pinball83.maskededittext.MaskedEditText;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class RegistrationPersonalFragment extends Fragment {
 
-    private ImageView imageViewLogo;
+    @BindView(R.id.imageViewLogoSalonGo)
+    ImageView imageViewLogo;
     private EditText editTextLogin;
     private EditText editTextName;
     private EditText editTextPassword;
@@ -51,7 +54,7 @@ public class RegistrationPersonalFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        imageViewLogo=view.findViewById(R.id.imageViewLogoSalonGo);
+        ButterKnife.bind(this, view);
         editTextName=view.findViewById(R.id.editTextNameRPF);
         editTextLogin=view.findViewById(R.id.editTextLoginRPF);
         editTextTell=view.findViewById(R.id.editTextTelRPF);

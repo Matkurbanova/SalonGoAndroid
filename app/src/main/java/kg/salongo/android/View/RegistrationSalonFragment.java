@@ -52,7 +52,7 @@ public class RegistrationSalonFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         imageViewLogo=view.findViewById(R.id.imageViewLogoSalonGo);
-        imageViewAvatar=view.findViewById(R.id.imageViewPrAvatar);
+        imageViewAvatar=view.findViewById(R.id.imageView3);
         editTextTitle=view.findViewById(R.id.editTextTitel);
         editTextlogin=view.findViewById(R.id.editTextLoginRegSalon);
         editTextAddress=view.findViewById(R.id.editTextaddres);

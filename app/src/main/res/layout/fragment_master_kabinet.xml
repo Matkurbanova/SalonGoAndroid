@@ -21,17 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageViewPhotoMaster"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher_round" />
-
         <TextView
             android:id="@+id/textViewNameMAster"
             android:layout_width="wrap_content"
@@ -39,20 +28,23 @@
             android:layout_marginTop="8dp"
             android:text="Kamilla"
             android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewPhotoMaster"
+            app:layout_constraintHorizontal_bias="0.37"
+            app:layout_constraintStart_toStartOf="@+id/textViewPhoneNumber"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewPhoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:text="+996(702) 899 789"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@+id/imageViewPhotoMaster"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAvatarMasterKabinet"
             app:layout_constraintTop_toBottomOf="@+id/textViewNameMAster" />
 
         <ImageView
@@ -71,9 +63,9 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="Опыт работа:"
             android:textColor="@color/black"
+            android:textSize="10dp"
             app:layout_constraintStart_toStartOf="@+id/textViewPhoneNumber"
             app:layout_constraintTop_toBottomOf="@+id/textViewPhoneNumber" />
 
@@ -83,6 +75,7 @@
             android:layout_height="wrap_content"
             android:text="2 Года"
             android:textColor="@color/black"
+            android:textSize="10dp"
             app:layout_constraintBottom_toBottomOf="@+id/textView10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.284"
@@ -102,15 +95,15 @@
         <TextView
             android:id="@+id/textViewDescription"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:text="Я - мастер ногтевого сервиса. Работаю с 2015 года. Я постоянно учусь, совершенствую свой уровень и качество работ, слежу за последними тенденциями..."
             android:textColor="@color/black"
-            android:textSize="10dp"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/imageViewPhotoMaster"
-            app:layout_constraintTop_toBottomOf="@+id/switchStatus" />
+            app:layout_constraintStart_toStartOf="@+id/imageViewAvatarMasterKabinet"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewAvatarMasterKabinet" />
 
         <Switch
             android:id="@+id/switchStatus"
@@ -119,53 +112,85 @@
             android:layout_marginTop="8dp"
             android:text="Статус"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:textSize="12dp"
             app:layout_constraintStart_toStartOf="@+id/textView10"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
         <Button
-            android:id="@+id/buttonEdit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Добавить услуги"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
-
-        <Button
             android:id="@+id/buttonAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="101dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="8dp"
             android:text="Редактировать"
             android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/buttonAddPromo" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintStart_toEndOf="@+id/switchStatus"
+            app:layout_constraintTop_toBottomOf="@+id/textViewExperience" />
 
-        <Button
-            android:id="@+id/buttonAddPromo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Добавить акции"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
-            app:layout_constraintStart_toEndOf="@+id/buttonAdd"
-            app:layout_constraintTop_toTopOf="@+id/buttonEdit" />
+        <ImageView
+            android:id="@+id/imageViewAvatarMasterKabinet"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/plus" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMasterProfile"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutKabinetMaster"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monday" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tuesday" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wednesday" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerKabinetMaster"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/tabLayoutKabinetMaster">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddKabinetMaster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

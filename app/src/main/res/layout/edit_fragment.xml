@@ -13,29 +13,16 @@
         tools:layout_editor_absoluteY="0dp">
 
 
-        <ImageView
-            android:id="@+id/imagePhoto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/UpdatePhoto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.471"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher_round" />
-
         <TextView
             android:id="@+id/UpdatePhoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Сменить фото профиля"
-            android:textColor="@color/black"
+            android:textColor="@color/font"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imagePhoto" />
+            app:layout_constraintTop_toBottomOf="@+id/imageViewAvatarEditFragment" />
 
         <EditText
             android:id="@+id/EditName"
@@ -44,7 +31,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:ems="15"
-            android:text="Название"
+            android:hint="Название"
+            android:textColorHint="@color/cardview_dark_background"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/EditAddress"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="15"
-            android:text="Адрес"
+            android:hint="Адрес"
+            android:textColorHint="@color/cardview_dark_background"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
@@ -71,7 +60,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="6dp"
             android:ems="15"
-            android:text="Телефон номер"
+            android:hint="Телефон номер"
+            android:textColorHint="@color/cardview_dark_background"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/CheckWorkDay"
             app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +76,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:ems="15"
-            android:text="Instagram Login"
+            android:textColorHint="@color/cardview_dark_background"
+            android:hint="Instagram Login"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/editOldPassword"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +92,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:ems="15"
-            android:text="Старый пароль"
+            android:hint="Старый пароль"
+            android:textColorHint="@color/cardview_dark_background"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/editNewPassword"
             app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +107,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="15"
-            android:text="Новый пароль"
+            android:hint="Новый пароль"
+            android:textColorHint="@color/cardview_dark_background"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.505"
@@ -236,7 +229,8 @@
             android:layout_marginTop="8dp"
             android:ems="15"
             android:paddingBottom="52dp"
-            android:text="Описание"
+            android:hint="Описание"
+            android:textColorHint="@color/cardview_dark_background"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -252,6 +246,16 @@
             app:layout_constraintHorizontal_bias="0.848"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editDescription" />
+
+        <ImageView
+            android:id="@+id/imageViewAvatarEditFragment"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/plus" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
