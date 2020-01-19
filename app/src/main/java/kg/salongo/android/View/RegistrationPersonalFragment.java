@@ -23,7 +23,7 @@ import kg.salongo.android.R;
 
 public class RegistrationPersonalFragment extends Fragment {
 
-    @BindView(R.id.imageViewLogoSalonGo)
+    @BindView(R.id.imageViewSalonGoLogo)
     ImageView imageViewLogo;
     private EditText editTextLogin;
     private EditText editTextName;

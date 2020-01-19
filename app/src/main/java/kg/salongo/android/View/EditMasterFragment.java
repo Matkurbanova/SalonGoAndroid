@@ -18,12 +18,13 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
 public class EditMasterFragment extends Fragment {
     @BindView(R.id.imageViewAvatarEditMaster)
-    ImageView imageMasterLogo;
+    CircleImageView imageMasterLogo;
     @BindView(R.id.EditNameMaster)
     EditText EditNameMaster;
     @BindView(R.id.EditWorkExperience)
@@ -36,7 +37,6 @@ public class EditMasterFragment extends Fragment {
     EditText editOldPassword;
     @BindView(R.id.editNewPassword)
     EditText editNewPassword;
-    @BindView(R.id.CheckWorkDay)
     EditText editAboutMaster;
     @BindView(R.id.buttonSave)
     Button buttonSave;

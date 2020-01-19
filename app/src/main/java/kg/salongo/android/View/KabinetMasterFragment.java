@@ -88,6 +88,10 @@ public class KabinetMasterFragment extends Fragment {
             }
         });
 
+        buttonEdit.setOnClickListener(v -> {
+            mainActivity.showFragment(new EditMasterFragment());
+        });
+
         pagerAdapter = new KabinetMasterPagerAdapter(getChildFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);

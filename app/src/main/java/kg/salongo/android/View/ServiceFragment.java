@@ -26,7 +26,7 @@ import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class ServiceFragment extends Fragment{
+public class ServiceFragment extends Fragment {
     private RecyclerView recyclerView;
     private ServiceAdapter adapter;
     private MainActivity mainActivity;
@@ -45,8 +45,8 @@ public class ServiceFragment extends Fragment{
             mainActivity = (MainActivity) context;
     }
 
-    public void setMoreService(MoreService moreService){
-        this.moreService=moreService;
+    public void setMoreService(MoreService moreService) {
+        this.moreService = moreService;
     }
 
     private Service Service[] = new Service[]{
@@ -66,11 +66,7 @@ public class ServiceFragment extends Fragment{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        recyclerView=view.findViewById(R.id.recyclerViewServise);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
-        adapter = new ServiceAdapter(getContext(), this);
-        recyclerView.setAdapter(adapter);
-        adapter.setServices(Arrays.asList(Service));
+
     }
 
     public void serviceClicked(Service service) {
