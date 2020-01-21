@@ -34,8 +34,7 @@ public class MasterProfileFragment extends Fragment {
     private ImageView imageViewIconPhone;
     @BindView(R.id.imageViewIconInst)
     ImageView imageViewIconInst;
-    @BindView(R.id.textView10)
-    TextView textViewExperience;
+
     @BindView(R.id.textViewExperience)
     TextView textViewExperiences;
     @BindView(R.id.textViewDescription)

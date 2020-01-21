@@ -69,9 +69,9 @@ public class SubCategoryFragment extends Fragment {
     }
 
     public void subCategoryClicked(SubCategory subCategory) {
-        ServiceFragment serviceFragment = new ServiceFragment();
-        serviceFragment.setSubCategory(subCategory);
-        mainActivity.showFragment(serviceFragment);
+        TypeServiceFragment typeServiceFragment = new TypeServiceFragment();
+        typeServiceFragment.setSubCategory(subCategory);
+        mainActivity.showFragment(typeServiceFragment);
     }
 
 

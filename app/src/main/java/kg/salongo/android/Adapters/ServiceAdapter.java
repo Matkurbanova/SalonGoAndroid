@@ -30,7 +30,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
         this.serviceFragment = serviceFragment;
     }
 
-    public void setServices(List<Service> services) {
+    public void setServiceList(List<Service> services) {
         serviceList.clear();
         serviceList.addAll(services);
         notifyDataSetChanged();

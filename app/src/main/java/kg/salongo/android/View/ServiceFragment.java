@@ -49,7 +49,7 @@ public class ServiceFragment extends Fragment {
         this.moreService = moreService;
     }
 
-    private Service Service[] = new Service[]{
+    private Service services[] = new Service[]{
             new Service("Варвара", "Коррекция бровей", "5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек", "Сегодня c 09:00 до 19:00 ", "Закрыто. Откроется в 09:00", "500",
                     "https://i.pinimg.com/600x315/63/f9/4a/63f94a65f8d2a49fb430fd7a26bbcf3c.jpg"),
             new Service("Варвара", "Коррекция бровей", "5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек", "Сегодня c 09:00 до 19:00 ", "Закрыто. Откроется в 09:00", "500",
@@ -65,6 +65,11 @@ public class ServiceFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        recyclerView = view.findViewById(R.id.recyclerViewService);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
+        adapter = new ServiceAdapter(getContext(), this);
+        recyclerView.setAdapter(adapter);
+        adapter.setServiceList(Arrays.asList(services));
 
 
     }
