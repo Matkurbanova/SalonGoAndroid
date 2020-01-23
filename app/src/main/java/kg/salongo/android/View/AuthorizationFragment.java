@@ -9,15 +9,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.squareup.picasso.Picasso;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+import kg.salongo.android.api.ApiRequests;
+import kg.salongo.android.api.ApiResponse;
+import kg.salongo.android.models.GoUser;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AuthorizationFragment extends Fragment {
     @BindView(R.id.imageViewLogoSalonGo)
@@ -48,7 +58,38 @@ public class AuthorizationFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
-        buttonOk.setOnClickListener(v -> mainActivity.showFragment(new CategoryFragment()));
+//        buttonOk.setOnClickListener(v -> mainActivity.showFragment(new CategoryFragment()));
         textViewRegistration.setOnClickListener(v -> mainActivity.showFragment(new RegistrationPersonalFragment(), false));
+    }
+
+    @OnClick(R.id.buttonOK)
+    public void onOkClick(View v) {
+        String login = editTextLogin.getText().toString();
+        String password = editTextPassword.getText().toString();
+        ApiRequests.login(login, password, new Callback<ApiResponse<GoUser>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<GoUser>> call, Response<ApiResponse<GoUser>> response) {
+                if (response.isSuccessful()) {
+                    ApiResponse<GoUser> res = response.body();
+                    if (res.getStatus() == 0) {
+                        Picasso.get().load(ApiRequests.IMAGES + res.getData().getAvatarimages())
+                                .into(imageViewLogoSalonGo);
+
+                        mainActivity.showFragment(new CategoryFragment());
+                    } else {
+                        Toast.makeText(getContext(), res.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(getContext(), "Failure", Toast.LENGTH_LONG).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse<GoUser>> call, Throwable t) {
+                Toast.makeText(getContext(), "Failure", Toast.LENGTH_LONG).show();
+                t.printStackTrace();
+            }
+        });
     }
 }
