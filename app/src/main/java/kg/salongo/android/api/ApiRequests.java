@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiRequests {
 
-    public static final String BASE_URL = "http://192.168.1.163:8080";
+    public static final String BASE_URL = "http://192.168.0.111:8080";
     public static final String IMAGES = BASE_URL + "/api/image/";
 
     private static Gson gson = new GsonBuilder().create();

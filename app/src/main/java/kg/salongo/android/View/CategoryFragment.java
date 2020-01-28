@@ -1,7 +1,9 @@
 package kg.salongo.android.View;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,18 +16,46 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.Arrays;
+import java.util.List;
 
 import kg.salongo.android.Adapters.CategoryAdapter;
 import kg.salongo.android.Data.Category;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+import kg.salongo.android.api.ApiRequests;
+import kg.salongo.android.api.ApiResponse;
+import kg.salongo.android.api.services.CategoryService;
+import kg.salongo.android.models.GoCategory;
+import kg.salongo.android.models.GoUser;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import static android.content.Intent.getIntent;
+import static android.content.Intent.getIntentOld;
 
 public class CategoryFragment extends Fragment {
     private RecyclerView recyclerView;
     private CategoryAdapter adapter;
     private MainActivity mainActivity;
+    private  int id;
+    Gson gson = new GsonBuilder()
+            .setLenient()
+            .create();
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(ApiRequests.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+
+            .build();
+    CategoryService categoryService=retrofit.create(CategoryService.class);
+
+//    Call<List<GoCategory>> goCategory=getCategoryById("id");
 
     @Override
     public void onAttach(Context context) {
@@ -47,6 +77,10 @@ public class CategoryFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_category, container, false);
     }
 
+
+
+
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerView = view.findViewById(R.id.recyclerView);
@@ -55,6 +89,23 @@ public class CategoryFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         adapter.setCategoryList(Arrays.asList(categories));
     }
+//    void  loadCategory(){
+//        Call<List<Category>>call=id>0? categoryService.getCategoryById(id): categoryService.getCategory();
+//        call.enqueue(new Callback<List<Category>>() {
+//            @Override
+//            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+//                if (response.isSuccessful())
+//                    adapter.setCategoryList(response.body());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Category>> call, Throwable t) {
+//
+//                Log.e("Category","onFailure",t);
+//            }
+//        });
+
+
 
     public void categoryClicked(Category category) {
         SubCategoryFragment subCategoryFragment = new SubCategoryFragment();
