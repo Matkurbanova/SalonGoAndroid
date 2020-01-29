@@ -1,7 +1,6 @@
 package kg.salongo.android.Adapters;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +14,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.jar.Attributes;
 
 import kg.salongo.android.Data.Category;
 import kg.salongo.android.R;
 import kg.salongo.android.View.CategoryFragment;
+import kg.salongo.android.api.ApiRequests;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
     private List<Category> categoryList = new ArrayList<>();
@@ -48,11 +47,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.CategoryViewHolder holder, int position) {
        final Category category = categoryList.get(position);
-        holder.name.setText(category.getName());
+        holder.name.setText(category.getNameCategory());
 
         if (!category.getImage().isEmpty())
             Picasso.get()
-                    .load(category.getImage())
+                    .load(ApiRequests.IMAGES + category.getImage())
                     .into(holder.image);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

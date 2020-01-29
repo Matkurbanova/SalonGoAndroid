@@ -38,6 +38,7 @@ dependencies {
     implementation 'com.synnapps:carouselview:0.1.5'
     implementation 'com.github.pinball83:masked-edittext:1.0.4'
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
 
 

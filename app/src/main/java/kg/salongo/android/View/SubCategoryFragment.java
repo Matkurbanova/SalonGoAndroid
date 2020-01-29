@@ -3,6 +3,7 @@ package kg.salongo.android.View;
 import android.content.Context;
 import android.os.Bundle;
 import android.print.PrinterId;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Arrays;
+import java.util.List;
 
 import kg.salongo.android.Adapters.CategoryAdapter;
 import kg.salongo.android.Adapters.SubCategoryAdapter;
@@ -26,6 +28,11 @@ import kg.salongo.android.Data.Category;
 import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+import kg.salongo.android.api.ApiRequests;
+import kg.salongo.android.api.ApiResponse;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SubCategoryFragment extends Fragment {
     private RecyclerView recyclerView;
@@ -41,15 +48,25 @@ public class SubCategoryFragment extends Fragment {
             mainActivity = (MainActivity) context;
     }
 
-    private SubCategory subCategories[] = new SubCategory[]{
 
-            new SubCategory("Окрашивание бровей с хной"),
-            new SubCategory("Коррекция бровей"),
-            new SubCategory("Окрашивание бровей краской")
-    };
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    private void loadSubCategories(Category category) {
+        ApiRequests.getSubCategories(category.getId(), new Callback<ApiResponse<List<SubCategory>>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<List<SubCategory>>> call, Response<ApiResponse<List<SubCategory>>> response) {
+                if (response.isSuccessful() && response.body().getStatus() == 0)
+                    adapter.setSubCategoryList(response.body().getData());
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse<List<SubCategory>>> call, Throwable t) {
+                Log.e("SubCategory", "onFailure",t);
+            }
+        });
     }
 
 
@@ -65,7 +82,8 @@ public class SubCategoryFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
         adapter = new SubCategoryAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);
-        adapter.setSubCategoryList(Arrays.asList(subCategories));
+        loadSubCategories(category);
+//        adapter.setSubCategoryList(Arrays.asList(subCategories));
     }
 
     public void subCategoryClicked(SubCategory subCategory) {
