@@ -25,8 +25,7 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
     private List<MasterService> masterServiceList = new ArrayList<>();
     private Context context;
     private MasterServiceFragment masterServiceFragment;
-   // private MasterServiceFragment masterServiceFragment;
-    public ServiceMasterAdapter(Context context, MasterServiceFragment masterServiceFragment) {
+     public ServiceMasterAdapter(Context context, MasterServiceFragment masterServiceFragment) {
         this.context = context;
         this.masterServiceFragment = masterServiceFragment;
     }

@@ -3,9 +3,12 @@ package kg.salongo.android.api;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.Collection;
 import java.util.List;
 
 import kg.salongo.android.Data.Category;
+import kg.salongo.android.Data.MasterService;
+import kg.salongo.android.Data.Service;
 import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.api.services.CategoryService;
 import kg.salongo.android.api.services.UserService;
@@ -14,9 +17,9 @@ import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiRequests {
+public class ApiRequests<L extends Collection<E>> {
 
-    public static final String BASE_URL = "http://192.168.0.106:8080";
+    public static final String BASE_URL = "http://192.168.0.102:8080";
     public static final String IMAGES = BASE_URL + "/api/image/";
 
     private static Gson gson = new GsonBuilder().create();
@@ -38,5 +41,13 @@ public class ApiRequests {
     public static void getSubCategories(int id, Callback<ApiResponse<List<SubCategory>>> callback){
         CategoryService categoryService = retrofit.create(CategoryService.class);
         categoryService.getSubCategories(id).enqueue(callback);
+    }
+    public  static  void getMasterServices(int SubCategoryId, Callback<ApiResponse<List<MasterService>>>callback){
+        CategoryService categoryService=retrofit.create(CategoryService.class);
+        categoryService.getMasterServices(SubCategoryId).enqueue(callback);
+    }
+    public static void getSalonService(int SubCategoryId, Callback<ApiResponse<List<Service>>>callback){
+        CategoryService categoryService=retrofit.create(CategoryService.class);
+        categoryService.getSalonServices(SubCategoryId).enqueue(callback);
     }
 }

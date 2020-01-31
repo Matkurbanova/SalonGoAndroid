@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kg.salongo.android.Data.KabinetMaster;
-import kg.salongo.android.Data.MasterProfile;
 import kg.salongo.android.R;
 
 public class KabinetMasterAdapter extends RecyclerView.Adapter<KabinetMasterAdapter.KabinetMasterVH> {

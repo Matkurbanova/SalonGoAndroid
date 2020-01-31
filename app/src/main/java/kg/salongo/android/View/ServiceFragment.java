@@ -2,6 +2,7 @@ package kg.salongo.android.View;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
 import kg.salongo.android.Adapters.ServiceAdapter;
@@ -25,6 +27,11 @@ import kg.salongo.android.Data.Service;
 import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+import kg.salongo.android.api.ApiRequests;
+import kg.salongo.android.api.ApiResponse;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ServiceFragment extends Fragment {
     private RecyclerView recyclerView;
@@ -33,9 +40,34 @@ public class ServiceFragment extends Fragment {
     private SubCategory subCategory;
     private MoreService moreService;
 
+    public ServiceFragment() {
+
+    }
+
+    public ServiceFragment(SubCategory subCategory) {
+        setSubCategory(subCategory);
+    }
+
     public void setSubCategory(SubCategory subCategory) {
         this.subCategory = subCategory;
     }
+
+    public void loadServiceSalon(SubCategory subCategory){
+        ApiRequests.getSalonService(subCategory.getId(), new Callback<ApiResponse<List<Service>>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<List<Service>>> call, Response<ApiResponse<List<Service>>> response) {
+                if (response.isSuccessful() && response.body().getStatus() == 0)
+                    adapter.setServiceList(response.body().getData());
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse<List<Service>>> call, Throwable t) {
+                Log.e("Service", "onFailure",t);
+
+            }
+        });
+    }
+
 
 
     @Override
@@ -49,13 +81,6 @@ public class ServiceFragment extends Fragment {
         this.moreService = moreService;
     }
 
-    private Service services[] = new Service[]{
-            new Service("Варвара", "Коррекция бровей", "5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек", "Сегодня c 09:00 до 19:00 ", "Закрыто. Откроется в 09:00", "500",
-                    "https://i.pinimg.com/600x315/63/f9/4a/63f94a65f8d2a49fb430fd7a26bbcf3c.jpg"),
-            new Service("Варвара", "Коррекция бровей", "5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек", "Сегодня c 09:00 до 19:00 ", "Закрыто. Откроется в 09:00", "500",
-                    "https://i.pinimg.com/600x315/63/f9/4a/63f94a65f8d2a49fb430fd7a26bbcf3c.jpg"),
-
-    };
 
     @Nullable
     @Override
@@ -69,7 +94,8 @@ public class ServiceFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
         adapter = new ServiceAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);
-        adapter.setServiceList(Arrays.asList(services));
+        loadServiceSalon(subCategory);
+//        adapter.setServiceList(Arrays.asList(services));
 
 
     }
@@ -79,4 +105,5 @@ public class ServiceFragment extends Fragment {
         personalFragment.setService(service);
         mainActivity.showFragment(personalFragment);
     }
+
 }

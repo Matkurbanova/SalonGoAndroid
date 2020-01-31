@@ -2,6 +2,7 @@ package kg.salongo.android.View;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,22 +13,36 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Arrays;
+import java.util.List;
 
 import kg.salongo.android.Adapters.ServiceMasterAdapter;
 
 
-import kg.salongo.android.Data.MasterProfile;
+import kg.salongo.android.Data.MasterProfiles;
 import kg.salongo.android.Data.MasterService;
 
+import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+import kg.salongo.android.api.ApiRequests;
+import kg.salongo.android.api.ApiResponse;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MasterServiceFragment extends Fragment {
     private RecyclerView recyclerViewServiceMaster;
     private ServiceMasterAdapter serviceMasterAdapter;
+    private SubCategory subCategory;
     private MainActivity mainActivity;
-    private MasterProfile masterProfile;
+    private MasterProfiles masterProfile;
+
+    public MasterServiceFragment() {
+    }
+
+    public MasterServiceFragment(SubCategory subCategory) {
+        this.subCategory = subCategory;
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -36,14 +51,27 @@ public class MasterServiceFragment extends Fragment {
             mainActivity = (MainActivity) context;
     }
 
-    public void setMasterProfil(MasterProfile masterProfil) {
+    public void setMasterProfil(MasterProfiles masterProfil) {
         this.masterProfile = masterProfil;
     }
-//    private MasterService masterServices[] = new MasterService[]{
-//
-//            new MasterService("https://i.pinimg.com/736x/1c/ea/a1/1ceaa1221c1af3cfe88f4e2c7a83a421.jpg", "Камилла",
-//                    "Коррекция бровей", "2 года", "свободна", "занята")
-//    };
+
+
+    private void loadMasterServices(SubCategory subCategory) {
+        if (subCategory != null)
+            ApiRequests.getMasterServices(subCategory.getId(), new Callback<ApiResponse<List<MasterService>>>() {
+                @Override
+                public void onResponse(Call<ApiResponse<List<MasterService>>> call, Response<ApiResponse<List<MasterService>>> response) {
+                    if (response.isSuccessful() && response.body().getStatus() == 0)
+                        serviceMasterAdapter.setMasterServiceFragmentList(response.body().getData());
+                }
+
+                @Override
+                public void onFailure(Call<ApiResponse<List<MasterService>>> call, Throwable t) {
+                    Log.e("MasterService", "onFailure", t);
+
+                }
+            });
+    }
 
 
     @Nullable
@@ -52,13 +80,6 @@ public class MasterServiceFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_servicesmaster, container, false);
     }
 
-    MasterService masterServices[] = {
-            new MasterService("https://i.pinimg.com/736x/1c/ea/a1/1ceaa1221c1af3cfe88f4e2c7a83a421.jpg", "Камилла",
-                    "Коррекция бровей", "2 года", "свободна", "занята"),
-            new MasterService("https://i.pinimg.com/736x/1c/ea/a1/1ceaa1221c1af3cfe88f4e2c7a83a421.jpg", "Камилла",
-                    "Коррекция бровей", "2 года", "свободна", "занята")
-
-    };
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -66,7 +87,8 @@ public class MasterServiceFragment extends Fragment {
         recyclerViewServiceMaster.setLayoutManager(new GridLayoutManager(getContext(), 1));
         serviceMasterAdapter = new ServiceMasterAdapter(getContext(), this);
         recyclerViewServiceMaster.setAdapter(serviceMasterAdapter);
-        serviceMasterAdapter.setMasterServiceFragmentList(Arrays.asList(masterServices));
+        loadMasterServices(subCategory);
+//        serviceMasterAdapter.setMasterServiceFragmentList(Arrays.asList(masterServices));
 
     }
 

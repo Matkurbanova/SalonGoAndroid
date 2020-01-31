@@ -19,7 +19,7 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import kg.salongo.android.Adapters.MasterProfileAdapter;
-import kg.salongo.android.Data.MasterProfile;
+import kg.salongo.android.Data.MasterProfiles;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
@@ -48,8 +48,8 @@ public class MasterProfileFragment extends Fragment {
             mainActivity = (MainActivity) context;
     }
 
-    private MasterProfile masterProfile[]=new MasterProfile[]{
-            new MasterProfile("https://images11.cosmopolitan.ru/upload/gallery/f84/f8449fa1ed14e7dc1000ae45007f4dd9.jpg", "Kamilla")
+    private MasterProfiles masterProfile[]=new MasterProfiles[]{
+            new MasterProfiles("https://images11.cosmopolitan.ru/upload/gallery/f84/f8449fa1ed14e7dc1000ae45007f4dd9.jpg", "Kamilla")
     };
     @Nullable
     @Override
@@ -69,7 +69,7 @@ public class MasterProfileFragment extends Fragment {
 
 
     }
-    public void masterProfilClicked(MasterProfile masterProfile){
+    public void masterProfilClicked(MasterProfiles masterProfile){
         MasterServiceFragment masterServiceFragment=new MasterServiceFragment();
         masterServiceFragment.setMasterProfil(masterProfile);
         mainActivity.showFragment(masterServiceFragment);

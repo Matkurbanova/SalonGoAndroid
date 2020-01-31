@@ -1,7 +1,8 @@
 package kg.salongo.android.Data;
 
 public class MasterService {
-    private String imageMaster;
+    private int id;
+    private String image;
     private String NameMaster;
     private String nameofService;
 
@@ -12,20 +13,27 @@ public class MasterService {
     public MasterService(
             String imageMaster, String NameMaster, String nameofService, String workExperienceYear,
             String statusFree, String statusBusy) {
-        this.imageMaster = imageMaster;
+        this.image = imageMaster;
         this.NameMaster = NameMaster;
         this.nameofService = nameofService;
         this.experienceYear = experienceYear;
         this.statusFree = statusFree;
         this.statusBusy = statusBusy;
     }
-
-    public String getImageMaster() {
-        return imageMaster;
+    public int getId() {
+        return id;
     }
 
-    public void setImageMaster(String imageMaster) {
-        this.imageMaster = imageMaster;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
 

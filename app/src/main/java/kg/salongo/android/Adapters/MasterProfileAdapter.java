@@ -15,20 +15,19 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-import kg.salongo.android.Data.MasterProfile;
+import kg.salongo.android.Data.MasterProfiles;
 import kg.salongo.android.R;
 import kg.salongo.android.View.MasterProfileFragment;
-import kg.salongo.android.View.MoreMasterFragment;
 
 public class MasterProfileAdapter extends RecyclerView.Adapter<MasterProfileAdapter.MasterProfileVH> {
-    private List<MasterProfile> masterProfileList = new ArrayList<>();
+    private List<MasterProfiles> masterProfileList = new ArrayList<>();
     private Context context;
 private MasterProfileFragment masterProfileFragment;
     public MasterProfileAdapter(Context context) {
         this.context = context;
     }
 
-    public void setMasterProfiles(List<MasterProfile> masterProfiles) {
+    public void setMasterProfiles(List<MasterProfiles> masterProfiles) {
         masterProfileList.clear();
         masterProfileList.addAll(masterProfiles);
         notifyDataSetChanged();
@@ -48,7 +47,7 @@ private MasterProfileFragment masterProfileFragment;
 
     @Override
     public void onBindViewHolder(@NonNull MasterProfileVH holder, int position) {
-        MasterProfile masterProfile = masterProfileList.get(position);
+        MasterProfiles masterProfile = masterProfileList.get(position);
         holder.textViewNameService.setText(masterProfile.getDescription());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

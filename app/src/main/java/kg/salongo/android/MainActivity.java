@@ -21,8 +21,10 @@ import kg.salongo.android.View.MasterProfileFragment;
 import kg.salongo.android.View.MasterServiceFragment;
 import kg.salongo.android.View.MoreMasterFragment;
 import kg.salongo.android.View.MoreSalonFragment;
+import kg.salongo.android.View.PersonalKabinetFragment;
 import kg.salongo.android.View.PromoFragment;
 import kg.salongo.android.View.TypeFragment;
+import kg.salongo.android.utils.PrefHelp;
 
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -66,7 +68,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 showFragment(new CategoryFragment());
                 break;
             case R.id.action_personal:
-                showFragment(new TypeFragment());
+                if (PrefHelp.edit().getBoolean("isLoggedIn")) {
+                    showFragment(new PersonalKabinetFragment());
+                } else {
+                    showFragment(new TypeFragment());
+                }
                 break;
             case R.id.action_sales:
                 showFragment(new PromoFragment(false));

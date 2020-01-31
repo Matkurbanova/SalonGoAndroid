@@ -1,8 +1,6 @@
 package kg.salongo.android.Data;
-
-import androidx.annotation.Nullable;
-
 public class Service {
+    private int id;
     private String image;
     private String nameSalon;
     private String nameSubCategory;
@@ -20,6 +18,14 @@ public class Service {
         this.price=price;
         this.image=image;
         this.close=close;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getClose() {

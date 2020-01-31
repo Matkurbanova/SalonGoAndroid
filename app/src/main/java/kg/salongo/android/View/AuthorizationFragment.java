@@ -1,6 +1,7 @@
 package kg.salongo.android.View;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ import kg.salongo.android.R;
 import kg.salongo.android.api.ApiRequests;
 import kg.salongo.android.api.ApiResponse;
 import kg.salongo.android.models.GoUser;
+import kg.salongo.android.utils.PrefHelp;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -76,6 +78,8 @@ public class AuthorizationFragment extends Fragment {
                                 .into(imageViewLogoSalonGo);
 
                         mainActivity.showFragment(new CategoryFragment());
+                        PrefHelp.edit().putBoolean("isLoggedIn", true);
+                        PrefHelp.edit().putString("token", res.getData().getToken());
                     } else {
                         Toast.makeText(getContext(), res.getMessage(), Toast.LENGTH_LONG).show();
                     }
