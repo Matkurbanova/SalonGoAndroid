@@ -8,6 +8,7 @@ import java.util.List;
 
 import kg.salongo.android.Data.Category;
 import kg.salongo.android.Data.MasterService;
+import kg.salongo.android.Data.Promo;
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.api.services.CategoryService;
@@ -19,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiRequests {
 
-    public static final String BASE_URL = "http://192.168.0.106:8080";
+    public static final String BASE_URL = "http://192.168.0.102:8080";
     public static final String IMAGES = BASE_URL + "/api/image/";
 
     private static Gson gson = new GsonBuilder().create();
@@ -50,5 +51,9 @@ public class ApiRequests {
         CategoryService categoryService=retrofit.create(CategoryService.class);
         categoryService.getSalonServices(SubCategoryId).enqueue(callback);
     }
-//    public static void getPromo(Callback<ApiResponse<List<>>>)
+    public static void getPromo(Callback<ApiResponse<List<Promo>>>callback){
+        CategoryService categoryService=retrofit.create(CategoryService.class);
+        categoryService.getPromo().enqueue(callback);
+
+    }
 }

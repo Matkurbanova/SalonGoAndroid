@@ -1,24 +1,36 @@
 package kg.salongo.android.Data;
 
+import android.os.AsyncTask;
+
+import java.util.List;
+
 public class MasterService {
     private int id;
     private String image;
-    private String NameMaster;
-    private String nameofService;
-    private String experienceYear;
-    private String statusFree;
-    private String statusBusy;
+    private String name;
+    private String description;
+    private String workExperienceYear;
+    private List<Satus> status;
+    private  String phone;
 
     public MasterService(
-            String imageMaster, String NameMaster, String nameofService, String workExperienceYear,
-            String statusFree, String statusBusy) {
+            String imageMaster, String name, String description, String workExperienceYear,
+            List<Satus> status) {
         this.image = imageMaster;
-        this.NameMaster = NameMaster;
-        this.nameofService = nameofService;
-        this.experienceYear = experienceYear;
-        this.statusFree = statusFree;
-        this.statusBusy = statusBusy;
+        this.name = name;
+        this.description = description;
+        this.workExperienceYear = workExperienceYear;
+        this.status = status;
     }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
     public int getId() {
         return id;
     }
@@ -35,45 +47,34 @@ public class MasterService {
         this.image = image;
     }
 
-
-
-    public String getNameofService() {
-        return nameofService;
+    public String getDescription() {
+        return description;
     }
 
-    public void setNameofService(String nameofService) {
-        this.nameofService = nameofService;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getExperienceYear() {
-        return experienceYear;
+        return workExperienceYear;
     }
 
-    public void setExperienceYear(String experienceYear) {
-        this.experienceYear = experienceYear;
+    public void setExperienceYear(String workExperienceYear) {
+        this.workExperienceYear = workExperienceYear;
+    }
+    public String getName() {
+        return name;
     }
 
-    public String getNameMaster() {
-        return NameMaster;
+    public void setName(String name) {
+        name = name;
     }
 
-    public void setNameMaster(String nameMaster) {
-        NameMaster = nameMaster;
+    public List<Satus> getStatus() {
+        return status;
     }
 
-    public String getStatusFree() {
-        return statusFree;
-    }
-
-    public void setStatusFree(String statusFree) {
-        this.statusFree = statusFree;
-    }
-
-    public String getStatusBusy() {
-        return statusBusy;
-    }
-
-    public void setStatusBusy(String statusBusy) {
-        this.statusBusy = statusBusy;
+    public void setStatus(List<Satus> status) {
+        this.status = status;
     }
 }

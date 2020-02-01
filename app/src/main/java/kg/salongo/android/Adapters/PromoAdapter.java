@@ -57,7 +57,6 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.PromoVH> {
     public void onBindViewHolder(@NonNull PromoAdapter.PromoVH holder, final int position) {
         final Promo promo = promoList.get(position);
         holder.textViewName.setText(promo.getTextViewName());
-
         holder.textViewNewPrice.setText("" + promo.getNewPrice());
         holder.textViewOldPrice.setPaintFlags(holder.textViewOldPrice.getPaintFlags() |
                 Paint.STRIKE_THRU_TEXT_FLAG);
@@ -89,21 +88,14 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.PromoVH> {
         private ImageView promoShare;
         private ImageView Liked;
         private ImageView imageViewDelete;
-
-
         public PromoVH(@NonNull View itemView) {
             super(itemView);
-
             textViewName = itemView.findViewById(R.id.textViewName);
             textViewOldPrice = itemView.findViewById(R.id.OldPrice);
             textViewNewPrice = itemView.findViewById(R.id.NewPrice);
             textViewProductInfo = itemView.findViewById(R.id.PromoInfo);
             imageViewDelete = itemView.findViewById(R.id.imageViewDelete);
-
-
             promoShare = itemView.findViewById(R.id.promoShare);
-
-
         }
     }
 

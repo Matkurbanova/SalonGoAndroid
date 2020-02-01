@@ -56,8 +56,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
                     + " дo " + service.getWorkTimes().get(0).getTime_end();
             holder.textViewWorkTime.setText(workTime);
         }
-
-
         if (!service.getImage().isEmpty())
             Picasso.get()
                     .load(ApiRequests.IMAGES + service.getImage())
@@ -83,7 +81,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
         TextView textViewWorkTime;
         ImageView imageViewLogo;
         Button buttonprice;
-
 
         public ServiceHV(@NonNull View itemView) {
             super(itemView);

@@ -14,6 +14,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
 
@@ -26,27 +28,28 @@
         android:id="@+id/textViewNameMaster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:text="Камила"
         android:textColor="@color/black"
         android:textSize="16dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPrice"
         app:layout_constraintStart_toEndOf="@+id/imageMaster"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="66dp"
+        android:layout_height="21dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@color/colorforbutton"
         android:text="500 сом"
+        android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/NameOfService"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toEndOf="@+id/NameOfService"
         app:layout_constraintTop_toTopOf="@+id/NameOfService" />
 
     <TextView
@@ -58,8 +61,7 @@
         android:layout_marginBottom="16dp"
         android:text="Коррекция бровей"
         android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
+        android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/textViewAddress"
         app:layout_constraintStart_toEndOf="@+id/imageMaster"
         app:layout_constraintTop_toBottomOf="@+id/textViewNameMaster"
@@ -82,34 +84,22 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:text="2 года"
-        android:textSize="12dp"
         android:textColor="@color/black"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@+id/WorkExperience"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@+id/WorkExperience"
         app:layout_constraintTop_toTopOf="@+id/WorkExperience" />
-
-    <TextView
-        android:id="@+id/Status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-android:textSize="12dp"
-        android:text="Статус:"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/textViewTellMaster"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTellMaster" />
 
     <TextView
         android:id="@+id/StatusBusy"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="занята"
-        android:textSize="12dp"
         android:textColor="@color/red"
-        app:layout_constraintBottom_toBottomOf="@+id/Status"
-        app:layout_constraintStart_toEndOf="@+id/Status"
-        app:layout_constraintTop_toTopOf="@+id/Status" />
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTellMaster"
+        app:layout_constraintStart_toStartOf="@+id/textViewTellMaster"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTellMaster" />
 
     <TextView
         android:id="@+id/textViewTellMaster"
@@ -125,9 +115,8 @@ android:textSize="12dp"
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:background="@color/color_hinter"
-        app:layout_constraintTop_toBottomOf="@+id/StatusBusy"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
 

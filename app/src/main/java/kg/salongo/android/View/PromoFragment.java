@@ -2,6 +2,7 @@ package kg.salongo.android.View;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +14,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Arrays;
+import java.util.List;
 
 import kg.salongo.android.Adapters.PromoAdapter;
 import kg.salongo.android.Data.Promo;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+import kg.salongo.android.api.ApiRequests;
+import kg.salongo.android.api.ApiResponse;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PromoFragment extends Fragment {
     private RecyclerView recyclerViewAksii;
@@ -46,19 +53,29 @@ public class PromoFragment extends Fragment {
 
 
     }
+    void  loadPromo(){
+        ApiRequests.getPromo(new Callback<ApiResponse<List<Promo>>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<List<Promo>>> call, Response<ApiResponse<List<Promo>>> response) {
+                if (response.isSuccessful() && response.body().getStatus() == 0)
+                    promoAdapter.setPromoList(response.body().getData());
+            }
 
-    Promo promos[] = {
-            new Promo("400сом", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "", "", "Мир Эстетики","600"),
-            new Promo("300сом", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "", "", "Мир Эстетики","500"),
-            new Promo("380сом", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "Центр красоты  Мир Эстетики рад подарить вам новогоднюю скидку 10% на все услуги!", "", "", "Мир Эстетики","500"),
-    };
+            @Override
+            public void onFailure(Call<ApiResponse<List<Promo>>> call, Throwable t) {
+                Log.e("Promo", "onFailure", t);
+
+            }
+        });
+    }
 
     private void initViews(View view) {
         recyclerViewAksii = view.findViewById(R.id.recyclerViewAksii);
         promoAdapter = new PromoAdapter(getContext(), isUserPromos);
         recyclerViewAksii.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewAksii.setAdapter(promoAdapter);
-        promoAdapter.setPromoList(Arrays.asList(promos));
+        loadPromo();
+        //promoAdapter.setPromoList(Arrays.asList(promos));
 
 
     }

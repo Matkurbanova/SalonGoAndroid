@@ -86,6 +86,3 @@ private String oldPrice;
         this.oldPrice = oldPrice;
     }
 }
-
-
-
