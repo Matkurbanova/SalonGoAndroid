@@ -140,6 +140,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="76dp"
             android:text="сохранить"
+            android:background="@color/colorforbutton"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.851"
             app:layout_constraintStart_toStartOf="parent"

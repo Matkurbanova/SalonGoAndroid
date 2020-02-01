@@ -2,7 +2,7 @@ package kg.salongo.android.Data;
 
 public class Promo {
 
-
+private int id;
     private String newPrice;
     private String promoDescription;
     private String productInfo;
@@ -20,6 +20,13 @@ private String oldPrice;
         this.promoImage = PromoImage;
         this.textViewName=textViewName;
         this.oldPrice=oldPrice;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTextViewName() {

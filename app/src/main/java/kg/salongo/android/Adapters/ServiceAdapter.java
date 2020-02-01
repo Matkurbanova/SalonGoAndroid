@@ -19,6 +19,7 @@ import java.util.List;
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.R;
 import kg.salongo.android.View.ServiceFragment;
+import kg.salongo.android.api.ApiRequests;
 
 public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceHV> {
     private List<Service> serviceList = new ArrayList<>();
@@ -47,16 +48,19 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
     @Override
     public void onBindViewHolder(@NonNull ServiceAdapter.ServiceHV holder, int position) {
         final Service service = serviceList.get(position);
-        holder.textViewSalonName.setText(service.getNameSalon());
-        holder.textViewSubCatygoryName.setText(service.getNameSubCategory());
+        holder.textViewSalonName.setText(service.getname());
+        holder.textViewSubCatygoryName.setText(service.getdescription());
         holder.textViewaddress.setText(service.getAddress());
-        holder.textViewWorkTime.setText(service.getWorkTime());
-        holder.textClose.setText(service.getClose());
+        if (service.getWorkTimes() != null && service.getWorkTimes().size() > 0) {
+            String workTime = "Сегодня с " + service.getWorkTimes().get(0).getTime_begin()
+                    + " дo " + service.getWorkTimes().get(0).getTime_end();
+            holder.textViewWorkTime.setText(workTime);
+        }
 
 
         if (!service.getImage().isEmpty())
             Picasso.get()
-                    .load(service.getImage())
+                    .load(ApiRequests.IMAGES + service.getImage())
                     .into(holder.imageViewLogo);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +83,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
         TextView textViewWorkTime;
         ImageView imageViewLogo;
         Button buttonprice;
-        TextView textClose;
+
 
         public ServiceHV(@NonNull View itemView) {
             super(itemView);
@@ -89,7 +93,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
             textViewWorkTime = itemView.findViewById(R.id.textViewWorkTime);
             imageViewLogo = itemView.findViewById(R.id.imageViewServiceLogo);
             buttonprice = itemView.findViewById(R.id.button);
-            textClose = itemView.findViewById(R.id.textClose);
 
         }
     }

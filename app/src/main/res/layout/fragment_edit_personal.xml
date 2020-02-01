@@ -80,6 +80,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Сохранить"
+        android:background="@color/colorforbutton"
+        android:textColor="@color/black"
+        android:padding="6dp"
         app:layout_constraintEnd_toEndOf="@+id/editTextNewPass"
         app:layout_constraintStart_toStartOf="@+id/editTextNewPass"
         app:layout_constraintTop_toBottomOf="@+id/editTextNewPass" />

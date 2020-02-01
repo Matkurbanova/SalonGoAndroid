@@ -25,7 +25,8 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
     private List<MasterService> masterServiceList = new ArrayList<>();
     private Context context;
     private MasterServiceFragment masterServiceFragment;
-     public ServiceMasterAdapter(Context context, MasterServiceFragment masterServiceFragment) {
+
+    public ServiceMasterAdapter(Context context, MasterServiceFragment masterServiceFragment) {
         this.context = context;
         this.masterServiceFragment = masterServiceFragment;
     }
@@ -35,13 +36,14 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
         masterServiceList.addAll(masterServices);
         notifyDataSetChanged();
     }
+
     @NonNull
     @Override
     public ServiceMasterAdapter.MasterServiceHV onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
                 .inflate(R.layout.list_servicemaster, parent, false);
         return new ServiceMasterAdapter.MasterServiceHV(view);
-   }
+    }
 
 
     @Override
@@ -50,15 +52,12 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
         holder.NameMaster.setText(masterService.getNameMaster());
         holder.nameofService.setText(masterService.getNameofService());
         holder.experienceYear.setText(masterService.getExperienceYear());
-         holder.itemView.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 masterServiceFragment.masterServiceClicked( masterService);
-             }
-         });
-
-
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                masterServiceFragment.masterServiceClicked(masterService);
+            }
+        });
 
 
     }
@@ -69,22 +68,21 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
     }
 
     public class MasterServiceHV extends RecyclerView.ViewHolder {
-        TextView NameMaster ;
+        TextView NameMaster;
         TextView nameofService;
         TextView experienceYear;
         ImageView imageMaster;
         TextView textViewTellMaster;
         TextView statusBusy;
+
         public MasterServiceHV(@NonNull View itemView) {
             super(itemView);
-            NameMaster= itemView.findViewById(R.id.textViewNameMaster);
-            nameofService=itemView.findViewById(R.id.NameOfService);
-            experienceYear=itemView.findViewById(R.id.WorkExperienceYear);
-            imageMaster=itemView.findViewById(R.id.imageMaster);
-            statusBusy=itemView.findViewById(R.id.StatusBusy);
-            textViewTellMaster=itemView.findViewById(R.id.textViewTellMaster);
-
-
+            NameMaster = itemView.findViewById(R.id.textViewNameMaster);
+            nameofService = itemView.findViewById(R.id.NameOfService);
+            experienceYear = itemView.findViewById(R.id.WorkExperienceYear);
+            imageMaster = itemView.findViewById(R.id.imageMaster);
+            statusBusy = itemView.findViewById(R.id.StatusBusy);
+            textViewTellMaster = itemView.findViewById(R.id.textViewTellMaster);
 
 
         }

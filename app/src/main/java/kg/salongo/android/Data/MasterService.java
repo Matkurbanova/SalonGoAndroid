@@ -5,7 +5,6 @@ public class MasterService {
     private String image;
     private String NameMaster;
     private String nameofService;
-
     private String experienceYear;
     private String statusFree;
     private String statusBusy;

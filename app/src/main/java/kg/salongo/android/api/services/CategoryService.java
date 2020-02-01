@@ -4,6 +4,7 @@ import java.util.List;
 
 import kg.salongo.android.Data.Category;
 import kg.salongo.android.Data.MasterService;
+import kg.salongo.android.Data.Promo;
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.api.ApiResponse;
@@ -23,4 +24,6 @@ public interface CategoryService {
 
     @GET("/api/servicesalon/{SubCategoryId}")
     Call<ApiResponse<List<Service>>> getSalonServices(@Path("SubCategoryId") int SalonServId);
+    @GET("/api/promo")
+    Call<ApiResponse<List<Promo>>>getPromo();
 }

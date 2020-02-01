@@ -17,9 +17,9 @@ import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiRequests<L extends Collection<E>> {
+public class ApiRequests {
 
-    public static final String BASE_URL = "http://192.168.0.102:8080";
+    public static final String BASE_URL = "http://192.168.0.106:8080";
     public static final String IMAGES = BASE_URL + "/api/image/";
 
     private static Gson gson = new GsonBuilder().create();
@@ -50,4 +50,5 @@ public class ApiRequests<L extends Collection<E>> {
         CategoryService categoryService=retrofit.create(CategoryService.class);
         categoryService.getSalonServices(SubCategoryId).enqueue(callback);
     }
+//    public static void getPromo(Callback<ApiResponse<List<>>>)
 }

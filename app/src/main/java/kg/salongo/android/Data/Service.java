@@ -1,24 +1,18 @@
 package kg.salongo.android.Data;
+
+import java.util.List;
+
 public class Service {
     private int id;
     private String image;
-    private String nameSalon;
-    private String nameSubCategory;
+    private String name;
+    private String description;
     private String address;
-    private String workTime;
+    private List<WorkTime> workTimes;
     private String price;
     private String close;
 
-    public Service(
-            String nameSalon, String nameSubCategory, String address, String workTime, String close,String price, String image) {
-        this.nameSalon=nameSalon;
-        this.nameSubCategory=nameSubCategory;
-        this.address=address;
-        this.workTime=workTime;
-        this.price=price;
-        this.image=image;
-        this.close=close;
-    }
+
 
     public int getId() {
         return id;
@@ -44,20 +38,20 @@ public class Service {
         this.image = image;
     }
 
-    public String getNameSalon() {
-        return nameSalon;
+    public String getname() {
+        return name;
     }
 
-    public void setNameSalon(String nameSalon) {
-        this.nameSalon = nameSalon;
+    public void setname(String nameSalon) {
+        this.name = nameSalon;
     }
 
-    public String getNameSubCategory() {
-        return nameSubCategory;
+    public String getdescription() {
+        return description;
     }
 
-    public void setNameSubCategory(String nameSubCategory) {
-        this.nameSubCategory = nameSubCategory;
+    public void setdescription(String description) {
+        this.description = description;
     }
 
     public String getAddress() {
@@ -68,12 +62,12 @@ public class Service {
         this.address = address;
     }
 
-    public String getWorkTime() {
-        return workTime;
+    public List<WorkTime> getWorkTimes() {
+        return workTimes;
     }
 
-    public void setWorkTime(String workTime) {
-        this.workTime = workTime;
+    public void setWorkTimes(List<WorkTime> workTime) {
+        this.workTimes = workTime;
     }
 
     public String getPrice() {

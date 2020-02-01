@@ -14,12 +14,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewNameSubcat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.03"
@@ -43,27 +42,26 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="60dp"
-        android:layout_height="31dp"
+        android:layout_width="49dp"
+        android:layout_height="22dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="@color/white"
+        android:background="@color/colorforbutton"
         android:text="500 сом"
         android:textColor="@color/black"
         android:textSize="8sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textClose"
         app:layout_constraintTop_toTopOf="@+id/textViewNameSubcat" />
 
     <TextView
         android:id="@+id/textViewNameSubcat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:text="Коррекция бровей"
         android:textColor="@color/black"
         android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toEndOf="@+id/imageViewServiceLogo"
         app:layout_constraintTop_toBottomOf="@+id/textViewNameMAster" />
 
@@ -74,27 +72,16 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="5-й микрорайон, 63B 5м-н,Октябрский район,Бишкек"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textClose"
-        app:layout_constraintTop_toBottomOf="@+id/textClose" />
-
-    <TextView
-        android:id="@+id/textClose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Закрыто. Откроется в 09:00"
         android:textColor="@color/font"
         android:textSize="12sp"
-        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textViewWorkTime"
         app:layout_constraintTop_toBottomOf="@+id/textViewWorkTime" />
 
     <TextView
         android:id="@+id/textViewWorkTime"
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
+        android:layout_height="wrap_content"
         android:text="Сегодня c 09:00 до 19:00 "
         android:textColor="@color/black"
         android:textSize="12sp"
@@ -104,12 +91,11 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="1dp"
         android:background="@color/color_hinter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewServiceLogo" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
