@@ -14,6 +14,7 @@ import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.api.services.CategoryService;
 import kg.salongo.android.api.services.UserService;
 import kg.salongo.android.models.GoUser;
+import kg.salongo.android.models.User;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -55,5 +56,10 @@ public class ApiRequests {
         CategoryService categoryService=retrofit.create(CategoryService.class);
         categoryService.getPromo().enqueue(callback);
 
+    }
+
+    public static void getUser(Callback<ApiResponse<User>>callback){
+        UserService userService=retrofit.create(UserService.class);
+        userService.getUser().enqueue(callback);
     }
 }

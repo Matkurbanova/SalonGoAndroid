@@ -9,6 +9,7 @@ public class GoUser {
     String name;
     String avatarimages;
     String token;
+    int type;
 
     public String getAvatarimages() {
         return avatarimages;
@@ -16,6 +17,14 @@ public class GoUser {
 
     public void setAvatarimages(String avatarimages) {
         this.avatarimages = avatarimages;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public int getType() {
+        return type;
     }
 
     public int getId() {
