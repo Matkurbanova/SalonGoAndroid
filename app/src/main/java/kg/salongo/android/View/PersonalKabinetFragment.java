@@ -17,16 +17,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Arrays;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import kg.salongo.android.Adapters.PersonalKabinetAdapter;
 import kg.salongo.android.Data.PersonalKabinet;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+import kg.salongo.android.utils.PrefHelp;
 
 public class PersonalKabinetFragment extends Fragment {
-    private ImageView userAvatar;
-    private TextView textViewNameUser;
-    private Button EditProfile;
+    @BindView(R.id.userAvatar)
+    ImageView userAvatar;
+    @BindView(R.id.textViewNameUser)
+    TextView textViewNameUser;
+    @BindView(R.id.EditProfile)
+    Button EditProfile;
     private RecyclerView recyclerView;
+    @BindView(R.id.textViewGoOut)
+    TextView textViewGoOut;
     private PersonalKabinetAdapter personalKabinetAdapter;
     private PersonalKabinet personalKabinet;
     private MainActivity mainActivity;
@@ -55,16 +63,13 @@ public class PersonalKabinetFragment extends Fragment {
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        userAvatar=view.findViewById(R.id.userAvatar);
-        textViewNameUser=view.findViewById(R.id.textViewNameUser);
-        EditProfile=view.findViewById(R.id.EditProfile);
-
-        EditProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.showFragment(new EditPersonalFragment());
-            }
+        ButterKnife.bind(this, view);
+        EditProfile.setOnClickListener(v -> mainActivity.showFragment(new EditPersonalFragment()));
+        textViewGoOut.setOnClickListener(v -> {
+            PrefHelp.edit().clear();
+            mainActivity.showFragment(new TypeFragment());
         });
+
         recyclerView = view.findViewById(R.id.RecyclerViewPersonalKabinet);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
         personalKabinetAdapter= new PersonalKabinetAdapter(getContext(),this);

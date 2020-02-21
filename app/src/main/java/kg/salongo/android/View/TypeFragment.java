@@ -22,6 +22,7 @@ public class TypeFragment extends Fragment {
     private Button buttonPersonal;
     private Button buttonSalon;
     private Button  buttonMaster;
+    private TextView textViewSgin;
     private MainActivity mainActivity;
     @Override
     public void onAttach(Context context) {
@@ -42,25 +43,12 @@ public class TypeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         textViewText=view.findViewById(R.id.textViewtext);
         imageViewLogo=view.findViewById(R.id.imageView);
+        textViewSgin=view.findViewById(R.id.textViewSign);
         buttonPersonal=view.findViewById(R.id.buttonPersonal);
-        buttonPersonal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.showFragment(new RegistrationPersonalFragment());
-            }
-        });
+        buttonPersonal.setOnClickListener(v -> mainActivity.showFragment(new RegistrationPersonalFragment()));
         buttonSalon=view.findViewById(R.id.buttonSalon);
-        buttonSalon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.showFragment(new RegistrationSalonFragment());
-            }
-        });
+        buttonSalon.setOnClickListener(v -> mainActivity.showFragment(new RegistrationSalonFragment()));
         buttonMaster=view.findViewById(R.id.buttonMaster);
-        buttonMaster.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.showFragment(new RegistrationMasterFragment());
-            }
-        });
+        buttonMaster.setOnClickListener(v -> mainActivity.showFragment(new RegistrationMasterFragment()));
+        textViewSgin.setOnClickListener(v -> mainActivity.showFragment(new AuthorizationFragment()));
 }}

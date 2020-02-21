@@ -24,6 +24,7 @@ import kg.salongo.android.Adapters.KabinetSalonAdapter;
 import kg.salongo.android.Data.KabinetSalon;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+import kg.salongo.android.utils.PrefHelp;
 
 public class KabinetSalonFragment extends Fragment {
     private KabinetSalonAdapter adapter;

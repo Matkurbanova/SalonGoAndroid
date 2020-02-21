@@ -99,6 +99,7 @@
         android:id="@+id/imageViewPhone"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:autoLink="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewNumber"
         app:layout_constraintTop_toTopOf="@+id/textViewNumber"
@@ -119,13 +120,16 @@
     <TextView
         android:id="@+id/textViewNameService"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:text="Коррекция бровей"
         android:textColor="@color/black"
         android:textSize="13dp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="166dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewmaster" />
 
     <TextView
         android:id="@+id/textViewPrice"
@@ -154,58 +158,34 @@
         app:layout_constraintStart_toStartOf="@+id/textViewNameService"
         app:layout_constraintTop_toBottomOf="@+id/textViewNameService" />
 
-    <ImageView
-        android:id="@+id/imageViewMoreImage1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/imageViewNews"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/promo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDescription"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-    <ImageView
-        android:id="@+id/imageViewMoreImage2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintStart_toEndOf="@+id/imageViewMoreImage1"
-        app:layout_constraintTop_toTopOf="@+id/imageViewMoreImage1"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-    <ImageView
-        android:id="@+id/imageViewMoreImage3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintStart_toEndOf="@+id/imageViewMoreImage2"
-        app:layout_constraintTop_toTopOf="@+id/imageViewMoreImage2"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewMoreImage3"
-        app:layout_constraintTop_toTopOf="@+id/imageViewMoreImage3"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:slideInterval="3000" />
 
     <Button
         android:id="@+id/buttonMoreService"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
         android:padding="6dp"
         android:shadowColor="@color/colorforbutton"
         android:text="Другие услуги мастера"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMoreImage3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewNews" />
 
     <ImageView
         android:id="@+id/imageViewmaster"

@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Arrays;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import kg.salongo.android.Adapters.KabinetSalonAdapter;
 import kg.salongo.android.Adapters.MoreServiceAdapter;
 import kg.salongo.android.Data.KabinetSalon;
@@ -28,15 +30,23 @@ import kg.salongo.android.R;
 public class MoreServiceFragment extends Fragment {
     private RecyclerView recyclerView;
     private MoreServiceAdapter adapter;
-    private ImageView imageViewLogoSal;
-    private TextView textViewNameSalon;
-    private TextView textViewDescription;
-    private ImageView imageViewIconPhone;
-    private TextView textViewAddress;
-    private TextView textViewNomer;
-    private TextView textViewTimeWork;
+    @BindView(R.id.imageViewKabinetLogo)
+    ImageView imageViewLogoSal;
+    @BindView(R.id.textViewNameMAster)
+    TextView textViewNameSalon;
+    @BindView(R.id.textViewDiscrN)
+    TextView textViewDescription;
+    @BindView(R.id.imageView6)
+    ImageView imageViewIconPhone;
+    @BindView(R.id.textViewadress)
+    TextView textViewAddress;
+    @BindView(R.id.textViewNumber)
+    TextView textViewNomer;
+    @BindView(R.id.textViewWorkTM)
+    TextView textViewTimeWork;
     private MainActivity mainActivity;
-
+    @BindView(R.id.textViewProfilSalonSatatus)
+    TextView textViewProfilMasterStatus;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -56,13 +66,7 @@ public class MoreServiceFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        imageViewLogoSal = view.findViewById(R.id.imageViewKabinetLogo);
-        textViewNameSalon = view.findViewById(R.id.textViewNameMAster);
-        textViewDescription = view.findViewById(R.id.textViewDiscrN);
-        textViewAddress = view.findViewById(R.id.textViewadress);
-        textViewNomer = view.findViewById(R.id.textViewNumber);
-        textViewTimeWork = view.findViewById(R.id.textViewWorkTM);
-        imageViewIconPhone = view.findViewById(R.id.imageView6);
+        ButterKnife.bind(this,view);
         recyclerView = view.findViewById(R.id.recyclerViewKabinetSalon);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         adapter = new MoreServiceAdapter(getContext());

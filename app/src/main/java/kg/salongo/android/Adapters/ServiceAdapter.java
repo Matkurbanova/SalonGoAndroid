@@ -61,12 +61,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
                     .load(ApiRequests.IMAGES + service.getImage())
                     .into(holder.imageViewLogo);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                serviceFragment.serviceClicked(service);
-            }
-        });
+        holder.itemView.setOnClickListener(v -> serviceFragment.serviceClicked(service));
     }
 
     @Override

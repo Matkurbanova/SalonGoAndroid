@@ -9,11 +9,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="188dp"
-        android:layout_height="193dp"
-        android:layout_marginTop="@android:dimen/notification_large_icon_height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@android:dimen/thumbnail_height"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
@@ -23,22 +23,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Войти как"
+        android:text="Зарегистрироваться как:"
         android:textColor="@color/black"
         android:textSize="16dp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/buttonPersonal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="197dp"
+        android:layout_height="42dp"
         android:layout_marginTop="8dp"
+        android:background="@color/colorforbutton"
         android:padding="6dp"
         android:text="Пользователь"
-        android:background="@color/colorforbutton"
+
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,12 +46,12 @@
 
     <Button
         android:id="@+id/buttonSalon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="196dp"
+        android:layout_height="38dp"
         android:layout_marginTop="16dp"
+        android:background="@color/colorforbutton"
         android:padding="6dp"
         android:text="Салон красоты"
-        android:background="@color/colorforbutton"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,17 +59,28 @@
 
     <Button
         android:id="@+id/buttonMaster"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="197dp"
+        android:layout_height="46dp"
         android:layout_marginTop="16dp"
-        android:padding="6dp"
         android:background="@color/colorforbutton"
-        android:textColor="@color/black"
+        android:padding="6dp"
         android:text="Мастер"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSalon"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Войти"
+        android:textColor="@color/font"
+        app:layout_constraintEnd_toEndOf="@+id/buttonMaster"
+        app:layout_constraintStart_toStartOf="@+id/buttonMaster"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMaster" />
 </androidx.constraintlayout.widget.ConstraintLayout>

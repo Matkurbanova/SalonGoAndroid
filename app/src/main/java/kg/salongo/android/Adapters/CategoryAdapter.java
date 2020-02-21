@@ -31,7 +31,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     }
         public void setCategoryList (List<Category> categoryes) {
             categoryList.clear();
-
                 categoryList.addAll(categoryes);
             notifyDataSetChanged();
         }
@@ -54,12 +53,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                     .load(ApiRequests.IMAGES + category.getImage())
                     .into(holder.image);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                categoryFragment.categoryClicked(category);
-            }
-        });
+        holder.itemView.setOnClickListener(v -> categoryFragment.categoryClicked(category));
     }
     @Override
     public int getItemCount() {

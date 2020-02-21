@@ -34,7 +34,7 @@
             android:id="@+id/textViewDiscrN"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="Мы всегда рады видеть новых гостей в нашем салоне красоты! Широкий спектр услуг, отличное качество - по приемлемым ценам. "
             android:textColor="#131212"
             android:textSize="12dp"
@@ -45,21 +45,23 @@
 
         <TextView
             android:id="@+id/textViewadress"
-            android:layout_width="286dp"
-            android:layout_height="38dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:text="​5-й микрорайон, 63Б 5 м-н, Октябрьский район, Бишкек"
             android:textColor="#F318188A"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewWorkTM"
-            app:layout_constraintTop_toBottomOf="@+id/textViewWorkTM" />
+            app:layout_constraintStart_toStartOf="@+id/textViewProfilSalonSatatus"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProfilSalonSatatus" />
 
         <TextView
             android:id="@+id/textViewNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:text="+996(702 858 956)"
             android:textColor="#070707"
@@ -70,21 +72,21 @@
 
         <TextView
             android:id="@+id/textViewWorkTM"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:text="Сегодня c 09:00 до 19:00 Закрыто. Откроется в 09:00"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Сегодня c 09:00 до 19:00 "
             android:textColor="#FA0F0F0F"
             android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textViewNumber"
             app:layout_constraintTop_toBottomOf="@+id/textViewNumber" />
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView6"
@@ -92,13 +94,11 @@
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="23dp"
-            android:layout_height="23dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewNumber"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView4"
-            app:layout_constraintHorizontal_bias="0.7"
-            app:layout_constraintStart_toEndOf="@+id/textViewNumber"
-            app:layout_constraintTop_toTopOf="@+id/textViewNumber"
+            app:layout_constraintStart_toEndOf="@+id/textViewNameMAster"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNameMAster"
             app:srcCompat="@drawable/phone" />
 
         <ImageView
@@ -111,6 +111,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/plus" />
+
+        <TextView
+            android:id="@+id/textViewProfilSalonSatatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Статус: Занят"
+            android:textColor="@color/red"
+            app:layout_constraintStart_toStartOf="@+id/textViewWorkTM"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWorkTM" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
