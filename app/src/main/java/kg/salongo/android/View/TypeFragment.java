@@ -45,6 +45,8 @@ public class TypeFragment extends Fragment {
         imageViewLogo=view.findViewById(R.id.imageView);
         textViewSgin=view.findViewById(R.id.textViewSign);
         buttonPersonal=view.findViewById(R.id.buttonPersonal);
+
+
         buttonPersonal.setOnClickListener(v -> mainActivity.showFragment(new RegistrationPersonalFragment()));
         buttonSalon=view.findViewById(R.id.buttonSalon);
         buttonSalon.setOnClickListener(v -> mainActivity.showFragment(new RegistrationSalonFragment()));
