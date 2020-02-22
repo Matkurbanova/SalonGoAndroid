@@ -43,7 +43,7 @@
             android:layout_marginLeft="8dp"
             android:text="+996(702) 899 789"
             android:textColor="@color/black"
-            android:textSize="12dp"
+            android:textSize="13dp"
             app:layout_constraintStart_toEndOf="@+id/imageViewAvatarMasterKabinet"
             app:layout_constraintTop_toBottomOf="@+id/textViewNameMAster" />
 
@@ -63,9 +63,10 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Опыт работа:"
             android:textColor="@color/black"
-            android:textSize="10dp"
+            android:textSize="13dp"
             app:layout_constraintStart_toStartOf="@+id/textViewPhoneNumber"
             app:layout_constraintTop_toBottomOf="@+id/textViewPhoneNumber" />
 
@@ -73,9 +74,10 @@
             android:id="@+id/textViewExperience"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="2 Года"
             android:textColor="@color/black"
-            android:textSize="10dp"
+            android:textSize="13dp"
             app:layout_constraintBottom_toBottomOf="@+id/textView10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.284"
@@ -88,6 +90,7 @@
             android:layout_height="23dp"
             app:layout_constraintBottom_toBottomOf="@+id/textViewPhoneNumber"
             app:layout_constraintEnd_toStartOf="@+id/imageViewIconInst"
+            app:layout_constraintHorizontal_bias="0.76"
             app:layout_constraintStart_toEndOf="@+id/textViewPhoneNumber"
             app:layout_constraintTop_toTopOf="@+id/textViewPhoneNumber"
             app:srcCompat="@drawable/phone" />
@@ -98,6 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
             android:text="Я - мастер ногтевого сервиса. Работаю с 2015 года. Я постоянно учусь, совершенствую свой уровень и качество работ, слежу за последними тенденциями..."
             android:textColor="@color/black"
             android:textSize="12dp"

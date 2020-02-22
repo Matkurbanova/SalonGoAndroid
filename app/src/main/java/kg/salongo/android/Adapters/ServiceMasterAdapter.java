@@ -5,7 +5,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,10 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kg.salongo.android.Data.MasterService;
-import kg.salongo.android.Data.Service;
 import kg.salongo.android.R;
 import kg.salongo.android.View.MasterServiceFragment;
-import kg.salongo.android.View.ServiceFragment;
 import kg.salongo.android.api.ApiRequests;
 
 public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdapter.MasterServiceHV> {

@@ -17,7 +17,11 @@ public interface UserService {
             @Query("login") String login, @Query("password") String password);
 
     @POST("api/register/personal")
-    Call<ApiResponse<User>> getUser();
+    Call<ApiResponse<User>> registerPersonal(
+            @Query("login") String login,
+            @Query("password") String password,
+            @Query("phone") String phone,
+            @Query("name") String name);
 
 
 }

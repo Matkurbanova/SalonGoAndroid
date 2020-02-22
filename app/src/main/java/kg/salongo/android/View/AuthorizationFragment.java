@@ -23,6 +23,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+import kg.salongo.android.Statics;
 import kg.salongo.android.api.ApiRequests;
 import kg.salongo.android.api.ApiResponse;
 import kg.salongo.android.models.GoUser;
@@ -77,7 +78,8 @@ public class AuthorizationFragment extends Fragment {
                         Picasso.get().load(ApiRequests.IMAGES + res.getData().getAvatarimages())
                                 .into(imageViewLogoSalonGo);
 
-                        mainActivity.showFragment(new CategoryFragment());
+                        onLoginSuccess(res.getData());
+
                         PrefHelp.edit().putBoolean("isLoggedIn", true);
                         PrefHelp.edit().putString("token", res.getData().getToken());
                     } else {
@@ -95,5 +97,20 @@ public class AuthorizationFragment extends Fragment {
                 t.printStackTrace();
             }
         });
+    }
+
+    void onLoginSuccess(GoUser user) {
+        switch (user.getType()) {
+            case Statics.Type.PERSONAL:
+                mainActivity.showFragment(new PersonalKabinetFragment());
+                break;
+            case Statics.Type.MASTER:
+                mainActivity.showFragment(new KabinetMasterFragment());
+                break;
+            case Statics.Type.SALON:
+                mainActivity.showFragment(new KabinetSalonFragment());
+
+                break;
+        }
     }
 }

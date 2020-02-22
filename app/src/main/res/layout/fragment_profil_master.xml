@@ -11,6 +11,7 @@
         android:id="@+id/constraintLayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -43,8 +44,8 @@
             android:id="@+id/textViewPhoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:text="+996 (703) 467 678"
             android:textColor="@color/black"
@@ -58,7 +59,7 @@
             android:layout_height="23dp"
             app:layout_constraintBottom_toBottomOf="@+id/textViewPhoneNumber"
             app:layout_constraintEnd_toStartOf="@+id/imageViewIconInst"
-            app:layout_constraintHorizontal_bias="0.73"
+            app:layout_constraintHorizontal_bias="0.79"
             app:layout_constraintStart_toEndOf="@+id/textViewPhoneNumber"
             app:layout_constraintTop_toTopOf="@+id/textViewPhoneNumber"
             app:srcCompat="@drawable/phone" />
@@ -100,11 +101,11 @@
             android:id="@+id/textViewDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:text="Я - мастер ногтевого сервиса. Работаю с 2015 года.
 Я постоянно учусь, совершенствую свой уровень и качество работ, слежу за последними тенденциями..."
             android:textColor="@color/black"
-            android:textSize="10dp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/imageViewPhotoMaster"
             app:layout_constraintTop_toBottomOf="@+id/textViewStatus" />
@@ -123,17 +124,36 @@
             app:layout_constraintTop_toTopOf="@+id/textViewStatus" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewKabin"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutProfileMaster"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monday" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tuesday" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wednesday" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerProfileMaster"
+        android:layout_width="409dp"
+        android:layout_height="519dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayoutProfileMaster" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

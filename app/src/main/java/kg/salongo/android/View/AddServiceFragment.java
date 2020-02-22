@@ -54,6 +54,6 @@ public class AddServiceFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
-        buttonSaveService.setOnClickListener(v -> mainActivity.showFragment(new ServiceFragment()));
+        buttonSaveService.setOnClickListener(v -> mainActivity.showFragment(new ServiceSalonFragment()));
     }
 }

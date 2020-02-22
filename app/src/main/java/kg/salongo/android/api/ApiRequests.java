@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiRequests {
 
-    public static final String BASE_URL = "http://192.168.0.106:8080";
+    public static final String BASE_URL = "http://192.168.0.108:8080";
     public static final String IMAGES = BASE_URL + "/api/image/";
 
     private static Gson gson = new GsonBuilder().create();
@@ -35,31 +35,39 @@ public class ApiRequests {
         userService.login(login, password).enqueue(callback);
     }
 
-    public static void getCategories(Callback<ApiResponse<List<Category>>> callback){
+    public static void getCategories(Callback<ApiResponse<List<Category>>> callback) {
         CategoryService categoryService = retrofit.create(CategoryService.class);
         categoryService.getCategories().enqueue(callback);
     }
 
-    public static void getSubCategories(int id, Callback<ApiResponse<List<SubCategory>>> callback){
+    public static void getSubCategories(int id, Callback<ApiResponse<List<SubCategory>>> callback) {
         CategoryService categoryService = retrofit.create(CategoryService.class);
         categoryService.getSubCategories(id).enqueue(callback);
     }
-    public  static  void getMasterServices(int SubCategoryId, Callback<ApiResponse<List<MasterService>>>callback){
-        CategoryService categoryService=retrofit.create(CategoryService.class);
+
+    public static void getMasterServices(int SubCategoryId, Callback<ApiResponse<List<MasterService>>> callback) {
+        CategoryService categoryService = retrofit.create(CategoryService.class);
         categoryService.getMasterServices(SubCategoryId).enqueue(callback);
     }
-    public static void getSalonService(int SubCategoryId, Callback<ApiResponse<List<Service>>>callback){
-        CategoryService categoryService=retrofit.create(CategoryService.class);
+
+    public static void getSalonService(int SubCategoryId, Callback<ApiResponse<List<Service>>> callback) {
+        CategoryService categoryService = retrofit.create(CategoryService.class);
         categoryService.getSalonServices(SubCategoryId).enqueue(callback);
     }
-    public static void getPromo(Callback<ApiResponse<List<Promo>>>callback){
-        CategoryService categoryService=retrofit.create(CategoryService.class);
+
+    public static void getPromo(Callback<ApiResponse<List<Promo>>> callback) {
+        CategoryService categoryService = retrofit.create(CategoryService.class);
         categoryService.getPromo().enqueue(callback);
 
     }
 
-    public static void getUser(Callback<ApiResponse<User>>callback){
-        UserService userService=retrofit.create(UserService.class);
-        userService.getUser().enqueue(callback);
+    public static void registerPersonal(
+            String login,
+            String password,
+            String phone,
+            String name,
+            Callback<ApiResponse<User>> callback) {
+        UserService userService = retrofit.create(UserService.class);
+        userService.registerPersonal(login, password, phone, name).enqueue(callback);
     }
 }

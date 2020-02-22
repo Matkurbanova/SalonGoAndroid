@@ -99,13 +99,13 @@ public class KabinetMasterFragment extends Fragment {
 
     class KabinetMasterPagerAdapter extends FragmentPagerAdapter {
         Fragment[] fragments = new Fragment[]{
-                new PromoFragment(true), //   0
-                new CategoryFragment() // 1
+                new CategoryFragment(), //   0
+                new PromoFragment(true) // 1
         };
 
         String[] titles = new String[]{
-                getString(R.string.promos),
                 getString(R.string.serivices),
+                getString(R.string.promos),
         };
 
 

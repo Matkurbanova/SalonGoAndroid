@@ -11,7 +11,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +34,7 @@
             android:id="@+id/textViewDiscrN"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Мы всегда рады видеть новых гостей в нашем салоне красоты! Широкий спектр услуг, отличное качество - по приемлемым ценам. "
             android:textColor="#131212"
             android:textSize="12dp"
@@ -48,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:text="​5-й микрорайон, 63Б 5 м-н, Октябрьский район, Бишкек"
             android:textColor="#F318188A"
             android:textSize="12dp"
@@ -76,6 +78,7 @@
             android:id="@+id/textViewWorkTM"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Сегодня c 09:00 до 19:00 Закрыто. Откроется в 09:00"
             android:textColor="#FA0F0F0F"
             android:textSize="12dp"
@@ -112,10 +115,23 @@
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/plus" />
+
+        <Button
+            android:id="@+id/buttonEditKabinetSalon"
+            android:layout_width="75dp"
+            android:layout_height="21dp"
+            android:background="@color/colorforbutton"
+            android:text="Редактировать"
+            android:textColor="@color/black"
+            android:textSize="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewadress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewWorkTM"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

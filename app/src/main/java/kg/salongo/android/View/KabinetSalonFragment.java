@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import kg.salongo.android.Adapters.KabinetSalonAdapter;
 import kg.salongo.android.Data.KabinetSalon;
 import kg.salongo.android.MainActivity;
@@ -28,7 +30,7 @@ import kg.salongo.android.utils.PrefHelp;
 
 public class KabinetSalonFragment extends Fragment {
     private KabinetSalonAdapter adapter;
-    @BindView(R.id.imageViewKabinetLogo)
+    @BindView(R.id.imageView13)
     ImageView imageViewLogoSal;
     @BindView(R.id.textViewNameMAster)
     TextView textViewNameSalon;
@@ -42,6 +44,8 @@ public class KabinetSalonFragment extends Fragment {
      TextView textViewTimeWork;
     @BindView(R.id.imageViewIconPhone)
      ImageView imageViewIconPhone;
+    @BindView(R.id.buttonEditKabinetSalon)
+    Button buttonEdit;
     private MainActivity mainActivity;
     private KabinetSalonaPagerAdapter pagerAdapter;
     private FloatingActionButton fabAdd;
@@ -69,8 +73,10 @@ public class KabinetSalonFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        ButterKnife.bind(this,view);
         tabLayout = view.findViewById(R.id.tabLayoutKabinetMaster);
         viewPager = view.findViewById(R.id.viewPagerKabinetMaster);
+        buttonEdit.setOnClickListener(v -> mainActivity.showFragment(new EditSalonFragment()));
         fabAdd = view.findViewById(R.id.fabAddKabinetMaster);
         fabAdd.setOnClickListener(v -> {
             if (viewPager.getCurrentItem() == 0) {

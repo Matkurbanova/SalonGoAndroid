@@ -33,18 +33,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ServiceFragment extends Fragment {
+public class ServiceSalonFragment extends Fragment {
     private RecyclerView recyclerView;
     private ServiceAdapter adapter;
     private MainActivity mainActivity;
     private SubCategory subCategory;
     private MoreService moreService;
 
-    public ServiceFragment() {
+    public ServiceSalonFragment() {
 
     }
 
-    public ServiceFragment(SubCategory subCategory) {
+    public ServiceSalonFragment(SubCategory subCategory) {
         setSubCategory(subCategory);
     }
 

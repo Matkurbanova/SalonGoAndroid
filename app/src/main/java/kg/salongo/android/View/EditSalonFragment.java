@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class EditFragment extends Fragment {
+public class EditSalonFragment extends Fragment {
     @BindView(R.id.imageViewAvatarEditFragment)
     ImageView imagephoto;
     @BindView(R.id.UpdatePhoto)

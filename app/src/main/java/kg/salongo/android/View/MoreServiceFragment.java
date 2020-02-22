@@ -18,12 +18,8 @@ import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import kg.salongo.android.Adapters.KabinetSalonAdapter;
 import kg.salongo.android.Adapters.MoreServiceAdapter;
-import kg.salongo.android.Data.KabinetSalon;
-import kg.salongo.android.Data.MasterService;
 import kg.salongo.android.Data.MoreService;
-import kg.salongo.android.Data.Service;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
@@ -75,7 +71,7 @@ public class MoreServiceFragment extends Fragment {
         adapter.setPersonalKabinets(Arrays.asList(kabinetSalon));
     }
     public void moreServiceClicked(MoreService moreService){
-        ServiceFragment serviceFragment=new ServiceFragment();
+        ServiceSalonFragment serviceFragment=new ServiceSalonFragment();
         serviceFragment.setMoreService(moreService);
         mainActivity.showFragment(serviceFragment);
     }

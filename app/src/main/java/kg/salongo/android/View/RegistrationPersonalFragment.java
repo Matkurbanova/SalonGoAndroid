@@ -2,7 +2,6 @@ package kg.salongo.android.View;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +17,8 @@ import androidx.fragment.app.Fragment;
 
 import com.github.pinball83.maskededittext.MaskedEditText;
 
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import kg.salongo.android.Data.Category;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 import kg.salongo.android.api.ApiRequests;
@@ -57,7 +53,9 @@ public class RegistrationPersonalFragment extends Fragment {
         ; //set mask to "8 (***) *** **-**" and not masked symbol to "*"
     }
     void loadRegisterPersonal() {
-        ApiRequests.getUser(new Callback<ApiResponse<User>>() {
+        ApiRequests.registerPersonal(
+                "", "","","" ,
+                new Callback<ApiResponse<User>>() {
             @Override
             public void onResponse(Call<ApiResponse<User>> call, Response<ApiResponse<User>> response) {
                 if (response.isSuccessful()) {

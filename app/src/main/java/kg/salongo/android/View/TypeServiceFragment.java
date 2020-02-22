@@ -60,7 +60,7 @@ public class TypeServiceFragment extends Fragment {
 
     class TypeServicePagerAdapter extends FragmentPagerAdapter {
         Fragment[] fragments = new Fragment[]{
-                new ServiceFragment(subCategory),
+                new ServiceSalonFragment(subCategory),
                 new MasterServiceFragment(subCategory)
 
         };

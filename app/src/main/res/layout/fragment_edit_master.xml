@@ -11,6 +11,7 @@
         android:id="@+id/EditNameMaster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ems="15"
         android:hint="Имя"
         android:inputType="textPersonName"
@@ -29,99 +30,94 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="15"
-        android:hint="Опыт работв"
+        android:hint="Опыт работа"
         android:textColor="@color/black"
         android:textColorHint="@color/cardview_dark_background"
-        app:layout_constraintBottom_toTopOf="@+id/editPhoneMaster"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditNameMaster" />
 
     <EditText
         android:id="@+id/editPhoneMaster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:ems="15"
         android:hint="Телефон номер"
         android:textColor="@color/black"
         android:textColorHint="@color/cardview_dark_background"
-        app:layout_constraintBottom_toTopOf="@+id/editInstaLinks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditWorkExperience" />
 
     <EditText
         android:id="@+id/editInstaLinks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:ems="15"
         android:hint="Instagram ссылка"
         android:textColor="@color/black"
         android:textColorHint="@color/cardview_dark_background"
-        app:layout_constraintBottom_toTopOf="@+id/editOldPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPhoneMaster" />
 
 
     <EditText
         android:id="@+id/editOldPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:ems="15"
         android:hint="Старый пароль"
         android:textColor="@color/black"
         android:textColorHint="@color/cardview_dark_background"
-        app:layout_constraintBottom_toTopOf="@+id/editNewPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editInstaLinks" />
 
     <EditText
         android:id="@+id/editNewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:ems="15"
         android:hint="Новый пароль"
         android:textColor="@color/black"
         android:textColorHint="@color/cardview_dark_background"
-        app:layout_constraintBottom_toTopOf="@+id/editAboutMaster"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editOldPassword" />
 
     <EditText
         android:id="@+id/editAboutMaster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:ems="15"
         android:hint="О себе"
         android:paddingBottom="52dp"
         android:textColor="@color/black"
         android:textColorHint="@color/cardview_dark_background"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNewPassword" />
 
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@android:dimen/notification_large_icon_height"
-        android:text="Сохранить"
+        android:layout_marginTop="24dp"
         android:background="@color/colorforbutton"
-        android:textColor="@color/black"
         android:padding="6dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Сохранить"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editAboutMaster" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewAvatarEditMaster"

@@ -18,15 +18,15 @@ import java.util.List;
 
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.R;
-import kg.salongo.android.View.ServiceFragment;
+import kg.salongo.android.View.ServiceSalonFragment;
 import kg.salongo.android.api.ApiRequests;
 
 public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceHV> {
     private List<Service> serviceList = new ArrayList<>();
     private Context context;
-    private ServiceFragment serviceFragment;
+    private ServiceSalonFragment serviceFragment;
 
-    public ServiceAdapter(Context context, ServiceFragment serviceFragment) {
+    public ServiceAdapter(Context context, ServiceSalonFragment serviceFragment) {
         this.context = context;
         this.serviceFragment = serviceFragment;
     }

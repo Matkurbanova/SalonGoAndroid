@@ -54,6 +54,6 @@ public class EditPersonalFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
-        buttonSave.setOnClickListener(v -> mainActivity.showFragment(new ServiceFragment()));
+        buttonSave.setOnClickListener(v -> mainActivity.showFragment(new ServiceSalonFragment()));
     }
 }
