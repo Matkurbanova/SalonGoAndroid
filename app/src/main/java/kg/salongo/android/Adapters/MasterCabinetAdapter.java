@@ -18,11 +18,11 @@ import java.util.List;
 import kg.salongo.android.Data.KabinetMaster;
 import kg.salongo.android.R;
 
-public class KabinetMasterAdapter extends RecyclerView.Adapter<KabinetMasterAdapter.KabinetMasterVH> {
+public class MasterCabinetAdapter extends RecyclerView.Adapter<MasterCabinetAdapter.KabinetMasterVH> {
     private List<KabinetMaster> kabinetMasterList = new ArrayList<>();
     private Context context;
 
-    public KabinetMasterAdapter(Context context) {
+    public MasterCabinetAdapter(Context context) {
         this.context = context;
     }
 

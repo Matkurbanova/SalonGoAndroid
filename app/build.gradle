@@ -22,7 +22,18 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+
+
 }
+
+    dependencies { def room_version = "2.2.4"
+        "androidx.room:room-runtime:$room_version"
+        annotationProcessor "androidx.room:room-compiler:$room_version"
+        // Для Kotlin используйте kapt вместо annotationProcessor // необязательно - Kotlin Поддержка расширений и сопрограмм для   реализации Room "androidx.room:room-ktx:$room_version" // необязательно - поддержка RxJava для   реализации Room "androidx.room:room-rxjava2:$room_version" // необязательно - поддержка Guava для Room, включая Необязательная   реализация и реализация ListenableFuture "androidx.room:room-guava:$room_version"// Тест помощников
+
+        testImplementation "androidx.room:room-testing:$room_version" }
+
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -39,6 +50,13 @@ dependencies {
     implementation 'com.github.pinball83:masked-edittext:1.0.4'
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+
+    implementation 'com.github.esafirm.android-image-picker:imagepicker:2.2.0'
+    // for experimental rx picker
+    implementation 'com.github.esafirm.android-image-picker:rximagepicker:2.2.0'
+    // If you have a problem with Glide, please use the same Glide version or simply open an issue
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+
 
     implementation 'de.hdodenhof:circleimageview:3.0.2'
     implementation 'com.jakewharton:butterknife:10.2.1'

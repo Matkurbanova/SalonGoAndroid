@@ -3,6 +3,7 @@ package kg.salongo.android.api;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.List;
 
@@ -13,8 +14,12 @@ import kg.salongo.android.Data.Service;
 import kg.salongo.android.Data.SubCategory;
 import kg.salongo.android.api.services.CategoryService;
 import kg.salongo.android.api.services.UserService;
+import kg.salongo.android.models.GoAddServise;
 import kg.salongo.android.models.GoUser;
 import kg.salongo.android.models.User;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -46,8 +51,8 @@ public class ApiRequests {
     }
 
     public static void getMasterServices(int SubCategoryId, Callback<ApiResponse<List<MasterService>>> callback) {
-        CategoryService categoryService = retrofit.create(CategoryService.class);
-        categoryService.getMasterServices(SubCategoryId).enqueue(callback);
+        kg.salongo.android.api.services.MasterService masterService = retrofit.create(kg.salongo.android.api.services.MasterService.class);
+        masterService.getMasterServices(SubCategoryId).enqueue(callback);
     }
 
     public static void getSalonService(int SubCategoryId, Callback<ApiResponse<List<Service>>> callback) {
@@ -69,5 +74,34 @@ public class ApiRequests {
             Callback<ApiResponse<User>> callback) {
         UserService userService = retrofit.create(UserService.class);
         userService.registerPersonal(login, password, phone, name).enqueue(callback);
+    }
+
+    public static void registerMaster(
+            String login,
+            String name,
+            String password,
+            String phone,
+            String workExperienceYear,
+            File imag,
+            Callback<ApiResponse<User>> callback) {
+        UserService userService = retrofit.create(UserService.class);
+        RequestBody requestFile =
+                RequestBody.create(MediaType.parse("multipart/form-data"), imag);
+        MultipartBody.Part body =
+                MultipartBody.Part.createFormData("image", imag.getName(), requestFile);
+        userService.registerMaster(login, name, password, phone, workExperienceYear, body).enqueue(callback);
+    }
+
+
+    public static void addService(
+            String token,
+            String Price,
+            String Description,
+            int subCategoryId,
+            String Image,
+            Callback<ApiResponse<GoAddServise>> callback) {
+        CategoryService categoryService = retrofit.create(CategoryService.class);
+        categoryService.addService(token, Price, Description, subCategoryId, Image).enqueue(callback);
+
     }
 }

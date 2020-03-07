@@ -6,22 +6,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.Arrays;
 import java.util.List;
 
-import butterknife.BindView;
-import kg.salongo.android.Adapters.ServiceAdapter;
+import kg.salongo.android.Adapters.SalonServiceaAdapter;
 import kg.salongo.android.Data.MoreService;
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.Data.SubCategory;
@@ -35,7 +29,7 @@ import retrofit2.Response;
 
 public class ServiceSalonFragment extends Fragment {
     private RecyclerView recyclerView;
-    private ServiceAdapter adapter;
+    private SalonServiceaAdapter adapter;
     private MainActivity mainActivity;
     private SubCategory subCategory;
     private MoreService moreService;
@@ -93,7 +87,7 @@ public class ServiceSalonFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerView = view.findViewById(R.id.recyclerViewService);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
-        adapter = new ServiceAdapter(getContext(), this);
+        adapter = new SalonServiceaAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);
         loadServiceSalon(subCategory);
 //        adapter.setServiceList(Arrays.asList(services));

@@ -15,19 +15,17 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-import kg.salongo.android.Data.KabinetSalon;
 import kg.salongo.android.Data.MoreService;
 import kg.salongo.android.R;
-import kg.salongo.android.View.MoreSalonFragment;
-import kg.salongo.android.View.MoreServiceFragment;
+import kg.salongo.android.View.SalonProfileFragment;
 
-public class MoreServiceAdapter extends RecyclerView.Adapter<MoreServiceAdapter.MoreServiceVH> {
+public class SalonProfileAdapter extends RecyclerView.Adapter<SalonProfileAdapter.MoreServiceVH> {
 
     private List<MoreService> moreServiceList = new ArrayList<>();
     private Context context;
-    private MoreServiceFragment moreServiceFragment;
+    private SalonProfileFragment moreServiceFragment;
 
-    public MoreServiceAdapter(Context context) {
+    public SalonProfileAdapter(Context context) {
         this.context = context;
     }
 
@@ -37,7 +35,7 @@ public class MoreServiceAdapter extends RecyclerView.Adapter<MoreServiceAdapter.
         notifyDataSetChanged();
     }
 
-    public void setMoreServiceFragment(MoreServiceFragment moreServiceFragment) {
+    public void setMoreServiceFragment(SalonProfileFragment moreServiceFragment) {
         this.moreServiceFragment = moreServiceFragment;
     }
 

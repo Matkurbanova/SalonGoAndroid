@@ -22,7 +22,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class EditMasterFragment extends Fragment {
+public class MasterEditFragment extends Fragment {
     @BindView(R.id.imageViewAvatarEditMaster)
     CircleImageView imageMasterLogo;
     @BindView(R.id.EditNameMaster)

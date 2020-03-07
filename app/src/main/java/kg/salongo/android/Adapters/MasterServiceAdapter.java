@@ -21,12 +21,12 @@ import kg.salongo.android.R;
 import kg.salongo.android.View.MasterServiceFragment;
 import kg.salongo.android.api.ApiRequests;
 
-public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdapter.MasterServiceHV> {
+public class MasterServiceAdapter extends RecyclerView.Adapter<MasterServiceAdapter.MasterServiceHV> {
     private List<MasterService> masterServiceList = new ArrayList<>();
     private Context context;
     private MasterServiceFragment masterServiceFragment;
 
-    public ServiceMasterAdapter(Context context, MasterServiceFragment masterServiceFragment) {
+    public MasterServiceAdapter(Context context, MasterServiceFragment masterServiceFragment) {
         this.context = context;
         this.masterServiceFragment = masterServiceFragment;
     }
@@ -39,14 +39,14 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
 
     @NonNull
     @Override
-    public ServiceMasterAdapter.MasterServiceHV onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MasterServiceAdapter.MasterServiceHV onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
                 .inflate(R.layout.list_servicemaster, parent, false);
-        return new ServiceMasterAdapter.MasterServiceHV(view);
+        return new MasterServiceAdapter.MasterServiceHV(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ServiceMasterAdapter.MasterServiceHV holder, int position) {
+    public void onBindViewHolder(@NonNull MasterServiceAdapter.MasterServiceHV holder, int position) {
         final MasterService masterService = masterServiceList.get(position);
         holder.NameMaster.setText(masterService.getName());
         holder.nameofService.setText(masterService.getDescription());
@@ -82,7 +82,7 @@ public class ServiceMasterAdapter extends RecyclerView.Adapter<ServiceMasterAdap
             super(itemView);
             NameMaster = itemView.findViewById(R.id.textViewNameMaster);
             nameofService = itemView.findViewById(R.id.NameOfService);
-            experienceYear = itemView.findViewById(R.id.WorkExperienceYear);
+            experienceYear = itemView.findViewById(R.id.workExperienceYear);
             imageMaster = itemView.findViewById(R.id.imageMaster);
             statusBusy = itemView.findViewById(R.id.StatusBusy);
             textViewTellMaster = itemView.findViewById(R.id.textViewTellMaster);

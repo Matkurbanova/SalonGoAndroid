@@ -21,7 +21,7 @@ import kg.salongo.android.Data.MasterService;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class OtherServicesMasterFragment extends Fragment {
+public class MoreServicesMasterFragment extends Fragment {
     private MasterService masterService;
     private ImageView imageMaster;
     private TextView NameMaster;
@@ -68,7 +68,7 @@ public class OtherServicesMasterFragment extends Fragment {
         imageMaster = view.findViewById(R.id.imageMaster);
         NameMaster = view.findViewById(R.id.NameMaster);
         WorkExperience = view.findViewById(R.id.WorkExperience);
-        WorkExperienceYear = view.findViewById(R.id.WorkExperienceYear);
+        WorkExperienceYear = view.findViewById(R.id.workExperienceYear);
         Status = view.findViewById(R.id.Status);
         StatusBusy = view.findViewById(R.id.StatusBusy);
         imagePhone = view.findViewById(R.id.imagePhone);

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +19,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
+import kg.salongo.android.api.ApiRequests;
+import kg.salongo.android.api.ApiResponse;
+import kg.salongo.android.models.GoAddServise;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AddServiceFragment extends Fragment {
     @BindView(R.id.mainImage)
@@ -43,6 +50,29 @@ public class AddServiceFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof MainActivity)
             mainActivity = (MainActivity) context;
+    }
+
+    void loadAddService() {
+        ApiRequests.addService("","","",1,"",
+                new Callback<ApiResponse<GoAddServise>>() {
+
+                    @Override
+                    public void onResponse(Call<ApiResponse<GoAddServise>> call, Response<ApiResponse<GoAddServise>> response) {
+                        if (response.isSuccessful()) {
+                            ApiResponse<GoAddServise> res = response.body();
+                            if (res.getStatus() == 0) {
+                                mainActivity.showFragment(new KabinetSalonFragment());
+                                Toast.makeText(getContext(), "Failure", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ApiResponse<GoAddServise>> call, Throwable t) {
+                        t.printStackTrace();
+
+                    }
+                });
     }
 
     @Nullable

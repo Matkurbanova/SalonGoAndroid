@@ -21,12 +21,12 @@ import kg.salongo.android.R;
 import kg.salongo.android.View.ServiceSalonFragment;
 import kg.salongo.android.api.ApiRequests;
 
-public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceHV> {
+public class SalonServiceaAdapter extends RecyclerView.Adapter<SalonServiceaAdapter.ServiceHV> {
     private List<Service> serviceList = new ArrayList<>();
     private Context context;
     private ServiceSalonFragment serviceFragment;
 
-    public ServiceAdapter(Context context, ServiceSalonFragment serviceFragment) {
+    public SalonServiceaAdapter(Context context, ServiceSalonFragment serviceFragment) {
         this.context = context;
         this.serviceFragment = serviceFragment;
     }
@@ -39,14 +39,14 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
 
     @NonNull
     @Override
-    public ServiceAdapter.ServiceHV onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SalonServiceaAdapter.ServiceHV onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
                 .inflate(R.layout.list_service, parent, false);
         return new ServiceHV(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ServiceAdapter.ServiceHV holder, int position) {
+    public void onBindViewHolder(@NonNull SalonServiceaAdapter.ServiceHV holder, int position) {
         final Service service = serviceList.get(position);
         holder.textViewSalonName.setText(service.getname());
         holder.textViewSubCatygoryName.setText(service.getdescription());

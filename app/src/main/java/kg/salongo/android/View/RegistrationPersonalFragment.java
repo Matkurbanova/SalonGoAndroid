@@ -1,5 +1,7 @@
 package kg.salongo.android.View;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.github.pinball83.maskededittext.MaskedEditText;
+
+import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,6 +44,10 @@ public class RegistrationPersonalFragment extends Fragment {
     private TextView signIn;
     private Button buttonSave;
     private MainActivity mainActivity;
+    AlertDialog dialog;
+
+    public RegistrationPersonalFragment() {
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -50,35 +58,54 @@ public class RegistrationPersonalFragment extends Fragment {
                 .mask("+996 (***) *** ***")
                 .notMaskedSymbol("*")
                 .build();
-        ; //set mask to "8 (***) *** **-**" and not masked symbol to "*"
+        ProgressDialog.Builder dBuilder = new ProgressDialog.Builder(context);
+        dBuilder.setTitle("Loading");
+        dBuilder.setMessage("Registration");
+        dialog = dBuilder.create();
     }
+
     void loadRegisterPersonal() {
+
+        dialog.show();
         ApiRequests.registerPersonal(
-                "", "","","" ,
+                editTextLogin.getText().toString(),
+                editTextPassword.getText().toString(),
+                editTextTell.getText().toString(),
+                editTextName.getText().toString(),
                 new Callback<ApiResponse<User>>() {
-            @Override
-            public void onResponse(Call<ApiResponse<User>> call, Response<ApiResponse<User>> response) {
-                if (response.isSuccessful()) {
-                    ApiResponse<User> res = response.body();
-                    if (res.getStatus() == 0) {
-//                        mainActivity.showFragment(new PersonalKabinetFragment());
-                        Toast.makeText(getContext(), "Failure", Toast.LENGTH_LONG).show();
+                    @Override
+                    public void onResponse(Call<ApiResponse<User>> call, Response<ApiResponse<User>> response) {
+                        dialog.dismiss();
+                        if (response.isSuccessful()) {
+                            ApiResponse<User> res = response.body();
+                            if (res.getStatus() == 0) {
+                                mainActivity.showFragment(new PersonalKabinetFragment());
+                                Toast.makeText(getContext(), "Success", Toast.LENGTH_LONG).show();
 
+                            } else {
+                                System.err.println("SERVER ERROR: " + response.message());
+                            }
+                        } else {
+                            try {
+                                System.err.println("REGISTER MASTER ERROR: " + response.errorBody().string());
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
-                }
-            }
 
-            @Override
-            public void onFailure(Call<ApiResponse<User>> call, Throwable t) {
+                    @Override
+                    public void onFailure(Call<ApiResponse<User>> call, Throwable t) {
+//                        dialog.dismiss();
 //                Toast.makeText(getContext(), "Failure", Toast.LENGTH_LONG).show();
-                t.printStackTrace();
-            }
-        });
+                        t.printStackTrace();
+                    }
+                });
 
     }
 
 
-        @Nullable
+    @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_registration, container, false);
@@ -95,9 +122,8 @@ public class RegistrationPersonalFragment extends Fragment {
         signIn = view.findViewById(R.id.textView2);
         signIn.setOnClickListener(v -> mainActivity.showFragment(new AuthorizationFragment()));
         buttonSave = view.findViewById(R.id.buttonOkRPF);
-        buttonSave.setOnClickListener(v -> mainActivity.showFragment(new PersonalKabinetFragment()));
+        buttonSave.setOnClickListener(v -> loadRegisterPersonal());
         textViewZaregstr.setOnClickListener(v -> mainActivity.showFragment(new RegistrationSalonFragment()));
-        loadRegisterPersonal();
     }
 
 

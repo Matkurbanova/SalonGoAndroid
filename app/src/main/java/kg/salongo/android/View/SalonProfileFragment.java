@@ -18,14 +18,14 @@ import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import kg.salongo.android.Adapters.MoreServiceAdapter;
+import kg.salongo.android.Adapters.SalonProfileAdapter;
 import kg.salongo.android.Data.MoreService;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
-public class MoreServiceFragment extends Fragment {
+public class SalonProfileFragment extends Fragment {
     private RecyclerView recyclerView;
-    private MoreServiceAdapter adapter;
+    private SalonProfileAdapter adapter;
     @BindView(R.id.imageViewKabinetLogo)
     ImageView imageViewLogoSal;
     @BindView(R.id.textViewNameMAster)
@@ -65,7 +65,7 @@ public class MoreServiceFragment extends Fragment {
         ButterKnife.bind(this,view);
         recyclerView = view.findViewById(R.id.recyclerViewKabinetSalon);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        adapter = new MoreServiceAdapter(getContext());
+        adapter = new SalonProfileAdapter(getContext());
         adapter.setMoreServiceFragment(this);
         recyclerView.setAdapter(adapter);
         adapter.setPersonalKabinets(Arrays.asList(kabinetSalon));

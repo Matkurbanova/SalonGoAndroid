@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import kg.salongo.android.Adapters.ServiceMasterAdapter;
+import kg.salongo.android.Adapters.MasterServiceAdapter;
 
 
 import kg.salongo.android.Data.MasterProfiles;
@@ -32,7 +32,7 @@ import retrofit2.Response;
 
 public class MasterServiceFragment extends Fragment {
     private RecyclerView recyclerViewServiceMaster;
-    private ServiceMasterAdapter serviceMasterAdapter;
+    private MasterServiceAdapter serviceMasterAdapter;
     private SubCategory subCategory;
     private MainActivity mainActivity;
     private MasterProfiles masterProfile;
@@ -85,7 +85,7 @@ public class MasterServiceFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerViewServiceMaster = view.findViewById(R.id.recyclerViewServiceMaster);
         recyclerViewServiceMaster.setLayoutManager(new GridLayoutManager(getContext(), 1));
-        serviceMasterAdapter = new ServiceMasterAdapter(getContext(), this);
+        serviceMasterAdapter = new MasterServiceAdapter(getContext(), this);
         recyclerViewServiceMaster.setAdapter(serviceMasterAdapter);
         loadMasterServices(subCategory);
 //        serviceMasterAdapter.setMasterServiceFragmentList(Arrays.asList(masterServices));
@@ -93,7 +93,7 @@ public class MasterServiceFragment extends Fragment {
     }
 
     public void masterServiceClicked(MasterService masterService) {
-        OtherServicesMasterFragment otherServicesMasterFragment = new OtherServicesMasterFragment();
+        MoreServicesMasterFragment otherServicesMasterFragment = new MoreServicesMasterFragment();
         otherServicesMasterFragment.setMasterService(masterService);
         mainActivity.showFragment(otherServicesMasterFragment);
     }

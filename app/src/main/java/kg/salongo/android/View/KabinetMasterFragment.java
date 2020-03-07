@@ -16,7 +16,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,8 +23,6 @@ import com.google.android.material.tabs.TabLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import kg.salongo.android.Data.KabinetMaster;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
 
@@ -89,7 +86,7 @@ public class KabinetMasterFragment extends Fragment {
         });
 
         buttonEdit.setOnClickListener(v -> {
-            mainActivity.showFragment(new EditMasterFragment());
+            mainActivity.showFragment(new MasterEditFragment());
         });
 
         pagerAdapter = new KabinetMasterPagerAdapter(getChildFragmentManager());

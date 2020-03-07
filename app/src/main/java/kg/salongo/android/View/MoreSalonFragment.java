@@ -18,7 +18,6 @@ import androidx.fragment.app.Fragment;
 import com.squareup.picasso.Picasso;
 
 
-import kg.salongo.android.Data.MoreService;
 import kg.salongo.android.Data.Service;
 import kg.salongo.android.MainActivity;
 import kg.salongo.android.R;
@@ -87,7 +86,7 @@ public class MoreSalonFragment extends Fragment {
         buttonMoreServiceSalon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showFragment(new MoreServiceFragment());
+                mainActivity.showFragment(new SalonProfileFragment());
             }
         });
         imageLike = view.findViewById(R.id.imageSave);

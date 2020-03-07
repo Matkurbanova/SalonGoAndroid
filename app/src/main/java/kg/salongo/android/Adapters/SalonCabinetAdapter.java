@@ -20,12 +20,12 @@ import butterknife.ButterKnife;
 import kg.salongo.android.Data.KabinetSalon;
 import kg.salongo.android.R;
 
-public class KabinetSalonAdapter extends RecyclerView.Adapter<KabinetSalonAdapter.KabinetSalonVH> {
+public class SalonCabinetAdapter extends RecyclerView.Adapter<SalonCabinetAdapter.KabinetSalonVH> {
 
     private List<KabinetSalon> kabinetSalonList = new ArrayList<>();
     private Context context;
 
-    public KabinetSalonAdapter(Context context) {
+    public SalonCabinetAdapter(Context context) {
         this.context = context;
     }
 
@@ -37,7 +37,7 @@ public class KabinetSalonAdapter extends RecyclerView.Adapter<KabinetSalonAdapte
 
     @NonNull
     @Override
-    public KabinetSalonAdapter.KabinetSalonVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SalonCabinetAdapter.KabinetSalonVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context)
                 .inflate(R.layout.list_kabinet_salona, parent, false);
@@ -47,7 +47,7 @@ public class KabinetSalonAdapter extends RecyclerView.Adapter<KabinetSalonAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull KabinetSalonAdapter.KabinetSalonVH holder, int position) {
+    public void onBindViewHolder(@NonNull SalonCabinetAdapter.KabinetSalonVH holder, int position) {
 
 
         KabinetSalon kabinetSalon = kabinetSalonList.get(position);
