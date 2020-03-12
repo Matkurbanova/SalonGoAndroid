@@ -37,11 +37,17 @@ public interface UserService {
             @Query("workExperienceYear") String workExperienceYear,
             @Part MultipartBody.Part file);
 
-    ;//    @POST("api/registr/master")
-//    Call<ApiResponse<User>>registerMaster(
-//            @Query("login")String login
-//
-//    )
+    @Multipart
+    @POST ("/api/register/salon")
+    Call<ApiResponse<User>>registerSalon(
+            @Query("login") String login,
+                    @Query("name") String name,
+                    @Query("password") String password,
+                    @Query("phone") String phone,
+                    @Query("address") String address,
+
+                    @Part MultipartBody.Part file);
+
 
 }
 

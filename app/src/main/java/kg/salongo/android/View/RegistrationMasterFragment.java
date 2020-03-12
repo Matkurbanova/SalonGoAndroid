@@ -84,7 +84,7 @@ public class RegistrationMasterFragment extends Fragment {
 
 
     void loadRegisterMaster() {
-        ApiRequests.registerMaster(
+        ApiRequests. registerMaster(
                 editTextLogin.getText().toString(),
                 editTextName.getText().toString(),
                 editTextPass.getText().toString(),
@@ -134,7 +134,6 @@ public class RegistrationMasterFragment extends Fragment {
         textViewSignIn.setOnClickListener(v -> mainActivity.showFragment(new AuthorizationFragment()));
         imageViewPhon.setOnClickListener(v -> ImagePicker.create(this).single().start());
     }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

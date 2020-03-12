@@ -43,6 +43,7 @@ public class MoreServicesMasterFragment extends Fragment {
     private ImageView imageViewShere;
     private Button buttonServicesMaster;
 
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -53,6 +54,7 @@ public class MoreServicesMasterFragment extends Fragment {
     public void setMasterService(MasterService masterService) {
         this.masterService = masterService;
     }
+
 
 
     @Nullable

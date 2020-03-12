@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.File;
-import java.util.Collection;
 import java.util.List;
 
 import kg.salongo.android.Data.Category;
@@ -24,9 +23,9 @@ import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiRequests {
+public class ApiRequests<U> extends ApiResponse<User> {
 
-    public static final String BASE_URL = "http://192.168.0.108:8080";
+    public static final String BASE_URL = "http://192.168.0.102:8080";
     public static final String IMAGES = BASE_URL + "/api/image/";
 
     private static Gson gson = new GsonBuilder().create();
@@ -54,6 +53,12 @@ public class ApiRequests {
         kg.salongo.android.api.services.MasterService masterService = retrofit.create(kg.salongo.android.api.services.MasterService.class);
         masterService.getMasterServices(SubCategoryId).enqueue(callback);
     }
+
+//    public  static void getMasterMoreService(int masterId, Call<ApiResponse<List<MasterMoreService>>>callback){
+//        kg.salongo.android.api.services.MasterService masterMoreService=  retrofit.create(kg.salongo.android.api.services.MasterService.class);
+//        masterMoreService.getMasterMoreService(masterId).enqueue(callback);
+//
+//    }
 
     public static void getSalonService(int SubCategoryId, Callback<ApiResponse<List<Service>>> callback) {
         CategoryService categoryService = retrofit.create(CategoryService.class);
@@ -92,7 +97,19 @@ public class ApiRequests {
         userService.registerMaster(login, name, password, phone, workExperienceYear, body).enqueue(callback);
     }
 
-
+    public static  void registerSalon(
+            String login,
+            String name,
+            String password,
+            String phone,
+            String address,
+            File image,
+            Callback<ApiResponse<User>> callback){
+        UserService userService=retrofit.create(UserService.class);
+        RequestBody requestFile=RequestBody.create(MediaType.parse("multipart/form-data"), image);
+        MultipartBody.Part body=MultipartBody.Part.createFormData("image", image.getName(), requestFile);
+        userService.registerSalon(login, name, password, phone,address, body ).enqueue(callback);
+    }
     public static void addService(
             String token,
             String Price,
